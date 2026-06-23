@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../shared.js"></script>
+<script src="../../../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e7e5df;}
+  a{text-decoration:none;color:inherit;}
+</style>
+</helmet>
+
+<div style="width:100%;min-height:100vh;box-sizing:border-box;padding:34px 24px 64px;background:#e7e5df;font-family:'Inter',sans-serif;">
+
+  <div style="max-width:390px;margin:0 auto 18px;display:flex;align-items:center;gap:12px;">
+    <a href="../../../index.html" style="font-size:12.5px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:6px 13px;font-weight:600;">‹ Mục lục</a>
+    <div style="font-size:12px;color:#8a8780;">Đối tác · Mobile — Đăng nhập</div>
+  </div>
+
+  <!-- ===================== KHUNG 390px ===================== -->
+  <div style="margin:0 auto;width:390px;background:#fff;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);color:#1f1d29;border:1px solid #e3e0da;">
+
+    <!-- status bar (nền tối) -->
+    <div style="height:40px;background:#3a1f6e;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;color:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #fff;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#fff;border-radius:1px;"></span></span></div>
+
+    <!-- hero gradient -->
+    <div style="background:linear-gradient(150deg,rgba(58,31,110,.92),rgba(26,16,48,.9)),url('https://images.unsplash.com/photo-1513735492246-483525079686?auto=format&fit=crop&w=720&q=70') center/cover;padding:0 24px 44px;color:#fff;">
+      <div style="font-weight:800;font-size:20px;padding-top:18px;">nightlife<span style="color:#c9a7ff;">.hn</span></div>
+      <div style="font-size:12px;color:#c9a7ff;margin-top:3px;">Cổng đối tác</div>
+      <h2 style="font-size:24px;font-weight:800;line-height:1.2;margin-top:34px;max-width:250px;">Quản lý quán của bạn dễ dàng</h2>
+      <p style="font-size:12.5px;color:#e0d4ee;margin-top:10px;max-width:250px;line-height:1.6;">Quét mã giảm giá · đối soát dịch vụ · đăng thông tin.</p>
+    </div>
+
+    <!-- form đăng nhập -->
+    <div style="padding:24px 22px 30px;margin-top:-20px;background:#fff;border-radius:24px 24px 0 0;position:relative;">
+      <h3 style="font-size:19px;font-weight:800;">Đăng nhập đối tác</h3>
+      <p style="font-size:12.5px;color:#8a879a;margin-top:5px;">Dùng tài khoản được Admin cấp cho quán của bạn.</p>
+
+      <div style="margin-top:18px;display:flex;flex-direction:column;gap:13px;">
+        <div>
+          <label style="font-size:12px;font-weight:600;color:#5b5870;">Số điện thoại</label>
+          <div style="margin-top:6px;border:1px solid #e2e0e8;border-radius:11px;padding:14px;font-size:13.5px;color:#9a98a6;display:flex;align-items:center;gap:10px;"><img src="https://img.icons8.com/ios/100/9A98A6/phone.png" style="width:17px;height:17px;" alt="">0912 345 678</div>
+        </div>
+        <div>
+          <label style="font-size:12px;font-weight:600;color:#5b5870;">Mật khẩu</label>
+          <div style="margin-top:6px;border:1px solid #e2e0e8;border-radius:11px;padding:14px;font-size:13.5px;color:#9a98a6;display:flex;align-items:center;justify-content:space-between;"><span style="display:flex;align-items:center;gap:10px;"><img src="https://img.icons8.com/ios/100/9A98A6/lock--v1.png" style="width:17px;height:17px;" alt="">••••••••</span><span style="font-size:11.5px;color:#6d28d9;font-weight:600;">Hiện</span></div>
+        </div>
+      </div>
+
+      <div style="margin-top:8px;text-align:right;"><span style="font-size:11.5px;color:#6d28d9;font-weight:600;">Quên mật khẩu?</span></div>
+
+      <a href="dashboard.html" style="margin-top:14px;display:block;background:#6d28d9;color:#fff;text-align:center;border-radius:12px;padding:15px;font-weight:700;font-size:14px;">Đăng nhập</a>
+
+      <p style="text-align:center;font-size:12px;color:#8a879a;margin-top:18px;">Chưa có tài khoản? <span style="color:#6d28d9;font-weight:600;">Đăng ký hợp tác</span></p>
+
+      <div style="margin-top:18px;font-size:11px;color:#b6b3c0;text-align:center;line-height:1.6;">© 2026 NightLife · Partner Portal</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>class Component extends DCLogic { renderVals(){ return {}; } }</script>
+</body>
+</html>

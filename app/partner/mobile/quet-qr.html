@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../shared.js"></script>
+<script src="../../../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e7e5df;}
+  a{text-decoration:none;color:inherit;}
+</style>
+</helmet>
+
+<div style="width:100%;min-height:100vh;box-sizing:border-box;padding:34px 24px 64px;background:#e7e5df;font-family:'Inter',sans-serif;">
+
+  <div style="max-width:390px;margin:0 auto 18px;display:flex;align-items:center;gap:12px;">
+    <a href="../../../index.html" style="font-size:12.5px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:6px 13px;font-weight:600;">‹ Mục lục</a>
+    <div style="font-size:12px;color:#8a8780;">Đối tác · Mobile — Quét mã</div>
+  </div>
+
+  <!-- ===================== KHUNG 390px (camera nền tối) ===================== -->
+  <div style="margin:0 auto;width:390px;background:#16121f;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);color:#fff;border:1px solid #e3e0da;position:relative;">
+
+    <!-- status bar (nền tối) -->
+    <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;color:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #fff;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#fff;border-radius:1px;"></span></span></div>
+
+    <!-- header -->
+    <div style="padding:6px 18px 14px;display:flex;align-items:center;gap:12px;"><a href="dashboard.html" style="font-size:22px;color:#fff;line-height:1;">‹</a><span style="font-weight:800;font-size:16px;">Quét mã giảm giá</span></div>
+
+    <!-- vùng camera + 4 góc tím -->
+    <div style="height:320px;background:radial-gradient(circle at 50% 38%,#2a2435,#16121f);position:relative;display:flex;align-items:center;justify-content:center;">
+      <div style="width:220px;height:220px;border-radius:18px;position:relative;">
+        <img src="https://img.icons8.com/ios/300/FFFFFF/qr-code.png" style="width:140px;height:140px;opacity:.45;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);" alt="">
+        <span style="position:absolute;top:0;left:0;width:36px;height:36px;border-top:4px solid #6d28d9;border-left:4px solid #6d28d9;border-radius:8px 0 0 0;"></span>
+        <span style="position:absolute;top:0;right:0;width:36px;height:36px;border-top:4px solid #6d28d9;border-right:4px solid #6d28d9;border-radius:0 8px 0 0;"></span>
+        <span style="position:absolute;bottom:0;left:0;width:36px;height:36px;border-bottom:4px solid #6d28d9;border-left:4px solid #6d28d9;border-radius:0 0 0 8px;"></span>
+        <span style="position:absolute;bottom:0;right:0;width:36px;height:36px;border-bottom:4px solid #6d28d9;border-right:4px solid #6d28d9;border-radius:0 0 8px 0;"></span>
+      </div>
+      <div style="position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:12px;color:#cbbfe0;">Đưa mã QR của khách vào khung</div>
+    </div>
+
+    <!-- sheet kết quả kéo lên -->
+    <div style="background:#fff;color:#1f1d29;border-radius:24px 24px 0 0;margin-top:-20px;position:relative;padding:16px 18px 86px;">
+      <div style="width:42px;height:5px;border-radius:3px;background:#e0ddea;margin:0 auto 14px;"></div>
+
+      <div style="background:#e6f7ee;border-radius:13px;padding:13px 14px;display:flex;align-items:center;gap:11px;">
+        <span style="width:34px;height:34px;border-radius:50%;background:#177544;display:flex;align-items:center;justify-content:center;flex:none;"><img src="https://img.icons8.com/ios-filled/100/FFFFFF/checkmark.png" style="width:16px;height:16px;" alt=""></span>
+        <div><div style="font-size:14px;font-weight:700;color:#177544;">Happy Hour −30%</div><div style="font-size:11.5px;color:#3a7a59;margin-top:2px;">Minh H. · Hội viên · còn 22 giờ</div></div>
+      </div>
+
+      <div style="margin-top:12px;border:1px solid #ececec;border-radius:13px;padding:4px 14px;">
+        <div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #f1f0f3;font-size:12.5px;"><span style="color:#8a879a;">Mã</span><span style="font-family:monospace;font-weight:600;color:#6d28d9;">NL-HH30-7K2A</span></div>
+        <div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #f1f0f3;font-size:12.5px;"><span style="color:#8a879a;">Khách</span><span style="font-weight:600;">Minh H. · Hội viên</span></div>
+        <div style="display:flex;justify-content:space-between;padding:9px 0;font-size:12.5px;"><span style="color:#8a879a;">Liên kết</span><span style="font-weight:600;">Booking #BK-2041</span></div>
+      </div>
+
+      <div style="display:flex;gap:10px;margin-top:14px;">
+        <a href="doi-soat.html" style="flex:1;background:#6d28d9;color:#fff;text-align:center;border-radius:12px;padding:14px;font-weight:700;font-size:14px;">Xác nhận đã dùng</a>
+        <a href="quet-qr.html" style="flex:none;border:1px solid #f1cdd3;color:#b03a4a;border-radius:12px;padding:14px 18px;font-weight:600;font-size:14px;">Từ chối</a>
+      </div>
+    </div>
+
+    <!-- ===================== BOTTOM NAV (active: Quét) ===================== -->
+    <div style="position:absolute;left:0;right:0;bottom:0;height:64px;background:#fff;border-top:1px solid #ececec;display:flex;align-items:center;justify-content:space-around;padding-bottom:6px;">
+      <a href="dashboard.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:44px;padding-top:4px;"><img src="https://img.icons8.com/ios/100/B6B3C0/dashboard-layout.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Tổng quan</span></a>
+      <a href="quet-qr.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:44px;padding-top:4px;"><img src="https://img.icons8.com/ios-filled/100/6D28D9/qr-code.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#6d28d9;font-weight:600;">Quét</span></a>
+      <a href="doi-soat.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:44px;padding-top:4px;"><img src="https://img.icons8.com/ios/100/B6B3C0/checked-checkbox.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Đối soát</span></a>
+      <a href="dang-tin.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:44px;padding-top:4px;"><img src="https://img.icons8.com/ios/100/B6B3C0/edit.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Đăng</span></a>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>class Component extends DCLogic { renderVals(){ return {}; } }</script>
+</body>
+</html>

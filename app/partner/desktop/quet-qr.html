@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../shared.js"></script>
+<script src="../../../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e7e5df;}
+  a{text-decoration:none;color:inherit;}
+  .navi{transition:background .14s,color .14s;}
+  .navi:hover{background:#f6f4fb;color:#6d28d9;}
+  .btn{cursor:pointer;transition:filter .14s;}
+  .btn:active{filter:brightness(.96);}
+  ::-webkit-scrollbar{width:9px;height:9px;}
+  ::-webkit-scrollbar-thumb{background:#d7d4de;border-radius:5px;}
+</style>
+</helmet>
+
+<div style="width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;padding:34px 48px 64px;background:#e7e5df;font-family:'Inter',sans-serif;">
+
+  <!-- thanh quay lại mục lục -->
+  <div style="max-width:1100px;margin-bottom:18px;display:flex;align-items:center;gap:14px;">
+    <a href="../../../index.html" style="font-size:13px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:7px 14px;font-weight:600;">‹ Mục lục</a>
+    <div style="font-size:13px;color:#8a8780;">Đối tác · Desktop — <b style="color:#2b2a26;">Quét mã QR (PA3)</b></div>
+  </div>
+
+  <!-- ===================== KHUNG CMS ===================== -->
+  <div style="width:1100px;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.12);color:#1f1d29;display:flex;min-height:640px;">
+
+    <!-- ---------- SIDEBAR (active: Quét mã QR) ---------- -->
+    <div style="width:230px;flex:none;border-right:1px solid #ececec;display:flex;flex-direction:column;padding:20px 0;background:#fff;">
+      <div style="padding:0 20px 6px;font-weight:800;font-size:18px;color:#6d28d9;">nightlife<span style="color:#1f1d29;">.hn</span></div>
+      <div style="padding:0 20px 16px;"><span style="font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#6d28d9;background:#f1ebff;border-radius:11px;padding:3px 10px;">CỔNG ĐỐI TÁC</span></div>
+      <div style="padding:0 12px;display:flex;flex-direction:column;gap:4px;">
+        <a href="dashboard.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/dashboard-layout.png" style="width:20px;height:20px;" alt="">Tổng quan</a>
+        <a href="quet-qr.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:11px;background:#f1ebff;color:#6d28d9;font-weight:600;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/qr-code.png" style="width:20px;height:20px;" alt="">Quét mã QR</a>
+        <a href="doi-soat.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/checked-checkbox.png" style="width:20px;height:20px;" alt="">Đối soát</a>
+        <a href="dang-tin.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/edit.png" style="width:20px;height:20px;" alt="">Đăng thông tin</a>
+        <a href="#" class="navi" style="display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/settings.png" style="width:20px;height:20px;" alt="">Cài đặt</a>
+      </div>
+      <div style="margin-top:auto;padding:14px 16px 0;border-top:1px solid #ececec;display:flex;align-items:center;gap:10px;">
+        <span style="width:36px;height:36px;border-radius:9px;background:linear-gradient(140deg,#d6336c,#7b2d6b);flex:none;"></span>
+        <div style="flex:1;"><div style="font-size:13px;font-weight:600;">Club Lumière</div><div style="font-size:11px;color:#8a879a;">Đối tác</div></div>
+        <a href="dang-nhap.html" title="Đăng xuất"><img src="https://img.icons8.com/ios/100/8A879A/exit.png" style="width:18px;height:18px;" alt=""></a>
+      </div>
+    </div>
+    <!-- ---------- /SIDEBAR ---------- -->
+
+    <!-- ---------- MAIN ---------- -->
+    <div style="flex:1;background:#f5f4f2;display:flex;flex-direction:column;min-width:0;">
+
+      <!-- topbar -->
+      <div style="background:#fff;border-bottom:1px solid #ececec;padding:14px 26px;display:flex;align-items:center;justify-content:space-between;">
+        <div><div style="font-size:18px;font-weight:800;">Quét mã giảm giá</div><div style="font-size:12px;color:#8a879a;margin-top:1px;">Đưa mã QR của khách vào khung hoặc nhập tay</div></div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <span style="font-size:13px;font-weight:600;">Club Lumière</span>
+          <span style="width:36px;height:36px;border-radius:50%;background:linear-gradient(140deg,#d6336c,#7b2d6b);flex:none;"></span>
+        </div>
+      </div>
+
+      <!-- content -->
+      <div style="padding:26px;display:flex;gap:24px;overflow:auto;">
+
+        <!-- cột scan -->
+        <div style="width:300px;flex:none;background:#fff;border:1px solid #ececec;border-radius:16px;padding:24px;text-align:center;box-shadow:0 3px 12px rgba(40,20,60,.06);">
+          <div style="width:230px;height:230px;margin:0 auto;border-radius:16px;background:#16121f;position:relative;display:flex;align-items:center;justify-content:center;">
+            <img src="https://img.icons8.com/ios/300/FFFFFF/qr-code.png" style="width:150px;height:150px;opacity:.85;" alt="">
+            <span style="position:absolute;top:14px;left:14px;width:28px;height:28px;border-top:3px solid #6d28d9;border-left:3px solid #6d28d9;border-radius:6px 0 0 0;"></span>
+            <span style="position:absolute;top:14px;right:14px;width:28px;height:28px;border-top:3px solid #6d28d9;border-right:3px solid #6d28d9;border-radius:0 6px 0 0;"></span>
+            <span style="position:absolute;bottom:14px;left:14px;width:28px;height:28px;border-bottom:3px solid #6d28d9;border-left:3px solid #6d28d9;border-radius:0 0 0 6px;"></span>
+            <span style="position:absolute;bottom:14px;right:14px;width:28px;height:28px;border-bottom:3px solid #6d28d9;border-right:3px solid #6d28d9;border-radius:0 0 6px 0;"></span>
+          </div>
+          <div style="font-size:13px;color:#8a879a;margin-top:14px;">Đưa mã QR của khách vào khung</div>
+          <div style="margin-top:14px;text-align:left;">
+            <label style="font-size:12px;font-weight:600;color:#5b5870;">Nhập mã thủ công</label>
+            <div style="margin-top:6px;border:1px solid #e2e0e8;border-radius:11px;padding:11px 13px;font-size:13px;color:#9a98a6;font-family:monospace;">NL-XXXX-XXXX</div>
+          </div>
+          <div class="btn" style="margin-top:12px;background:#f1ebff;color:#6d28d9;border-radius:11px;padding:11px;font-weight:600;font-size:13px;">Kiểm tra mã</div>
+        </div>
+
+        <!-- cột kết quả -->
+        <div style="flex:1;">
+          <div style="background:#fff;border:1px solid #ececec;border-radius:16px;overflow:hidden;box-shadow:0 3px 12px rgba(40,20,60,.06);">
+            <div style="background:#e6f7ee;padding:16px 20px;display:flex;align-items:center;gap:12px;">
+              <span style="width:38px;height:38px;border-radius:50%;background:#1f8a52;display:flex;align-items:center;justify-content:center;flex:none;"><img src="https://img.icons8.com/ios-filled/100/FFFFFF/checkmark.png" style="width:18px;height:18px;" alt=""></span>
+              <div><div style="font-weight:700;font-size:14.5px;color:#177544;">Mã hợp lệ — Đang giữ chỗ</div><div style="font-size:12px;color:#3a7a59;font-family:monospace;">NL-HH30-7K2A</div></div>
+            </div>
+            <div style="padding:20px;">
+              <div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #f1f0f3;font-size:13.5px;"><span style="color:#8a879a;">Ưu đãi</span><span style="font-weight:600;">Happy Hour −30%</span></div>
+              <div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #f1f0f3;font-size:13.5px;"><span style="color:#8a879a;">Khách</span><span style="font-weight:600;">Minh H. · Hội viên</span></div>
+              <div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #f1f0f3;font-size:13.5px;"><span style="color:#8a879a;">Hạn dùng</span><span style="font-weight:600;">Còn 22 giờ</span></div>
+              <div style="display:flex;justify-content:space-between;padding:9px 0;font-size:13.5px;"><span style="color:#8a879a;">Liên kết</span><span style="font-weight:600;">Booking #BK-2041</span></div>
+              <div style="display:flex;gap:12px;margin-top:18px;">
+                <div class="btn" style="flex:1;background:#6d28d9;color:#fff;text-align:center;border-radius:11px;padding:13px;font-weight:700;font-size:14px;">Xác nhận đã dùng</div>
+                <div class="btn" style="flex:none;border:1px solid #f1cdd3;color:#b03a4a;border-radius:11px;padding:13px 22px;font-weight:600;font-size:14px;">Từ chối</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:14px;font-size:12px;color:#8a879a;background:#fff;border:1px solid #ececec;border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:10px;">
+            <img src="https://img.icons8.com/ios/100/8A879A/info--v1.png" style="width:17px;height:17px;flex:none;" alt="">
+            Sau khi xác nhận, lượt dùng sẽ được ghi vào <b style="color:#5b5870;margin:0 3px;">Đối soát</b> của quán.
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- ---------- /MAIN ---------- -->
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>

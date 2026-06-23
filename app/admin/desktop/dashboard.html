@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../shared.js"></script>
+<script src="../../../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e7e5df;}
+  a{text-decoration:none;color:inherit;}
+  .navi{transition:background .14s,color .14s;}
+  .navi:hover{background:#f6f4fb;color:#6d28d9;}
+  .btn{cursor:pointer;transition:filter .14s;}
+  .btn:active{filter:brightness(.96);}
+  .row:hover{background:#faf9fc;}
+  ::-webkit-scrollbar{width:9px;height:9px;}
+  ::-webkit-scrollbar-thumb{background:#d7d4de;border-radius:5px;}
+</style>
+</helmet>
+
+<div style="width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;padding:34px 48px 64px;background:#e7e5df;font-family:'Inter',sans-serif;">
+
+  <!-- thanh quay lại mục lục -->
+  <div style="max-width:1180px;margin-bottom:18px;display:flex;align-items:center;gap:14px;">
+    <a href="../../../index.html" style="font-size:13px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:7px 14px;font-weight:600;">‹ Mục lục</a>
+    <div style="font-size:13px;color:#8a8780;">Admin CMS · Desktop — <b style="color:#2b2a26;">Tổng quan (AD1)</b></div>
+  </div>
+
+  <!-- ===================== KHUNG ADMIN ===================== -->
+  <div style="width:1180px;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.12);color:#1f1d29;display:flex;min-height:720px;">
+
+    <!-- ---------- SIDEBAR (copy nguyên khối này sang mọi trang admin, chỉ đổi mục active) ---------- -->
+    <div style="width:236px;flex:none;border-right:1px solid #ececec;display:flex;flex-direction:column;padding:20px 0;background:#fff;">
+      <div style="padding:0 20px 6px;font-weight:800;font-size:18px;color:#6d28d9;">nightlife<span style="color:#1f1d29;">.hn</span></div>
+      <div style="padding:0 20px 16px;"><span style="font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#6d28d9;background:#f1ebff;border-radius:11px;padding:3px 10px;">ADMIN CMS</span></div>
+
+      <div style="padding:0 12px;display:flex;flex-direction:column;gap:2px;overflow:auto;">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#a8a5b4;padding:8px 13px 4px;">VẬN HÀNH</div>
+        <a href="dashboard.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;background:#f1ebff;color:#6d28d9;font-weight:600;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/dashboard-layout.png" style="width:20px;height:20px;" alt="">Tổng quan</a>
+        <a href="booking.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/planner.png" style="width:20px;height:20px;" alt="">Đặt chỗ</a>
+        <a href="bill.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/cheque.png" style="width:20px;height:20px;" alt="">Duyệt hóa đơn <span style="margin-left:auto;font-size:10.5px;font-weight:700;color:#fff;background:#d6336c;border-radius:10px;padding:1px 7px;">7</span></a>
+        <a href="doi-tac.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/handshake.png" style="width:20px;height:20px;" alt="">Duyệt đối tác <span style="margin-left:auto;font-size:10.5px;font-weight:700;color:#fff;background:#d6336c;border-radius:10px;padding:1px 7px;">3</span></a>
+
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#a8a5b4;padding:12px 13px 4px;">NỘI DUNG</div>
+        <a href="quan.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/shop.png" style="width:20px;height:20px;" alt="">Quán / Địa điểm</a>
+        <a href="cast.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/geisha.png" style="width:20px;height:20px;" alt="">Cast</a>
+        <a href="media.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/stack-of-photos.png" style="width:20px;height:20px;" alt="">Thư viện media</a>
+        <a href="campaign.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/discount.png" style="width:20px;height:20px;" alt="">Campaign / Ưu đãi</a>
+        <a href="blog.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/news.png" style="width:20px;height:20px;" alt="">Blog / Nội dung</a>
+        <a href="ranking.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/trophy.png" style="width:20px;height:20px;" alt="">Xếp hạng thủ công</a>
+
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#a8a5b4;padding:12px 13px 4px;">PHÂN TÍCH</div>
+        <a href="bao-cao.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/combo-chart.png" style="width:20px;height:20px;" alt="">Báo cáo doanh thu</a>
+        <a href="membership.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/vip.png" style="width:20px;height:20px;" alt="">Membership &amp; điểm</a>
+      </div>
+
+      <div style="margin-top:auto;padding:14px 16px 0;border-top:1px solid #ececec;display:flex;align-items:center;gap:10px;">
+        <span style="width:36px;height:36px;border-radius:50%;background:linear-gradient(140deg,#6d28d9,#3a1f6e);flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;">A</span>
+        <div style="flex:1;"><div style="font-size:13px;font-weight:600;">Admin Trung</div><div style="font-size:11px;color:#8a879a;">Quản trị viên</div></div>
+        <a href="dang-nhap.html" title="Đăng xuất"><img src="https://img.icons8.com/ios/100/8A879A/exit.png" style="width:18px;height:18px;" alt=""></a>
+      </div>
+    </div>
+    <!-- ---------- /SIDEBAR ---------- -->
+
+    <!-- ---------- MAIN ---------- -->
+    <div style="flex:1;background:#f5f4f2;display:flex;flex-direction:column;min-width:0;">
+
+      <!-- topbar -->
+      <div style="background:#fff;border-bottom:1px solid #ececec;padding:14px 26px;display:flex;align-items:center;justify-content:space-between;">
+        <div><div style="font-size:18px;font-weight:800;">Tổng quan</div><div style="font-size:12px;color:#8a879a;margin-top:1px;">Cập nhật 23/06/2026 · 21:00</div></div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div style="display:flex;align-items:center;gap:8px;border:1px solid #ececec;border-radius:11px;padding:9px 14px;width:280px;color:#9a98a6;font-size:13px;"><img src="https://img.icons8.com/ios/100/9A98A6/search--v1.png" style="width:15px;height:15px;" alt="">Tìm quán, cast, booking…</div>
+          <div style="position:relative;"><img src="https://img.icons8.com/fluency/96/bell.png" style="width:24px;height:24px;" alt=""><span style="position:absolute;top:-3px;right:-3px;width:16px;height:16px;border-radius:50%;background:#d6336c;color:#fff;font-size:9.5px;font-weight:700;display:flex;align-items:center;justify-content:center;">5</span></div>
+          <span style="width:36px;height:36px;border-radius:50%;background:linear-gradient(140deg,#6d28d9,#3a1f6e);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;">A</span>
+        </div>
+      </div>
+
+      <!-- content -->
+      <div style="padding:24px 26px;overflow:auto;">
+
+        <!-- alert chờ xử lý -->
+        <div style="display:flex;align-items:center;gap:12px;background:#fff7ed;border:1px solid #fde3c4;border-radius:14px;padding:14px 18px;margin-bottom:18px;">
+          <img src="https://img.icons8.com/fluency/96/error.png" style="width:22px;height:22px;" alt="">
+          <div style="font-size:13.5px;color:#8a5a17;">Đang chờ xử lý: <b>7 hóa đơn</b>, <b>3 hồ sơ đối tác</b> và <b>18 yêu cầu đặt chỗ</b> mới.</div>
+          <a href="bill.html" class="btn" style="margin-left:auto;font-size:12.5px;font-weight:600;color:#fff;background:#6d28d9;border-radius:10px;padding:9px 16px;">Xử lý ngay ›</a>
+        </div>
+
+        <!-- stat cards -->
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;">
+          <div style="background:#fff;border:1px solid #ececec;border-radius:16px;padding:16px;"><div style="display:flex;align-items:center;gap:7px;font-size:12px;color:#8a879a;"><img src="https://img.icons8.com/fluency/96/shop.png" style="width:18px;height:18px;" alt="">Quán</div><div style="font-size:28px;font-weight:800;margin-top:6px;">124</div><div style="font-size:11px;color:#1f8a52;margin-top:3px;">▲ 4 mới tuần này</div></div>
+          <div style="background:#fff;border:1px solid #ececec;border-radius:16px;padding:16px;"><div style="display:flex;align-items:center;gap:7px;font-size:12px;color:#8a879a;"><img src="https://img.icons8.com/fluency/96/geisha.png" style="width:18px;height:18px;" alt="">Cast</div><div style="font-size:28px;font-weight:800;margin-top:6px;">356</div><div style="font-size:11px;color:#1f8a52;margin-top:3px;">▲ 12 mới</div></div>
+          <div style="background:#fff;border:1px solid #ececec;border-radius:16px;padding:16px;"><div style="display:flex;align-items:center;gap:7px;font-size:12px;color:#8a879a;"><img src="https://img.icons8.com/fluency/96/planner.png" style="width:18px;height:18px;" alt="">Booking mới</div><div style="font-size:28px;font-weight:800;margin-top:6px;">18</div><div style="font-size:11px;color:#b06a00;margin-top:3px;">● cần điều phối</div></div>
+          <div style="background:#fff;border:1px solid #ececec;border-radius:16px;padding:16px;"><div style="display:flex;align-items:center;gap:7px;font-size:12px;color:#8a879a;"><img src="https://img.icons8.com/fluency/96/cheque.png" style="width:18px;height:18px;" alt="">Bill chờ duyệt</div><div style="font-size:28px;font-weight:800;margin-top:6px;">7</div><div style="font-size:11px;color:#b06a00;margin-top:3px;">● chờ duyệt</div></div>
+          <div style="background:#fff;border:1px solid #ececec;border-radius:16px;padding:16px;"><div style="display:flex;align-items:center;gap:7px;font-size:12px;color:#8a879a;"><img src="https://img.icons8.com/fluency/96/money-bag.png" style="width:18px;height:18px;" alt="">Doanh thu T6</div><div style="font-size:28px;font-weight:800;margin-top:6px;">182<span style="font-size:15px;">tr</span></div><div style="font-size:11px;color:#1f8a52;margin-top:3px;">▲ 16%</div></div>
+        </div>
+
+        <!-- chart + top quán -->
+        <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:16px;margin-top:16px;">
+          <div style="background:#fff;border:1px solid #ececec;border-radius:16px;padding:20px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;"><div style="font-weight:700;font-size:15px;">Doanh thu &amp; hoa hồng 7 ngày</div><div style="display:flex;gap:12px;font-size:11.5px;color:#8a879a;"><span><span style="display:inline-block;width:9px;height:9px;border-radius:2px;background:#6d28d9;margin-right:5px;"></span>Doanh thu</span><span><span style="display:inline-block;width:9px;height:9px;border-radius:2px;background:#e0d6f7;margin-right:5px;"></span>Hoa hồng</span></div></div>
+            <div style="display:flex;align-items:flex-end;gap:16px;height:160px;">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;justify-content:flex-end;height:100%;"><div style="width:60%;background:#e0d6f7;height:18%;border-radius:5px 5px 0 0;"></div><div style="width:100%;background:#6d28d9;height:46%;border-radius:5px 5px 0 0;margin-top:-1px;"></div><span style="font-size:11px;color:#8a879a;">T2</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;justify-content:flex-end;height:100%;"><div style="width:60%;background:#e0d6f7;height:24%;border-radius:5px 5px 0 0;"></div><div style="width:100%;background:#6d28d9;height:62%;border-radius:5px 5px 0 0;"></div><span style="font-size:11px;color:#8a879a;">T3</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;justify-content:flex-end;height:100%;"><div style="width:60%;background:#e0d6f7;height:20%;border-radius:5px 5px 0 0;"></div><div style="width:100%;background:#6d28d9;height:40%;border-radius:5px 5px 0 0;"></div><span style="font-size:11px;color:#8a879a;">T4</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;justify-content:flex-end;height:100%;"><div style="width:60%;background:#e0d6f7;height:30%;border-radius:5px 5px 0 0;"></div><div style="width:100%;background:#6d28d9;height:74%;border-radius:5px 5px 0 0;"></div><span style="font-size:11px;color:#8a879a;">T5</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;justify-content:flex-end;height:100%;"><div style="width:60%;background:#e0d6f7;height:38%;border-radius:5px 5px 0 0;"></div><div style="width:100%;background:#6d28d9;height:96%;border-radius:5px 5px 0 0;"></div><span style="font-size:11px;color:#8a879a;">T6</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;justify-content:flex-end;height:100%;"><div style="width:60%;background:#e0d6f7;height:34%;border-radius:5px 5px 0 0;"></div><div style="width:100%;background:#6d28d9;height:88%;border-radius:5px 5px 0 0;"></div><span style="font-size:11px;color:#8a879a;">T7</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;justify-content:flex-end;height:100%;"><div style="width:60%;background:#e0d6f7;height:22%;border-radius:5px 5px 0 0;"></div><div style="width:100%;background:#6d28d9;height:54%;border-radius:5px 5px 0 0;"></div><span style="font-size:11px;color:#8a879a;">CN</span></div>
+            </div>
+          </div>
+          <div style="background:#fff;border:1px solid #ececec;border-radius:16px;padding:20px;">
+            <div style="font-weight:700;font-size:15px;margin-bottom:14px;">Top quán theo lượt đặt</div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div style="display:flex;align-items:center;gap:11px;"><span style="width:28px;height:28px;border-radius:8px;background:#E8B84B;color:#5a3d00;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;">1</span><span style="width:38px;height:38px;border-radius:50%;background:linear-gradient(140deg,#d6336c,#7b2d6b);flex:none;"></span><div style="flex:1;"><div style="font-size:13.5px;font-weight:600;">Club Lumière</div><div style="font-size:11px;color:#8a879a;">Tây Hồ, HN</div></div><span style="font-size:12.5px;font-weight:700;color:#6d28d9;">312</span></div>
+              <div style="display:flex;align-items:center;gap:11px;"><span style="width:28px;height:28px;border-radius:8px;background:#B9C2CC;color:#3a424d;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;">2</span><span style="width:38px;height:38px;border-radius:50%;background:linear-gradient(140deg,#3a8fb0,#2d5fae);flex:none;"></span><div style="flex:1;"><div style="font-size:13.5px;font-weight:600;">KTV Hoàng Gia</div><div style="font-size:11px;color:#8a879a;">Kim Mã, HN</div></div><span style="font-size:12.5px;font-weight:700;color:#6d28d9;">208</span></div>
+              <div style="display:flex;align-items:center;gap:11px;"><span style="width:28px;height:28px;border-radius:8px;background:#C8814B;color:#5a3300;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;">3</span><span style="width:38px;height:38px;border-radius:50%;background:linear-gradient(140deg,#5fae8a,#2d8a6a);flex:none;"></span><div style="flex:1;"><div style="font-size:13.5px;font-weight:600;">Spa Hồng Ngọc</div><div style="font-size:11px;color:#8a879a;">Đống Đa, HN</div></div><span style="font-size:12.5px;font-weight:700;color:#6d28d9;">210</span></div>
+              <div style="display:flex;align-items:center;gap:11px;"><span style="width:28px;height:28px;border-radius:8px;background:#5BC08A;color:#0a3d28;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;">4</span><span style="width:38px;height:38px;border-radius:50%;background:linear-gradient(140deg,#8a6ad0,#5d3da8);flex:none;"></span><div style="flex:1;"><div style="font-size:13.5px;font-weight:600;">Sakura Lounge</div><div style="font-size:11px;color:#8a879a;">Trúc Bạch, HN</div></div><span style="font-size:12.5px;font-weight:700;color:#6d28d9;">156</span></div>
+              <div style="display:flex;align-items:center;gap:11px;"><span style="width:28px;height:28px;border-radius:8px;background:#5BA6E0;color:#0a2e4d;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;">5</span><span style="width:38px;height:38px;border-radius:50%;background:linear-gradient(140deg,#e0a23a,#c0782d);flex:none;"></span><div style="flex:1;"><div style="font-size:13.5px;font-weight:600;">Casino Diamond</div><div style="font-size:11px;color:#8a879a;">Tây Hồ, HN</div></div><span style="font-size:12.5px;font-weight:700;color:#6d28d9;">89</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- bảng booking gần đây -->
+        <div style="background:#fff;border:1px solid #ececec;border-radius:16px;overflow:hidden;margin-top:16px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #f1f0f3;"><div style="font-weight:700;font-size:15px;">Yêu cầu đặt chỗ gần đây</div><a href="booking.html" style="font-size:12.5px;color:#6d28d9;font-weight:600;">Xem tất cả ›</a></div>
+          <div style="display:grid;grid-template-columns:1.4fr 1.4fr .8fr .8fr 1fr;padding:11px 20px;font-size:11.5px;color:#8a879a;font-weight:600;background:#faf9fc;border-bottom:1px solid #f1f0f3;"><span>Khách</span><span>Quán / Cast</span><span>Số người</span><span>Khung giờ</span><span>Trạng thái</span></div>
+          <div class="row" style="display:grid;grid-template-columns:1.4fr 1.4fr .8fr .8fr 1fr;padding:13px 20px;font-size:13px;border-bottom:1px solid #f4f3f6;align-items:center;"><span style="font-weight:600;">Minh H.</span><span>Club Lumière</span><span>4</span><span>21:30</span><span><span style="font-size:11px;font-weight:600;color:#b06a00;background:#fdefd6;border-radius:10px;padding:3px 9px;">Mới</span></span></div>
+          <div class="row" style="display:grid;grid-template-columns:1.4fr 1.4fr .8fr .8fr 1fr;padding:13px 20px;font-size:13px;border-bottom:1px solid #f4f3f6;align-items:center;"><span style="font-weight:600;">Yuki T.</span><span>KTV Hoàng Gia · Michi</span><span>2</span><span>20:00</span><span><span style="font-size:11px;font-weight:600;color:#177544;background:#e6f7ee;border-radius:10px;padding:3px 9px;">Hoàn tất</span></span></div>
+          <div class="row" style="display:grid;grid-template-columns:1.4fr 1.4fr .8fr .8fr 1fr;padding:13px 20px;font-size:13px;border-bottom:1px solid #f4f3f6;align-items:center;"><span style="font-weight:600;">Tuấn A.</span><span>Sakura Lounge</span><span>6</span><span>22:00</span><span><span style="font-size:11px;font-weight:600;color:#b06a00;background:#fdefd6;border-radius:10px;padding:3px 9px;">Mới</span></span></div>
+          <div class="row" style="display:grid;grid-template-columns:1.4fr 1.4fr .8fr .8fr 1fr;padding:13px 20px;font-size:13px;align-items:center;"><span style="font-weight:600;">Kenji M.</span><span>Roppongi Night</span><span>3</span><span>23:00</span><span><span style="font-size:11px;font-weight:600;color:#b03a4a;background:#fde7ea;border-radius:10px;padding:3px 9px;">Đã hủy</span></span></div>
+        </div>
+
+      </div>
+    </div>
+    <!-- ---------- /MAIN ---------- -->
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>

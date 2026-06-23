@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../shared.js"></script>
+<script src="../../../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e7e5df;}
+  a{text-decoration:none;color:inherit;}
+  .btn{cursor:pointer;transition:filter .14s;}
+  .btn:active{filter:brightness(.96);}
+</style>
+</helmet>
+
+<div style="width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;padding:34px 48px 64px;background:#e7e5df;font-family:'Inter',sans-serif;">
+
+  <!-- thanh quay lại mục lục -->
+  <div style="max-width:1100px;margin-bottom:18px;display:flex;align-items:center;gap:14px;">
+    <a href="../../../index.html" style="font-size:13px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:7px 14px;font-weight:600;">‹ Mục lục</a>
+    <div style="font-size:13px;color:#8a8780;">Đối tác · Desktop — <b style="color:#2b2a26;">Đăng nhập (PA1)</b></div>
+  </div>
+
+  <!-- ===================== KHUNG ĐĂNG NHẬP 2 CỘT ===================== -->
+  <div style="width:1100px;height:600px;background:#f5f4f2;border-radius:6px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.12);color:#1f1d29;display:flex;">
+
+    <!-- panel brand -->
+    <div style="width:46%;flex:none;background:linear-gradient(150deg,rgba(58,31,110,.86),rgba(26,16,48,.88));padding:48px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;">
+      <div style="font-weight:800;font-size:22px;">nightlife<span style="color:#c9a7ff;">.hn</span> <span style="font-size:13px;font-weight:600;color:#c9a7ff;border:1px solid rgba(201,167,255,.5);border-radius:14px;padding:3px 10px;margin-left:6px;">Đối tác</span></div>
+      <div>
+        <h2 style="font-size:32px;font-weight:800;line-height:1.18;max-width:360px;">Cổng quản lý dành cho quán đối tác</h2>
+        <p style="font-size:14px;color:#e0d4ee;margin-top:14px;max-width:340px;line-height:1.6;">Quét mã giảm giá, đối soát dịch vụ và đăng thông tin quán — tất cả tại một nơi.</p>
+        <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px;max-width:340px;">
+          <div style="display:flex;align-items:center;gap:11px;font-size:13.5px;color:#efe7fb;"><span style="width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;flex:none;"><img src="https://img.icons8.com/ios-filled/100/FFFFFF/qr-code.png" style="width:17px;height:17px;" alt=""></span>Quét &amp; xác nhận mã ưu đãi của khách</div>
+          <div style="display:flex;align-items:center;gap:11px;font-size:13.5px;color:#efe7fb;"><span style="width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;flex:none;"><img src="https://img.icons8.com/ios-filled/100/FFFFFF/checkmark.png" style="width:17px;height:17px;" alt=""></span>Đối soát dịch vụ đã sử dụng theo kỳ</div>
+          <div style="display:flex;align-items:center;gap:11px;font-size:13.5px;color:#efe7fb;"><span style="width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;flex:none;"><img src="https://img.icons8.com/ios-filled/100/FFFFFF/edit.png" style="width:17px;height:17px;" alt=""></span>Đăng &amp; cập nhật thông tin quán, cast</div>
+        </div>
+      </div>
+      <div style="font-size:12px;color:#b6abc9;">© 2026 NightLife · Partner Portal</div>
+    </div>
+
+    <!-- form -->
+    <div style="flex:1;background:#fff;display:flex;align-items:center;justify-content:center;padding:40px;">
+      <div style="width:340px;">
+        <h2 style="font-size:22px;font-weight:800;">Đăng nhập đối tác</h2>
+        <p style="font-size:13px;color:#8a879a;margin-top:5px;">Dùng tài khoản được Admin cấp cho quán của bạn.</p>
+        <div style="margin-top:22px;display:flex;flex-direction:column;gap:14px;">
+          <div>
+            <label style="font-size:12.5px;font-weight:600;color:#5b5870;">SĐT / Email quán</label>
+            <div style="margin-top:7px;border:1px solid #e2e0e8;border-radius:11px;padding:13px 14px;font-size:13.5px;color:#9a98a6;">club.lumiere@nightlife.hn</div>
+          </div>
+          <div>
+            <label style="font-size:12.5px;font-weight:600;color:#5b5870;">Mật khẩu</label>
+            <div style="margin-top:7px;border:1px solid #e2e0e8;border-radius:11px;padding:13px 14px;font-size:13.5px;color:#9a98a6;display:flex;align-items:center;justify-content:space-between;">••••••••<span style="font-size:12px;color:#6d28d9;font-weight:600;">Hiện</span></div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;font-size:12.5px;">
+            <span style="display:flex;align-items:center;gap:7px;color:#5b5870;"><span style="width:16px;height:16px;border:1.5px solid #c9c6cf;border-radius:5px;display:inline-block;"></span>Ghi nhớ đăng nhập</span>
+            <span style="color:#6d28d9;font-weight:600;">Quên mật khẩu?</span>
+          </div>
+        </div>
+        <a href="dashboard.html" class="btn" style="display:block;margin-top:18px;background:#6d28d9;color:#fff;text-align:center;border-radius:11px;padding:13px;font-weight:700;font-size:14px;">Đăng nhập</a>
+        <p style="text-align:center;font-size:12.5px;color:#8a879a;margin-top:18px;">Chưa có tài khoản? <a href="dashboard.html" style="color:#6d28d9;font-weight:600;">Đăng ký đối tác</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>

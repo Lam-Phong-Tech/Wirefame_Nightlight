@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../shared.js"></script>
+<script src="../../../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e7e5df;}
+  a{text-decoration:none;color:inherit;}
+  .navi{transition:background .14s,color .14s;}
+  .navi:hover{background:#f6f4fb;color:#6d28d9;}
+  .btn{cursor:pointer;transition:filter .14s;}
+  .btn:active{filter:brightness(.96);}
+  ::-webkit-scrollbar{width:9px;height:9px;}
+  ::-webkit-scrollbar-thumb{background:#d7d4de;border-radius:5px;}
+</style>
+</helmet>
+
+<div style="width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;padding:34px 48px 64px;background:#e7e5df;font-family:'Inter',sans-serif;">
+
+  <!-- thanh quay lại mục lục -->
+  <div style="max-width:1100px;margin-bottom:18px;display:flex;align-items:center;gap:14px;">
+    <a href="../../../index.html" style="font-size:13px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:7px 14px;font-weight:600;">‹ Mục lục</a>
+    <div style="font-size:13px;color:#8a8780;">Đối tác · Desktop — <b style="color:#2b2a26;">Đăng thông tin (PA5)</b></div>
+  </div>
+
+  <!-- ===================== KHUNG CMS ===================== -->
+  <div style="width:1100px;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.12);color:#1f1d29;display:flex;min-height:640px;">
+
+    <!-- ---------- SIDEBAR (active: Đăng thông tin) ---------- -->
+    <div style="width:230px;flex:none;border-right:1px solid #ececec;display:flex;flex-direction:column;padding:20px 0;background:#fff;">
+      <div style="padding:0 20px 6px;font-weight:800;font-size:18px;color:#6d28d9;">nightlife<span style="color:#1f1d29;">.hn</span></div>
+      <div style="padding:0 20px 16px;"><span style="font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#6d28d9;background:#f1ebff;border-radius:11px;padding:3px 10px;">CỔNG ĐỐI TÁC</span></div>
+      <div style="padding:0 12px;display:flex;flex-direction:column;gap:4px;">
+        <a href="dashboard.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/dashboard-layout.png" style="width:20px;height:20px;" alt="">Tổng quan</a>
+        <a href="quet-qr.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/qr-code.png" style="width:20px;height:20px;" alt="">Quét mã QR</a>
+        <a href="doi-soat.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/checked-checkbox.png" style="width:20px;height:20px;" alt="">Đối soát</a>
+        <a href="dang-tin.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:11px;background:#f1ebff;color:#6d28d9;font-weight:600;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/edit.png" style="width:20px;height:20px;" alt="">Đăng thông tin</a>
+        <a href="#" class="navi" style="display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/settings.png" style="width:20px;height:20px;" alt="">Cài đặt</a>
+      </div>
+      <div style="margin-top:auto;padding:14px 16px 0;border-top:1px solid #ececec;display:flex;align-items:center;gap:10px;">
+        <span style="width:36px;height:36px;border-radius:9px;background:linear-gradient(140deg,#d6336c,#7b2d6b);flex:none;"></span>
+        <div style="flex:1;"><div style="font-size:13px;font-weight:600;">Club Lumière</div><div style="font-size:11px;color:#8a879a;">Đối tác</div></div>
+        <a href="dang-nhap.html" title="Đăng xuất"><img src="https://img.icons8.com/ios/100/8A879A/exit.png" style="width:18px;height:18px;" alt=""></a>
+      </div>
+    </div>
+    <!-- ---------- /SIDEBAR ---------- -->
+
+    <!-- ---------- MAIN ---------- -->
+    <div style="flex:1;background:#f5f4f2;display:flex;flex-direction:column;min-width:0;">
+
+      <!-- topbar + tab nội dung -->
+      <div style="background:#fff;border-bottom:1px solid #ececec;padding:16px 26px;display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-size:18px;font-weight:800;">Đăng thông tin quán</div>
+        <div style="display:flex;gap:24px;font-size:13.5px;font-weight:600;">
+          <span style="color:#6d28d9;border-bottom:2px solid #6d28d9;padding-bottom:6px;">Thông tin quán</span>
+          <span style="color:#8a879a;">Cast</span>
+          <span style="color:#8a879a;">Bảng giá</span>
+          <span style="color:#8a879a;">Ảnh / Video</span>
+        </div>
+      </div>
+
+      <!-- content -->
+      <div style="padding:22px 26px;overflow:auto;">
+
+        <!-- banner trạng thái chờ duyệt -->
+        <div style="background:#fdefd6;border:1px solid #f5dca8;border-radius:12px;padding:12px 16px;font-size:12.5px;color:#b06a00;display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+          <img src="https://img.icons8.com/fluency/96/clock.png" style="width:20px;height:20px;flex:none;" alt="">
+          <span>Bản nháp đang chờ <b style="margin:0 3px;">Admin duyệt</b> — nội dung sẽ hiển thị công khai sau khi được duyệt.</span>
+          <span style="margin-left:auto;font-size:11px;font-weight:700;color:#b06a00;background:#fff;border:1px solid #f5dca8;border-radius:10px;padding:3px 10px;">Chờ duyệt</span>
+        </div>
+
+        <!-- form quán -->
+        <div style="background:#fff;border:1px solid #ececec;border-radius:16px;padding:22px;box-shadow:0 3px 12px rgba(40,20,60,.06);">
+          <div style="font-weight:700;font-size:14.5px;margin-bottom:16px;">Thông tin quán</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div style="grid-column:span 2;"><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Tên quán</label><div style="margin-top:6px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#1f1d29;">Club Lumière</div></div>
+            <div><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Loại hình</label><div style="margin-top:6px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#3a384a;display:flex;align-items:center;justify-content:space-between;">Bar / Lounge<span style="color:#8a879a;">▾</span></div></div>
+            <div><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Khu vực</label><div style="margin-top:6px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#3a384a;display:flex;align-items:center;justify-content:space-between;">Tây Hồ · Hà Nội<span style="color:#8a879a;">▾</span></div></div>
+            <div style="grid-column:span 2;"><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Địa chỉ</label><div style="margin-top:6px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#3a384a;">12 Quảng An, Tây Hồ, Hà Nội</div></div>
+            <div><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Giờ mở cửa</label><div style="margin-top:6px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#3a384a;">18:00 – 02:00</div></div>
+            <div><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Khoảng giá / khách</label><div style="margin-top:6px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#3a384a;">500.000 – 2.000.000đ</div></div>
+            <div style="grid-column:span 2;"><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Mô tả</label><div style="margin-top:6px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#3a384a;line-height:1.6;min-height:74px;">Lounge cao cấp ven Hồ Tây, không gian sang trọng với DJ quốc tế và cocktail signature. Phù hợp tiệc riêng tư và nhóm bạn.</div></div>
+          </div>
+        </div>
+
+        <!-- form cast -->
+        <div style="background:#fff;border:1px solid #ececec;border-radius:16px;padding:22px;margin-top:16px;box-shadow:0 3px 12px rgba(40,20,60,.06);">
+          <div style="font-weight:700;font-size:14.5px;margin-bottom:16px;">Cast nổi bật</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Tên hiển thị</label><div style="margin-top:6px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#3a384a;">Michi</div></div>
+            <div><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Ngày sinh</label><div style="margin-top:6px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#3a384a;">12/04/2000 · 25 tuổi</div></div>
+            <div><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Phí phục vụ</label><div style="margin-top:6px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#3a384a;">800.000đ / giờ</div></div>
+            <div><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Phong cách</label><div style="margin-top:6px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#3a384a;display:flex;align-items:center;justify-content:space-between;">Năng động · Vui vẻ<span style="color:#8a879a;">▾</span></div></div>
+          </div>
+        </div>
+
+        <!-- upload ảnh / video -->
+        <div style="background:#fff;border:1px solid #ececec;border-radius:16px;padding:22px;margin-top:16px;box-shadow:0 3px 12px rgba(40,20,60,.06);">
+          <div style="font-weight:700;font-size:14.5px;margin-bottom:6px;">Ảnh / Video</div>
+          <div style="font-size:12px;color:#8a879a;margin-bottom:14px;">Album ảnh và video là nội dung ưu tiên (P0). Định dạng JPG, PNG, MP4 · tối đa 20MB / tệp.</div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;">
+            <div style="height:90px;border-radius:11px;background:linear-gradient(140deg,#d6336c,#7b2d6b);position:relative;"><span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;"><img src="https://img.icons8.com/ios-filled/100/6D28D9/play.png" style="width:14px;height:14px;" alt=""></span></div>
+            <div style="height:90px;border-radius:11px;background:linear-gradient(140deg,#8a6ad0,#5d3da8);"></div>
+            <div style="height:90px;border-radius:11px;background:linear-gradient(140deg,#3a8fb0,#2d5fae);"></div>
+            <div style="height:90px;border-radius:11px;background:linear-gradient(140deg,#5fae8a,#2d8a6a);"></div>
+            <div class="btn" style="height:90px;border-radius:11px;border:1.5px dashed #d9c9f7;background:#faf7ff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;"><img src="https://img.icons8.com/fluency/96/add-image.png" style="width:26px;height:26px;" alt=""><span style="font-size:11px;color:#6d28d9;font-weight:600;">Tải lên</span></div>
+          </div>
+        </div>
+
+        <!-- nút hành động -->
+        <div style="display:flex;gap:12px;margin-top:20px;">
+          <div class="btn" style="background:#6d28d9;color:#fff;border-radius:11px;padding:13px 28px;font-weight:700;font-size:14px;">Gửi duyệt</div>
+          <div class="btn" style="border:1px solid #ececec;background:#fff;color:#5b5870;border-radius:11px;padding:13px 24px;font-weight:600;font-size:14px;">Lưu nháp</div>
+        </div>
+
+      </div>
+    </div>
+    <!-- ---------- /MAIN ---------- -->
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>
