@@ -58,19 +58,23 @@ window.NL = (function () {
 
   // ---------- cast ----------
   // [tên, tuổi, mô tả, sao, jp, imgId, gradA, gradB, rảnh]
+  // [tên, năm sinh, mô tả, sao, jp, imgId, gradA, gradB, khu vực, ngôn ngữ] — tuổi tự tính, KHÔNG hiển thị lịch rảnh
   var C = [
-    ['Michi', 23, 'Nói tiếng Nhật', 4.9, true, '1494790108377-be9c29b29330', '#e0598a', '#a8336b', true],
-    ['Yuki', 24, 'Phong cách đẹp', 4.8, false, '1517841905240-472988babdf9', '#3a9fb0', '#2d6fae', false],
-    ['Rina', 21, 'Trong độ tuổi 20', 4.7, false, '1438761681033-6461ffad8d80', '#e0a23a', '#c0782d', true],
-    ['Mai', 25, 'Nói chuyện duyên', 4.9, false, '1524504388940-b1c1722653e1', '#8a6ad0', '#5d3da8', false],
-    ['Hana', 22, 'Nói tiếng Nhật', 4.6, true, '1534528741775-53994a69daeb', '#e07a7a', '#b04545', false],
-    ['Saki', 23, 'Vui vẻ', 4.8, false, '1531123897727-8f129e1688ce', '#d6336c', '#7b2d6b', true],
-    ['Aoi', 24, 'Dịu dàng', 4.7, false, '1488426862026-3ee34a7d66df', '#5fae8a', '#2d8a6a', true],
-    ['Nana', 22, 'Hát hay', 4.8, false, '1529626455594-4ff0802cfb7e', '#b06ad0', '#7d3da8', false]
+    ['Michi', 2003, 'Nói tiếng Nhật', 4.9, true, '1494790108377-be9c29b29330', '#e0598a', '#a8336b', 'Tây Hồ', 'Nhật · Việt'],
+    ['Yuki', 2002, 'Phong cách đẹp', 4.8, false, '1517841905240-472988babdf9', '#3a9fb0', '#2d6fae', 'Kim Mã', 'Việt · Anh'],
+    ['Rina', 2005, 'Trong độ tuổi 20', 4.7, false, '1438761681033-6461ffad8d80', '#e0a23a', '#c0782d', 'Trúc Bạch', 'Việt'],
+    ['Mai', 2001, 'Nói chuyện duyên', 4.9, false, '1524504388940-b1c1722653e1', '#8a6ad0', '#5d3da8', 'Tây Hồ', 'Việt · Nhật'],
+    ['Hana', 2004, 'Nói tiếng Nhật', 4.6, true, '1534528741775-53994a69daeb', '#e07a7a', '#b04545', 'Hoàn Kiếm', 'Nhật · Việt'],
+    ['Saki', 2003, 'Vui vẻ', 4.8, false, '1531123897727-8f129e1688ce', '#d6336c', '#7b2d6b', 'Kim Mã', 'Việt'],
+    ['Aoi', 2002, 'Dịu dàng', 4.7, false, '1488426862026-3ee34a7d66df', '#5fae8a', '#2d8a6a', 'Đống Đa', 'Việt · Anh'],
+    ['Nana', 2004, 'Hát hay', 4.8, false, '1529626455594-4ff0802cfb7e', '#b06ad0', '#7d3da8', 'Trúc Bạch', 'Việt']
   ];
+  var THIS_YEAR = 2026;
   var CAST = C.map(function (r) {
-    return { name: r[0], age: r[1], desc: r[2], rating: r[3], jp: r[4], imgId: r[5], gradA: r[6], gradB: r[7], free: r[8] };
+    return { name: r[0], bornYear: r[1], age: THIS_YEAR - r[1], desc: r[2], rating: r[3], jp: r[4], imgId: r[5], gradA: r[6], gradB: r[7], area: r[8], lang: r[9] };
   });
+  function cast(name) { for (var i = 0; i < CAST.length; i++) if (CAST[i].name === name) return CAST[i]; return CAST[0]; }
+  var CAST_FILTERS = ['Tất cả', 'Nói tiếng Nhật', '20-23 tuổi', 'Tây Hồ', 'Đánh giá cao'];
 
   // ---------- bảng xếp hạng (trang chủ) ----------
   var RANK = {
@@ -106,11 +110,53 @@ window.NL = (function () {
     return (SERVICES[key] || []).map(function (s) { return { name: s[0], area: s[1], price: s[2], tag: s[3], grad: bg(s[4], s[5], s[6], 360) }; });
   }
 
+  // ---------- ưu đãi / sự kiện ----------
+  // [tên, nơi, nhãn giảm, hạn, imgId, kiểu badge màu]
+  var OFFERS = [
+    ['Happy Hour cuối tuần', 'Club Lumière · Tây Hồ', '-30%', 'Còn 3 ngày', '1572116469696-31de0f17cc34', 'pink'],
+    ['Combo phòng VIP 2+1', 'KTV Hoàng Gia · Kim Mã', '2+1', 'Còn 8 ngày', '1566417713940-fe7c737a9ef2', 'purple'],
+    ['Spa thư giãn nửa giá', 'Spa Hồng Ngọc · Đống Đa', '-50%', 'Sắp hết', '1596838132731-3301c3fd4317', 'amber'],
+    ['Ladies Night −20%', 'Hanoi Velvet · Hoàn Kiếm', '-20%', 'Thứ 5 hàng tuần', '1470337458703-46ad1756a187', 'pink'],
+    ['Welcome Member −8%', 'Sora Lounge · Quận 1', '-8%', 'Hội viên mới', '1551024601-bec78aea704b', 'purple'],
+    ['Khai trương −10%', 'Neon Garden · Bình Thạnh', '-10%', 'Còn 5 ngày', '1514933651103-005eec06c04b', 'teal']
+  ];
+  function buildOffers() {
+    return OFFERS.map(function (o) { return { title: o[0], place: o[1], value: o[2], expiry: o[3], img: photo(o[4], 720) }; });
+  }
+
+  // ---------- ví ưu đãi ----------
+  // [tên, nơi, trạng thái, hạn, giá trị]
+  var WALLET = [
+    ['Happy Hour −30%', 'Club Lumière · Tây Hồ', 'holding', 'Còn 22:14:08', '−30%'],
+    ['Combo VIP 2+1', 'KTV Hoàng Gia · Kim Mã', 'holding', 'Còn 6 ngày', '2+1'],
+    ['Welcome Member −8%', 'Sora Lounge · Quận 1', 'holding', 'Còn 5 ngày', '−8%'],
+    ['Spa thư giãn −50%', 'Spa Hồng Ngọc · Đống Đa', 'used', 'Đã dùng 12/06', '−50%'],
+    ['Ladies Night −20%', 'Hanoi Velvet · Hoàn Kiếm', 'used', 'Đã dùng 02/06', '−20%'],
+    ['Khai trương −10%', 'Neon Garden · Bình Thạnh', 'expired', 'Hết hạn 01/06', '−10%']
+  ];
+  // ---------- lịch sử đặt chỗ ----------
+  // [nơi, meta, trạng thái, imgId]
+  var BOOKINGS = [
+    ['Club Lumière', 'Tây Hồ · 21/06 · 21:00 · 4 người', 'new', '1572116469696-31de0f17cc34'],
+    ['Cast: Michi @ Club Lumière', '22/06 · 20:00 · 2 người', 'new', '1494790108377-be9c29b29330'],
+    ['KTV Hoàng Gia', '18/06 · 22:00 · 6 người', 'done', '1566417713940-fe7c737a9ef2'],
+    ['Sakura Lounge', '15/06 · 21:30 · 3 người', 'cancelled', '1551024601-bec78aea704b'],
+    ['Diamond Bar', '10/06 · 20:00 · 2 người', 'done', '1524661135-423995f22d0b']
+  ];
+  function bkBadge(s) { return { 'new': { label: 'Mới', color: '#6d28d9', bg: '#f1ebff' }, done: { label: 'Hoàn tất', color: '#1f8a52', bg: '#e6f7ee' }, cancelled: { label: 'Đã hủy', color: '#b03a4a', bg: '#fbe4e7' } }[s]; }
+  function cpBadge(s) { return { holding: { label: 'Đang giữ chỗ', color: '#6d28d9', bg: '#f1ebff' }, used: { label: 'Đã sử dụng', color: '#5b5870', bg: '#f3f2f5' }, expired: { label: 'Hết hạn', color: '#b03a4a', bg: '#fbe4e7' } }[s]; }
+
+  // ---------- tài khoản ----------
+  var ACCOUNT = { name: 'Nguyễn Văn A', phone: '0912 345 678', email: 'vana@email.com', tier: 'Vàng', points: 1240, nextTier: 'Bạch Kim', need: 760, joined: '03/2025' };
+
   return {
     fav: fav, booking: booking,
     photo: photo, grad: grad, bg: bg, heart: heart,
     chip: chip, pill: pill, pillSm: pillSm, seg: seg, tab: tab,
     VENUES: VENUES, venue: venue, CATS: CATS, AREAS: AREAS,
-    CAST: CAST, RANK: RANK, buildRank: buildRank, SERVICES: SERVICES, buildSvc: buildSvc
+    CAST: CAST, cast: cast, CAST_FILTERS: CAST_FILTERS,
+    RANK: RANK, buildRank: buildRank, SERVICES: SERVICES, buildSvc: buildSvc,
+    OFFERS: OFFERS, buildOffers: buildOffers, WALLET: WALLET, BOOKINGS: BOOKINGS,
+    bkBadge: bkBadge, cpBadge: cpBadge, ACCOUNT: ACCOUNT
   };
 })();

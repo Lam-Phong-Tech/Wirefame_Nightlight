@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../shared.js"></script>
+<script src="../../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e7e5df;}
+  a{text-decoration:none;color:inherit;}
+  .hscroll{scrollbar-width:thin;scrollbar-color:#c9c6cf transparent;}
+  .hscroll::-webkit-scrollbar{height:7px;}
+  .hscroll::-webkit-scrollbar-thumb{background:#c9c6cf;border-radius:4px;}
+  .card{transition:transform .16s ease, box-shadow .16s ease;cursor:pointer;}
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(40,20,60,.14);}
+  .lk{transition:color .14s ease;}
+  .lk:hover{color:#6d28d9;}
+</style>
+</helmet>
+
+<div style="width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;padding:34px 48px 64px;background:#e7e5df;font-family:'Inter',sans-serif;">
+
+  <div style="max-width:1100px;margin-bottom:22px;display:flex;align-items:center;gap:14px;">
+    <a href="../../index.html" style="font-size:13px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:7px 14px;font-weight:600;">‹ Mục lục</a>
+    <div style="font-size:13px;color:#8a8780;">Prototype Desktop · Luồng: <b style="color:#2b2a26;">Trang chủ → Danh sách → Chi tiết → Đặt chỗ → Xác nhận</b></div>
+  </div>
+
+  <div style="width:1100px;background:#f5f4f2;border-radius:16px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.10);color:#1f1d29;">
+
+    <!-- HEADER -->
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 34px;background:#fff;border-bottom:1px solid #ececec;">
+      <div style="display:flex;align-items:center;gap:34px;">
+        <a href="trang-chu.html" style="font-weight:800;font-size:20px;color:#6d28d9;">nightlife<span style="color:#1f1d29;">.hn</span></a>
+        <div style="display:flex;gap:22px;font-size:14px;color:#5b5870;font-weight:500;"><a href="trang-chu.html" style="color:#6d28d9;font-weight:600;">Trang chủ</a><a href="danh-sach-quan.html" class="lk">Tìm quán</a><span class="lk">Cast</span><span class="lk">Bảng xếp hạng</span><span class="lk">Tour</span><span class="lk">Blog</span></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;"><div style="font-size:13px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:6px 12px;font-weight:600;">VI · 日本語</div><a href="../../index.html" class="lk" style="font-size:13px;color:#5b5870;">Đăng nhập</a><div style="font-size:13px;font-weight:600;color:#fff;background:#6d28d9;border-radius:22px;padding:9px 18px;">Đăng ký đối tác</div></div>
+    </div>
+
+    <!-- HERO -->
+    <div style="padding:34px;background:#fff;">
+      <div style="position:relative;height:280px;border-radius:20px;overflow:hidden;background:linear-gradient(120deg,rgba(58,31,110,.72),rgba(123,45,107,.5)),url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=720&q=70') center/cover;padding:42px;display:flex;flex-direction:column;justify-content:center;color:#fff;">
+        <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#ffd0e4;">Gợi ý hôm nay</div>
+        <h2 style="font-size:42px;font-weight:800;line-height:1.06;margin-top:10px;max-width:560px;">Tối nay đi đâu<br>ở Hà Nội?</h2>
+        <p style="margin-top:10px;font-size:15px;color:#f0e6f4;max-width:440px;">KTV · Bar · Casino · Spa · Nhà hàng — đặt chỗ trong vài giây.</p>
+      </div>
+      <a href="danh-sach-quan.html" style="margin:-32px 34px 0;position:relative;display:flex;gap:10px;background:#fff;border:1px solid #ececec;border-radius:16px;padding:12px;box-shadow:0 12px 30px rgba(40,20,60,.12);align-items:center;">
+        <div style="display:flex;align-items:center;gap:8px;padding:0 16px;border-right:1px solid #eee;color:#6d28d9;font-size:14px;font-weight:600;"><img src="https://img.icons8.com/ios-filled/100/6D28D9/marker.png" style="width:14px;height:14px;margin-right:6px;" alt="">Hà Nội</div>
+        <div style="flex:1;display:flex;align-items:center;color:#9a98a6;font-size:14px;padding-left:8px;">Tìm quán hoặc cast gần bạn…</div>
+        <div style="font-weight:600;font-size:14px;color:#fff;background:#6d28d9;border-radius:11px;padding:12px 26px;">Tìm</div>
+      </a>
+    </div>
+
+    <!-- CATEGORIES -->
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:12px;padding:14px 34px 26px;">
+      <a href="danh-sach-quan.html" class="card" style="text-align:center;padding:18px 8px;background:#fff;border-radius:16px;box-shadow:0 2px 10px rgba(40,20,60,.05);"><img src="https://img.icons8.com/fluency/96/cocktail.png" style="width:28px;height:28px;display:block;margin:0 auto;" alt=""><div style="font-size:12.5px;color:#5b5870;margin-top:8px;font-weight:500;">Tìm quán</div></a>
+      <a href="danh-sach-quan.html" class="card" style="text-align:center;padding:18px 8px;background:#fff;border-radius:16px;box-shadow:0 2px 10px rgba(40,20,60,.05);"><img src="https://img.icons8.com/fluency/96/geisha.png" style="width:28px;height:28px;display:block;margin:0 auto;" alt=""><div style="font-size:12.5px;color:#5b5870;margin-top:8px;font-weight:500;">Tìm Cast</div></a>
+      <a href="danh-sach-quan.html" class="card" style="text-align:center;padding:18px 8px;background:#fff;border-radius:16px;box-shadow:0 2px 10px rgba(40,20,60,.05);"><img src="https://img.icons8.com/fluency/96/gift.png" style="width:28px;height:28px;display:block;margin:0 auto;" alt=""><div style="font-size:12.5px;color:#5b5870;margin-top:8px;font-weight:500;">Ưu đãi</div></a>
+      <a href="danh-sach-quan.html" class="card" style="text-align:center;padding:18px 8px;background:#fff;border-radius:16px;box-shadow:0 2px 10px rgba(40,20,60,.05);"><img src="https://img.icons8.com/fluency/96/confetti.png" style="width:28px;height:28px;display:block;margin:0 auto;" alt=""><div style="font-size:12.5px;color:#5b5870;margin-top:8px;font-weight:500;">Sự kiện</div></a>
+      <a href="danh-sach-quan.html" class="card" style="text-align:center;padding:18px 8px;background:#fff;border-radius:16px;box-shadow:0 2px 10px rgba(40,20,60,.05);"><img src="https://img.icons8.com/fluency/96/restaurant.png" style="width:28px;height:28px;display:block;margin:0 auto;" alt=""><div style="font-size:12.5px;color:#5b5870;margin-top:8px;font-weight:500;">Nhà hàng</div></a>
+      <a href="danh-sach-quan.html" class="card" style="text-align:center;padding:18px 8px;background:#fff;border-radius:16px;box-shadow:0 2px 10px rgba(40,20,60,.05);"><img src="https://img.icons8.com/fluency/96/spa-flower.png" style="width:28px;height:28px;display:block;margin:0 auto;" alt=""><div style="font-size:12.5px;color:#5b5870;margin-top:8px;font-weight:500;">Spa</div></a>
+    </div>
+
+    <!-- ĐỀ XUẤT -->
+    <div style="padding:8px 34px 28px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+        <div style="font-weight:700;font-size:20px;"><img src="https://img.icons8.com/fluency/96/crescent-moon.png" style="width:22px;height:22px;vertical-align:-5px;margin-right:8px;" alt="">Đề xuất tối nay đi đâu</div>
+        <a href="danh-sach-quan.html" style="font-size:13px;color:#8a879a;" class="lk">Tuyển chọn bởi biên tập ▸</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;">
+        <sc-for list="{{ recs }}" as="v" hint-placeholder-count="4">
+          <div onClick="{{ v.open }}" class="card" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 3px 12px rgba(40,20,60,.06);">
+            <div style="height:118px;background:{{ v.img }};position:relative;"><span onClick="{{ v.fav }}" style="position:absolute;top:8px;right:8px;width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,.28);display:flex;align-items:center;justify-content:center;cursor:pointer;"><img src="{{ v.favIcon }}" style="width:16px;height:16px;" alt=""></span></div>
+            <div style="padding:12px;"><div style="font-weight:600;font-size:14px;">{{ v.name }}</div><div style="font-size:11.5px;color:#8a879a;margin-top:3px;">{{ v.area }} · {{ v.catLabel }}</div><div style="margin-top:8px;font-size:12.5px;color:#e8923a;">★ {{ v.rating }} <span style="color:#1f1d29;font-weight:600;margin-left:6px;">từ {{ v.price }}</span></div></div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- COUPON HOT -->
+    <div style="padding:8px 34px 28px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+        <div style="font-weight:700;font-size:20px;"><img src="https://img.icons8.com/fluency/96/discount.png" style="width:22px;height:22px;vertical-align:-5px;margin-right:8px;" alt="">Coupon Hot</div>
+        <span style="font-size:12.5px;color:#8a879a;">Cách lấy mã &amp; tích điểm →</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+        <a href="chi-tiet-quan.html" class="card" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 3px 12px rgba(40,20,60,.06);"><div style="height:118px;background:url('https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=720&q=70') center/cover;position:relative;"><span style="position:absolute;top:12px;left:12px;background:#ffd24d;color:#5a3d00;font-size:18px;font-weight:800;border-radius:12px;padding:6px 12px;">-30%</span></div><div style="padding:14px;"><div style="font-weight:700;font-size:15px;">Happy Hour cuối tuần</div><div style="font-size:12.5px;color:#8a879a;margin-top:4px;">Club Lumière · Tây Hồ</div><div style="margin-top:12px;display:flex;align-items:center;justify-content:space-between;"><span style="font-size:11.5px;color:#c0246a;background:#fce4ef;border-radius:10px;padding:4px 9px;font-weight:600;">Còn 3 ngày</span><span style="font-size:13px;color:#6d28d9;font-weight:600;">Lấy mã ›</span></div></div></a>
+        <a href="chi-tiet-quan.html" class="card" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 3px 12px rgba(40,20,60,.06);"><div style="height:118px;background:url('https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=720&q=70') center/cover;position:relative;"><span style="position:absolute;top:12px;left:12px;background:#ffd24d;color:#5a3d00;font-size:18px;font-weight:800;border-radius:12px;padding:6px 12px;">2+1</span></div><div style="padding:14px;"><div style="font-weight:700;font-size:15px;">Combo phòng VIP</div><div style="font-size:12.5px;color:#8a879a;margin-top:4px;">KTV Hoàng Gia · Kim Mã</div><div style="margin-top:12px;display:flex;align-items:center;justify-content:space-between;"><span style="font-size:11.5px;color:#6d28d9;background:#f1ebff;border-radius:10px;padding:4px 9px;font-weight:600;">Còn 8 ngày</span><span style="font-size:13px;color:#6d28d9;font-weight:600;">Lấy mã ›</span></div></div></a>
+        <a href="chi-tiet-quan.html" class="card" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 3px 12px rgba(40,20,60,.06);"><div style="height:118px;background:url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?auto=format&fit=crop&w=720&q=70') center/cover;position:relative;"><span style="position:absolute;top:12px;left:12px;background:#ffd24d;color:#5a3d00;font-size:18px;font-weight:800;border-radius:12px;padding:6px 12px;">-50%</span></div><div style="padding:14px;"><div style="font-weight:700;font-size:15px;">Spa thư giãn nửa giá</div><div style="font-size:12.5px;color:#8a879a;margin-top:4px;">Spa Hồng Ngọc · Đống Đa</div><div style="margin-top:12px;display:flex;align-items:center;justify-content:space-between;"><span style="font-size:11.5px;color:#b06a00;background:#fdefd6;border-radius:10px;padding:4px 9px;font-weight:600;">Sắp hết</span><span style="font-size:13px;color:#6d28d9;font-weight:600;">Lấy mã ›</span></div></div></a>
+      </div>
+    </div>
+
+    <!-- BẢNG XẾP HẠNG (interactive) -->
+    <div style="padding:8px 34px 28px;">
+      <div style="font-weight:700;font-size:20px;margin-bottom:14px;"><img src="https://img.icons8.com/fluency/96/trophy.png" style="width:22px;height:22px;vertical-align:-5px;margin-right:8px;" alt="">{{ rankTitle }}</div>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px;">
+        <sc-for list="{{ cityTabs }}" as="c" hint-placeholder-count="3"><div onClick="{{ c.pick }}" style="{{ c.style }}">{{ c.label }}</div></sc-for>
+        <div style="margin-left:auto;display:flex;gap:8px;background:#fff;border:1px solid #ececec;border-radius:18px;padding:4px;">
+          <div onClick="{{ pickQuan }}" style="{{ segQuan }}">Quán</div>
+          <div onClick="{{ pickCast }}" style="{{ segCast }}">Cast</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <sc-for list="{{ rankList }}" as="r" hint-placeholder-count="5">
+          <div onClick="{{ r.open }}" class="card" style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #ececec;border-radius:14px;padding:12px 14px;">
+            <span style="width:30px;height:30px;border-radius:9px;flex:none;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:{{ r.numColor }};background:{{ r.crown }};">{{ r.rank }}</span>
+            <span style="width:46px;height:46px;border-radius:50%;flex:none;background:{{ r.img }};"></span>
+            <div style="flex:1;"><div style="font-weight:600;font-size:15px;">{{ r.name }}</div><div style="font-size:12.5px;color:#8a879a;margin-top:2px;">{{ r.area }}</div></div>
+            <div style="font-size:12.5px;color:#6d28d9;font-weight:600;">{{ r.metric }}</div>
+            <img src="https://img.icons8.com/ios/100/B6B3C0/chevron-right.png" style="width:16px;height:16px;" alt="">
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- DỊCH VỤ NỔI BẬT (interactive) -->
+    <div style="padding:8px 34px 28px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:12px;">
+        <div style="font-weight:700;font-size:20px;"><img src="https://img.icons8.com/fluency/96/like.png" style="width:22px;height:22px;vertical-align:-5px;margin-right:8px;" alt="">Dịch vụ nổi bật</div>
+        <div style="display:flex;gap:8px;background:#fff;border:1px solid #ececec;border-radius:18px;padding:4px;">
+          <div onClick="{{ pickNhahang }}" style="{{ segNhahang }}">Nhà hàng</div>
+          <div onClick="{{ pickSpa }}" style="{{ segSpa }}">Spa &amp; Massage</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;">
+        <sc-for list="{{ svc }}" as="s" hint-placeholder-count="4">
+          <div class="card" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 3px 12px rgba(40,20,60,.06);">
+            <div style="height:118px;background:{{ s.grad }};position:relative;"><span style="position:absolute;top:10px;left:10px;background:#fff;color:#6d28d9;font-size:10.5px;font-weight:700;border-radius:12px;padding:3px 9px;">{{ s.tag }}</span></div>
+            <div style="padding:12px;"><div style="font-weight:600;font-size:14px;">{{ s.name }}</div><div style="font-size:11.5px;color:#8a879a;margin-top:3px;">{{ s.area }}</div><div style="font-size:12.5px;color:#1f1d29;font-weight:600;margin-top:8px;">{{ s.price }}</div></div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- VIDEO HOT -->
+    <div style="padding:8px 34px 22px;">
+      <div style="font-weight:700;font-size:20px;margin-bottom:14px;"><img src="https://img.icons8.com/fluency/96/video-playlist.png" style="width:22px;height:22px;vertical-align:-5px;margin-right:8px;" alt="">Video Hot</div>
+      <div class="hscroll" style="display:flex;gap:14px;overflow-x:auto;padding-bottom:8px;">
+        <a href="chi-tiet-quan.html" style="flex:none;width:230px;"><div style="height:130px;border-radius:14px;background:url('https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=720&q=70') center/cover;position:relative;"><span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;"><img src="https://img.icons8.com/ios-filled/100/6D28D9/play.png" style="width:18px;height:18px;margin-left:2px;" alt=""></span><span style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.5);color:#fff;font-size:10.5px;border-radius:8px;padding:2px 7px;">0:45</span></div><div style="font-size:12.5px;font-weight:600;margin-top:9px;">Club Lumière · Tây Hồ</div></a>
+        <a href="chi-tiet-quan.html" style="flex:none;width:230px;"><div style="height:130px;border-radius:14px;background:url('https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?auto=format&fit=crop&w=720&q=70') center/cover;position:relative;"><span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;"><img src="https://img.icons8.com/ios-filled/100/6D28D9/play.png" style="width:18px;height:18px;margin-left:2px;" alt=""></span><span style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.5);color:#fff;font-size:10.5px;border-radius:8px;padding:2px 7px;">1:12</span></div><div style="font-size:12.5px;font-weight:600;margin-top:9px;">Sora Lounge · Quận 1</div></a>
+        <a href="chi-tiet-quan.html" style="flex:none;width:230px;"><div style="height:130px;border-radius:14px;background:url('https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=720&q=70') center/cover;position:relative;"><span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;"><img src="https://img.icons8.com/ios-filled/100/6D28D9/play.png" style="width:18px;height:18px;margin-left:2px;" alt=""></span><span style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.5);color:#fff;font-size:10.5px;border-radius:8px;padding:2px 7px;">0:58</span></div><div style="font-size:12.5px;font-weight:600;margin-top:9px;">Sakura Lounge · Trúc Bạch</div></a>
+        <a href="chi-tiet-quan.html" style="flex:none;width:230px;"><div style="height:130px;border-radius:14px;background:url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?auto=format&fit=crop&w=720&q=70') center/cover;position:relative;"><span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;"><img src="https://img.icons8.com/ios-filled/100/6D28D9/play.png" style="width:18px;height:18px;margin-left:2px;" alt=""></span><span style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.5);color:#fff;font-size:10.5px;border-radius:8px;padding:2px 7px;">1:30</span></div><div style="font-size:12.5px;font-weight:600;margin-top:9px;">Casino Diamond · Tây Hồ</div></a>
+      </div>
+    </div>
+
+    <!-- HƯỚNG DẪN -->
+    <div style="padding:8px 34px 30px;">
+      <div style="background:linear-gradient(135deg,#f6f1ff,#fdeef5);border:1px solid #ece4fb;border-radius:20px;padding:26px 28px;">
+        <div style="font-weight:700;font-size:20px;margin-bottom:4px;"><img src="https://img.icons8.com/fluency/96/idea.png" style="width:22px;height:22px;vertical-align:-5px;margin-right:8px;" alt="">Hướng dẫn lấy mã &amp; tích điểm</div>
+        <div style="font-size:13px;color:#6e6b7a;margin-bottom:20px;">3 bước đơn giản — dành cho người dùng mới.</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+          <div style="background:#fff;border-radius:14px;padding:18px;"><div style="width:34px;height:34px;border-radius:10px;background:#6d28d9;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;">1</div><div style="font-weight:600;font-size:14.5px;margin-top:12px;">Chọn coupon &amp; "Lấy mã"</div><div style="font-size:12.5px;color:#8a879a;margin-top:6px;line-height:1.6;">Mã được lưu vào ví ưu đãi trong tài khoản của bạn.</div></div>
+          <div style="background:#fff;border-radius:14px;padding:18px;"><div style="width:34px;height:34px;border-radius:10px;background:#6d28d9;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;">2</div><div style="font-weight:600;font-size:14.5px;margin-top:12px;">Đặt chỗ &amp; nhập mã</div><div style="font-size:12.5px;color:#8a879a;margin-top:6px;line-height:1.6;">Áp mã khi đặt bàn hoặc đặt cast để được giảm giá ngay.</div></div>
+          <div style="background:#fff;border-radius:14px;padding:18px;"><div style="width:34px;height:34px;border-radius:10px;background:#6d28d9;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;">3</div><div style="font-weight:600;font-size:14.5px;margin-top:12px;">Tích điểm sau check-in</div><div style="font-size:12.5px;color:#8a879a;margin-top:6px;line-height:1.6;">Mỗi lượt sử dụng cộng điểm để đổi ưu đãi hạng cao hơn.</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {};
+  renderVals(){
+    var NL = window.NL, self = this, st = this.state;
+    var city = st.city || 'all', type = st.type || 'quan', service = st.service || 'nhahang';
+
+    var rankList = NL.buildRank((NL.RANK[city] || NL.RANK.all)[type], type).map(function(r){
+      r.open = function(){ location.href='danh-sach-quan.html'; };
+      return r;
+    });
+    var cityTabs = [['all','Tất cả'],['hn','Hà Nội'],['hcm','TP.HCM']].map(function(c){
+      return { label:c[1], style:NL.pill(city===c[0]), pick:function(){ self.setState({city:c[0]}); } };
+    });
+    var svc = NL.buildSvc(service);
+
+    var recs = NL.VENUES.slice(0,4).map(function(v){
+      var faved = NL.fav.has(v.name);
+      return {
+        name:v.name, area:v.area, catLabel:v.catLabel, rating:v.rating, price:v.price,
+        img:NL.bg(v.imgId, v.gradA, v.gradB), favIcon:NL.heart(faved),
+        open:function(){ NL.booking.patch({venueSlug:v.slug, venueName:v.name, venueArea:v.area, venuePrice:v.price, venueCat:v.catLabel, venueImg:v.imgId, venueGradA:v.gradA, venueGradB:v.gradB}); location.href='chi-tiet-quan.html'; },
+        fav:function(e){ if(e&&e.preventDefault){e.preventDefault();e.stopPropagation();} NL.fav.toggle(v.name); self.forceUpdate(); }
+      };
+    });
+
+    return {
+      rankTitle: 'Bảng xếp hạng — ' + (type==='cast'?'Cast':'Quán') + ' nổi bật tháng 6/2026',
+      cityTabs:cityTabs, rankList:rankList,
+      segQuan:NL.seg(type==='quan'), segCast:NL.seg(type==='cast'),
+      pickQuan:function(){ self.setState({type:'quan'}); }, pickCast:function(){ self.setState({type:'cast'}); },
+      svc:svc, segNhahang:NL.seg(service==='nhahang'), segSpa:NL.seg(service==='spa'),
+      pickNhahang:function(){ self.setState({service:'nhahang'}); }, pickSpa:function(){ self.setState({service:'spa'}); },
+      recs:recs
+    };
+  }
+}
+</script>
+</body>
+</html>

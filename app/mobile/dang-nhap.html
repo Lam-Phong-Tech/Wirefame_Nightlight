@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../shared.js"></script>
+<script src="../../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e7e5df;}
+  a{text-decoration:none;color:inherit;}
+  input{font-family:inherit;outline:none;}
+  input:focus{border-color:#6d28d9!important;}
+  .btn{cursor:pointer;transition:filter .14s;}
+  .btn:active{filter:brightness(.95);}
+</style>
+</helmet>
+
+<div style="width:100%;min-height:100vh;box-sizing:border-box;padding:34px 24px 64px;background:#e7e5df;font-family:'Inter',sans-serif;">
+  <div style="max-width:390px;margin:0 auto 18px;display:flex;align-items:center;gap:12px;">
+    <a href="trang-chu.html" style="font-size:12.5px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:6px 13px;font-weight:600;">‹ Trang chủ</a>
+    <div style="font-size:12px;color:#8a8780;">Đăng nhập / Đăng ký</div>
+  </div>
+
+  <div style="margin:0 auto;width:390px;background:#fff;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);color:#1f1d29;border:1px solid #e3e0da;">
+    <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #1f1d29;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#1f1d29;border-radius:1px;"></span></span></div>
+
+    <div style="height:160px;background:linear-gradient(140deg,rgba(58,31,110,.78),rgba(123,45,107,.6)),url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=720&q=70') center/cover;padding:22px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;"><div style="font-weight:800;font-size:20px;">nightlife<span style="opacity:.8;">.hn</span></div><div style="font-size:12.5px;color:#f0e6f4;margin-top:4px;">Đăng nhập để đặt chỗ & lưu ưu đãi</div></div>
+
+    <div style="padding:18px;">
+      <div style="display:flex;gap:6px;background:#f3f2f5;border-radius:12px;padding:4px;">
+        <div onClick="{{ pickLogin }}" style="{{ sLogin }}">Đăng nhập</div>
+        <div onClick="{{ pickReg }}" style="{{ sReg }}">Đăng ký</div>
+      </div>
+      <h2 style="font-size:19px;font-weight:800;margin-top:16px;">{{ title }}</h2>
+      <div style="margin-top:14px;display:flex;flex-direction:column;gap:11px;">
+        <sc-if value="{{ isReg }}" hint-placeholder-val="{{ false }}"><div><label style="font-size:11.5px;font-weight:600;color:#5b5870;">Họ tên</label><input placeholder="Nguyễn Văn A" style="margin-top:5px;width:100%;border:1px solid #e2e0e8;border-radius:10px;padding:12px;font-size:13.5px;"></div></sc-if>
+        <div><label style="font-size:11.5px;font-weight:600;color:#5b5870;">Số điện thoại</label><input placeholder="0912 345 678" style="margin-top:5px;width:100%;border:1px solid #e2e0e8;border-radius:10px;padding:12px;font-size:13.5px;"></div>
+        <div><label style="font-size:11.5px;font-weight:600;color:#5b5870;">Mật khẩu</label><input type="password" placeholder="••••••••" style="margin-top:5px;width:100%;border:1px solid #e2e0e8;border-radius:10px;padding:12px;font-size:13.5px;"></div>
+        <div onClick="{{ submit }}" class="btn" style="background:#6d28d9;color:#fff;text-align:center;border-radius:12px;padding:14px;font-weight:700;font-size:14px;margin-top:2px;">{{ cta }}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;margin:16px 0;color:#b6b3c0;font-size:11.5px;"><span style="flex:1;height:1px;background:#ececec;"></span>hoặc<span style="flex:1;height:1px;background:#ececec;"></span></div>
+      <div style="display:flex;gap:10px;">
+        <div class="btn" style="flex:1;border:1px solid #ececec;border-radius:11px;padding:11px;display:flex;align-items:center;justify-content:center;gap:7px;font-size:12.5px;font-weight:600;"><img src="https://img.icons8.com/color/96/google-logo.png" style="width:17px;height:17px;" alt="">Google</div>
+        <div class="btn" style="flex:1;border:1px solid #ececec;border-radius:11px;padding:11px;display:flex;align-items:center;justify-content:center;gap:7px;font-size:12.5px;font-weight:600;"><img src="https://img.icons8.com/color/96/line-me.png" style="width:17px;height:17px;" alt="">LINE</div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {};
+  renderVals(){
+    var NL = window.NL, self = this, st = this.state;
+    var isReg = (st.mode || 'login') === 'register';
+    return {
+      sLogin:NL.seg(!isReg), sReg:NL.seg(isReg),
+      pickLogin:function(){ self.setState({mode:'login'}); }, pickReg:function(){ self.setState({mode:'register'}); },
+      isReg:isReg, title: isReg ? 'Tạo tài khoản mới' : 'Chào mừng trở lại',
+      cta: isReg ? 'Đăng ký' : 'Đăng nhập',
+      submit:function(){ location.href='trang-chu.html'; }
+    };
+  }
+}
+</script>
+</body>
+</html>
