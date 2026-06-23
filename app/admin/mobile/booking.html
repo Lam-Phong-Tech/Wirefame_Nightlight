@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../shared.js"></script>
+<script src="../../../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e7e5df;}
+  a{text-decoration:none;color:inherit;}
+  .hscroll{scrollbar-width:none;}
+  .hscroll::-webkit-scrollbar{display:none;}
+  .btn{cursor:pointer;transition:filter .14s;}
+  .btn:active{filter:brightness(.96);}
+</style>
+</helmet>
+
+<div style="width:100%;min-height:100vh;box-sizing:border-box;padding:34px 24px 64px;background:#e7e5df;font-family:'Inter',sans-serif;">
+
+  <div style="max-width:390px;margin:0 auto 18px;display:flex;align-items:center;gap:12px;">
+    <a href="../../../index.html" style="font-size:12.5px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:6px 13px;font-weight:600;">‹ Mục lục</a>
+    <div style="font-size:12px;color:#8a8780;">Admin · Mobile — Booking</div>
+  </div>
+
+  <div style="margin:0 auto;width:390px;background:#f5f4f2;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);color:#1f1d29;border:1px solid #e3e0da;">
+
+    <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;background:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #1f1d29;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#1f1d29;border-radius:1px;"></span></span></div>
+
+    <div style="background:#fff;border-bottom:1px solid #ececec;padding:11px 16px;display:flex;align-items:center;gap:12px;">
+      <span class="btn" style="width:38px;height:38px;border-radius:11px;background:#f5f4f2;display:flex;align-items:center;justify-content:center;flex:none;"><img src="https://img.icons8.com/ios/100/1F1D29/menu--v6.png" style="width:20px;height:20px;" alt=""></span>
+      <div style="flex:1;min-width:0;"><div style="font-size:16px;font-weight:800;line-height:1.1;">Điều phối đặt chỗ</div><div style="font-size:11px;color:#8a879a;">18 mới · 142 hoàn tất</div></div>
+      <span style="position:relative;width:38px;height:38px;border-radius:11px;background:#f5f4f2;display:flex;align-items:center;justify-content:center;flex:none;"><img src="https://img.icons8.com/ios/100/1F1D29/bell.png" style="width:19px;height:19px;" alt=""><span style="position:absolute;top:7px;right:8px;width:8px;height:8px;border-radius:50%;background:#d6336c;border:1.5px solid #fff;"></span></span>
+      <span style="width:38px;height:38px;border-radius:50%;background:linear-gradient(140deg,#6d28d9,#3a1f6e);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;flex:none;">A</span>
+    </div>
+
+    <!-- tabs trạng thái -->
+    <div class="hscroll" style="background:#fff;padding:0 16px 12px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid #ececec;">
+      <span style="flex:none;cursor:pointer;font-size:12.5px;border-radius:16px;padding:8px 15px;font-weight:600;background:#6d28d9;color:#fff;">Mới · 18</span>
+      <span style="flex:none;cursor:pointer;font-size:12.5px;border-radius:16px;padding:8px 15px;font-weight:600;background:#f3f2f5;color:#5b5870;">Hoàn tất · 142</span>
+      <span style="flex:none;cursor:pointer;font-size:12.5px;border-radius:16px;padding:8px 15px;font-weight:600;background:#f3f2f5;color:#5b5870;">Đã hủy · 9</span>
+    </div>
+
+    <!-- list -->
+    <div style="padding:14px 16px 16px;display:flex;flex-direction:column;gap:11px;">
+
+      <div style="background:#fff;border:1px solid #ececec;border-radius:15px;padding:14px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:11px;">
+          <span style="width:40px;height:40px;border-radius:11px;flex:none;background:linear-gradient(140deg,#d6336c,#7b2d6b);"></span>
+          <div style="flex:1;min-width:0;"><div style="font-size:13.5px;font-weight:700;">Minh H. <span style="font-size:11px;color:#6d28d9;font-weight:600;">#BK2418</span></div><div style="font-size:11.5px;color:#8a879a;">Club Lumière · Tây Hồ</div></div>
+          <span style="font-size:10.5px;font-weight:600;color:#b06a00;background:#fdefd6;border-radius:10px;padding:3px 9px;flex:none;">Mới</span>
+        </div>
+        <div style="display:flex;gap:16px;font-size:11.5px;color:#5b5870;margin-bottom:12px;"><span><img src="https://img.icons8.com/ios/100/8A879A/conference-call.png" style="width:14px;height:14px;vertical-align:-2px;"> 4 người</span><span><img src="https://img.icons8.com/ios/100/8A879A/clock--v1.png" style="width:14px;height:14px;vertical-align:-2px;"> 21:30</span><span><img src="https://img.icons8.com/ios/100/8A879A/phone.png" style="width:14px;height:14px;vertical-align:-2px;"> 0912 345 678</span></div>
+        <div style="display:flex;gap:8px;"><span class="btn" style="flex:1;text-align:center;font-size:12.5px;font-weight:600;border-radius:11px;padding:10px;color:#fff;background:#6d28d9;">Điều phối</span><span class="btn" style="font-size:12.5px;font-weight:600;border-radius:11px;padding:10px 16px;color:#b03a4a;border:1px solid #f1cdd3;background:#fff;">Hủy</span></div>
+      </div>
+
+      <div style="background:#fff;border:1px solid #ececec;border-radius:15px;padding:14px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:11px;">
+          <span style="width:40px;height:40px;border-radius:11px;flex:none;background:linear-gradient(140deg,#3a8fb0,#2d5fae);"></span>
+          <div style="flex:1;min-width:0;"><div style="font-size:13.5px;font-weight:700;">Yuki T. <span style="font-size:11px;color:#6d28d9;font-weight:600;">#BK2417</span></div><div style="font-size:11.5px;color:#8a879a;">KTV Hoàng Gia · Cast: Michi</div></div>
+          <span style="font-size:10.5px;font-weight:600;color:#b06a00;background:#fdefd6;border-radius:10px;padding:3px 9px;flex:none;">Mới</span>
+        </div>
+        <div style="display:flex;gap:16px;font-size:11.5px;color:#5b5870;margin-bottom:12px;"><span><img src="https://img.icons8.com/ios/100/8A879A/conference-call.png" style="width:14px;height:14px;vertical-align:-2px;"> 2 người</span><span><img src="https://img.icons8.com/ios/100/8A879A/clock--v1.png" style="width:14px;height:14px;vertical-align:-2px;"> 20:00</span><span><img src="https://img.icons8.com/ios/100/8A879A/phone.png" style="width:14px;height:14px;vertical-align:-2px;"> 0987 654 321</span></div>
+        <div style="display:flex;gap:8px;"><span class="btn" style="flex:1;text-align:center;font-size:12.5px;font-weight:600;border-radius:11px;padding:10px;color:#fff;background:#6d28d9;">Điều phối</span><span class="btn" style="font-size:12.5px;font-weight:600;border-radius:11px;padding:10px 16px;color:#b03a4a;border:1px solid #f1cdd3;background:#fff;">Hủy</span></div>
+      </div>
+
+      <div style="background:#fff;border:1px solid #ececec;border-radius:15px;padding:14px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:11px;">
+          <span style="width:40px;height:40px;border-radius:11px;flex:none;background:linear-gradient(140deg,#8a6ad0,#5d3da8);"></span>
+          <div style="flex:1;min-width:0;"><div style="font-size:13.5px;font-weight:700;">Tuấn A. <span style="font-size:11px;color:#6d28d9;font-weight:600;">#BK2416</span></div><div style="font-size:11.5px;color:#8a879a;">Sakura Lounge · Trúc Bạch</div></div>
+          <span style="font-size:10.5px;font-weight:600;color:#b06a00;background:#fdefd6;border-radius:10px;padding:3px 9px;flex:none;">Mới</span>
+        </div>
+        <div style="display:flex;gap:16px;font-size:11.5px;color:#5b5870;margin-bottom:12px;"><span><img src="https://img.icons8.com/ios/100/8A879A/conference-call.png" style="width:14px;height:14px;vertical-align:-2px;"> 6 người</span><span><img src="https://img.icons8.com/ios/100/8A879A/clock--v1.png" style="width:14px;height:14px;vertical-align:-2px;"> 22:00</span><span><img src="https://img.icons8.com/ios/100/8A879A/phone.png" style="width:14px;height:14px;vertical-align:-2px;"> 0903 111 222</span></div>
+        <div style="display:flex;gap:8px;"><span class="btn" style="flex:1;text-align:center;font-size:12.5px;font-weight:600;border-radius:11px;padding:10px;color:#fff;background:#6d28d9;">Điều phối</span><span class="btn" style="font-size:12.5px;font-weight:600;border-radius:11px;padding:10px 16px;color:#b03a4a;border:1px solid #f1cdd3;background:#fff;">Hủy</span></div>
+      </div>
+
+      <div style="background:#fff;border:1px solid #ececec;border-radius:15px;padding:14px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:11px;">
+          <span style="width:40px;height:40px;border-radius:11px;flex:none;background:linear-gradient(140deg,#3a9fb0,#2d6fae);"></span>
+          <div style="flex:1;min-width:0;"><div style="font-size:13.5px;font-weight:700;">Kenji M. <span style="font-size:11px;color:#6d28d9;font-weight:600;">#BK2415</span></div><div style="font-size:11.5px;color:#8a879a;">Roppongi Night · Kim Mã</div></div>
+          <span style="font-size:10.5px;font-weight:600;color:#b06a00;background:#fdefd6;border-radius:10px;padding:3px 9px;flex:none;">Mới</span>
+        </div>
+        <div style="display:flex;gap:16px;font-size:11.5px;color:#5b5870;margin-bottom:12px;"><span><img src="https://img.icons8.com/ios/100/8A879A/conference-call.png" style="width:14px;height:14px;vertical-align:-2px;"> 3 người</span><span><img src="https://img.icons8.com/ios/100/8A879A/clock--v1.png" style="width:14px;height:14px;vertical-align:-2px;"> 23:00</span><span><img src="https://img.icons8.com/ios/100/8A879A/phone.png" style="width:14px;height:14px;vertical-align:-2px;"> 0938 222 333</span></div>
+        <div style="display:flex;gap:8px;"><span class="btn" style="flex:1;text-align:center;font-size:12.5px;font-weight:600;border-radius:11px;padding:10px;color:#fff;background:#6d28d9;">Điều phối</span><span class="btn" style="font-size:12.5px;font-weight:600;border-radius:11px;padding:10px 16px;color:#b03a4a;border:1px solid #f1cdd3;background:#fff;">Hủy</span></div>
+      </div>
+
+    </div>
+
+    <div style="height:64px;background:#fff;border-top:1px solid #ececec;display:flex;align-items:center;justify-content:space-around;padding-bottom:6px;">
+      <a href="dashboard.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:44px;"><img src="https://img.icons8.com/ios/100/B6B3C0/dashboard-layout.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Tổng quan</span></a>
+      <a href="booking.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:44px;"><img src="https://img.icons8.com/ios-filled/100/6D28D9/planner.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#6d28d9;font-weight:600;">Booking</span></a>
+      <a href="bill.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:44px;"><img src="https://img.icons8.com/ios/100/B6B3C0/cheque.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Bill</span></a>
+      <a href="doi-tac.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:44px;"><img src="https://img.icons8.com/ios/100/B6B3C0/handshake.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Đối tác</span></a>
+      <a href="quan.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:44px;"><img src="https://img.icons8.com/ios/100/B6B3C0/menu-2.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Thêm</span></a>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>

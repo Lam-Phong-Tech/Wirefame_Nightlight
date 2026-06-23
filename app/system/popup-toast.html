@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../shared.js"></script>
+<script src="../../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e7e5df;}
+  a{text-decoration:none;color:inherit;}
+  .sectitle{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#a8a59d;font-weight:700;margin:30px 0 16px;}
+</style>
+</helmet>
+
+<div style="width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;padding:34px 48px 64px;background:#e7e5df;font-family:'Inter',sans-serif;color:#1f1d29;">
+
+  <div style="margin-bottom:8px;display:flex;align-items:center;gap:14px;">
+    <a href="../../index.html" style="font-size:13px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:7px 14px;font-weight:600;">‹ Mục lục</a>
+    <div style="font-size:13px;color:#8a8780;">Màn hệ thống · <b style="color:#2b2a26;">Showcase Popup &amp; Toast</b></div>
+  </div>
+  <h1 style="font-size:26px;font-weight:800;margin-top:14px;">Mẫu Popup &amp; Toast</h1>
+  <p style="font-size:14px;color:#6e6b64;margin-top:8px;max-width:700px;line-height:1.6;">Bộ mẫu thông báo dùng chung cho toàn app — modal giữa màn (có overlay mờ) và toast góc màn. Trình bày cả ngữ cảnh desktop và mobile.</p>
+
+  <!-- ================= MODAL POPUP — DESKTOP ================= -->
+  <div class="sectitle">A · Modal popup giữa màn (Desktop)</div>
+  <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start;">
+
+    <!-- Thành công -->
+    <div style="position:relative;width:430px;height:300px;border-radius:18px;overflow:hidden;background:url('https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=720&q=70') center/cover;box-shadow:0 10px 30px rgba(0,0,0,.12);">
+      <div style="position:absolute;inset:0;background:rgba(31,29,41,.55);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;padding:24px;">
+        <div style="width:100%;max-width:340px;background:#fff;border-radius:18px;padding:28px 24px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.3);">
+          <div style="width:60px;height:60px;border-radius:50%;margin:0 auto 16px;background:#e6f7ee;display:flex;align-items:center;justify-content:center;"><img src="https://img.icons8.com/ios-filled/100/177544/checkmark.png" style="width:30px;height:30px;" alt=""></div>
+          <div style="font-size:18px;font-weight:700;">Đặt chỗ thành công!</div>
+          <div style="font-size:13px;color:#5b5870;margin-top:8px;line-height:1.6;">Bàn của bạn tại Club Lumière đã được giữ. Mã đặt chỗ đã gửi vào tài khoản.</div>
+          <div style="margin-top:20px;font-size:14px;font-weight:600;color:#fff;background:#6d28d9;border-radius:11px;padding:13px;">Xem chi tiết</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Xác nhận hủy -->
+    <div style="position:relative;width:430px;height:300px;border-radius:18px;overflow:hidden;background:url('https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=720&q=70') center/cover;box-shadow:0 10px 30px rgba(0,0,0,.12);">
+      <div style="position:absolute;inset:0;background:rgba(31,29,41,.55);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;padding:24px;">
+        <div style="width:100%;max-width:340px;background:#fff;border-radius:18px;padding:28px 24px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.3);">
+          <div style="width:60px;height:60px;border-radius:50%;margin:0 auto 16px;background:#fde7ea;display:flex;align-items:center;justify-content:center;"><img src="https://img.icons8.com/ios-filled/100/B03A4A/trash.png" style="width:28px;height:28px;" alt=""></div>
+          <div style="font-size:18px;font-weight:700;">Hủy đặt chỗ?</div>
+          <div style="font-size:13px;color:#5b5870;margin-top:8px;line-height:1.6;">Bạn có chắc muốn hủy lượt đặt tại Club Lumière? Thao tác này không thể hoàn tác.</div>
+          <div style="display:flex;gap:10px;margin-top:20px;">
+            <div style="flex:1;font-size:14px;font-weight:600;color:#5b5870;background:#fff;border:1px solid #e0d6f7;border-radius:11px;padding:12px;">Để sau</div>
+            <div style="flex:1;font-size:14px;font-weight:600;color:#fff;background:#b03a4a;border-radius:11px;padding:12px;">Đồng ý hủy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cảnh báo -->
+    <div style="width:300px;background:#fff;border-radius:18px;padding:26px 22px;text-align:center;box-shadow:0 8px 24px rgba(40,20,60,.1);">
+      <div style="width:56px;height:56px;border-radius:50%;margin:0 auto 14px;background:#fdefd6;display:flex;align-items:center;justify-content:center;"><img src="https://img.icons8.com/ios-filled/100/B06A00/error.png" style="width:28px;height:28px;" alt=""></div>
+      <div style="font-size:17px;font-weight:700;">Phiên sắp hết hạn</div>
+      <div style="font-size:13px;color:#5b5870;margin-top:8px;line-height:1.6;">Vui lòng hoàn tất đặt chỗ trong 5 phút, nếu không phiên sẽ tự đóng.</div>
+      <div style="margin-top:18px;font-size:14px;font-weight:600;color:#b06a00;background:#fdefd6;border-radius:11px;padding:12px;">Tiếp tục</div>
+    </div>
+
+    <!-- Lỗi -->
+    <div style="width:300px;background:#fff;border-radius:18px;padding:26px 22px;text-align:center;box-shadow:0 8px 24px rgba(40,20,60,.1);">
+      <div style="width:56px;height:56px;border-radius:50%;margin:0 auto 14px;background:#fde7ea;display:flex;align-items:center;justify-content:center;"><img src="https://img.icons8.com/ios-filled/100/B03A4A/cancel.png" style="width:28px;height:28px;" alt=""></div>
+      <div style="font-size:17px;font-weight:700;">Đặt chỗ thất bại</div>
+      <div style="font-size:13px;color:#5b5870;margin-top:8px;line-height:1.6;">Không thể kết nối tới máy chủ. Vui lòng kiểm tra mạng và thử lại.</div>
+      <div style="margin-top:18px;font-size:14px;font-weight:600;color:#fff;background:#6d28d9;border-radius:11px;padding:12px;">Thử lại</div>
+    </div>
+
+  </div>
+
+  <!-- ================= TOAST — DESKTOP ================= -->
+  <div class="sectitle">B · Toast góc màn (Desktop)</div>
+  <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;">
+
+    <!-- success -->
+    <div style="display:flex;align-items:flex-start;gap:12px;width:360px;background:#e6f7ee;border:1px solid #bfe7d2;border-radius:14px;padding:14px 16px;box-shadow:0 8px 22px rgba(23,117,68,.12);">
+      <img src="https://img.icons8.com/ios-filled/100/177544/checkmark.png" style="width:20px;height:20px;flex:none;margin-top:2px;" alt="">
+      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:#177544;">Đã lấy mã thành công</div><div style="font-size:12.5px;color:#3a6b52;margin-top:3px;line-height:1.5;">Mã “Happy Hour −30%” đã lưu vào ví ưu đãi.</div></div>
+      <span style="color:#177544;font-size:16px;cursor:pointer;line-height:1;">×</span>
+    </div>
+
+    <!-- info (tím) -->
+    <div style="display:flex;align-items:flex-start;gap:12px;width:360px;background:#f1ebff;border:1px solid #ddccfa;border-radius:14px;padding:14px 16px;box-shadow:0 8px 22px rgba(109,40,217,.12);">
+      <img src="https://img.icons8.com/ios-filled/100/6D28D9/info.png" style="width:20px;height:20px;flex:none;margin-top:2px;" alt="">
+      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:#6d28d9;">Thông tin cập nhật</div><div style="font-size:12.5px;color:#5b4a85;margin-top:3px;line-height:1.5;">Hồ sơ của bạn đã được lưu thành công.</div></div>
+      <span style="color:#6d28d9;font-size:16px;cursor:pointer;line-height:1;">×</span>
+    </div>
+
+    <!-- cảnh báo -->
+    <div style="display:flex;align-items:flex-start;gap:12px;width:360px;background:#fdefd6;border:1px solid #f5dcab;border-radius:14px;padding:14px 16px;box-shadow:0 8px 22px rgba(176,106,0,.12);">
+      <img src="https://img.icons8.com/ios-filled/100/B06A00/error.png" style="width:20px;height:20px;flex:none;margin-top:2px;" alt="">
+      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:#b06a00;">Mã sắp hết hạn</div><div style="font-size:12.5px;color:#7d5410;margin-top:3px;line-height:1.5;">Mã ưu đãi của bạn còn hiệu lực trong 2 giờ.</div></div>
+      <span style="color:#b06a00;font-size:16px;cursor:pointer;line-height:1;">×</span>
+    </div>
+
+    <!-- lỗi -->
+    <div style="display:flex;align-items:flex-start;gap:12px;width:360px;background:#fde7ea;border:1px solid #f5c2cc;border-radius:14px;padding:14px 16px;box-shadow:0 8px 22px rgba(176,58,74,.12);">
+      <img src="https://img.icons8.com/ios-filled/100/B03A4A/cancel.png" style="width:20px;height:20px;flex:none;margin-top:2px;" alt="">
+      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:#b03a4a;">Không thể kết nối</div><div style="font-size:12.5px;color:#80323e;margin-top:3px;line-height:1.5;">Mất kết nối mạng. Vui lòng thử lại sau.</div></div>
+      <span style="color:#b03a4a;font-size:16px;cursor:pointer;line-height:1;">×</span>
+    </div>
+
+  </div>
+
+  <!-- ================= MOBILE CONTEXT ================= -->
+  <div class="sectitle">C · Ngữ cảnh Mobile (modal + toast trong khung 390px)</div>
+  <div style="display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;">
+
+    <!-- mobile frame: modal xác nhận -->
+    <div>
+      <div style="font-size:12px;color:#8a879a;margin-bottom:8px;font-weight:600;">Modal xác nhận (bottom sheet)</div>
+      <div style="position:relative;width:390px;height:560px;background:#f5f4f2;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);border:1px solid #e3e0da;">
+        <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;background:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #1f1d29;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#1f1d29;border-radius:1px;"></span></span></div>
+        <!-- nội dung mờ phía sau -->
+        <div style="padding:18px;filter:blur(1px);opacity:.6;">
+          <div style="height:150px;border-radius:14px;background:linear-gradient(140deg,#d6336c,#7b2d6b);"></div>
+          <div style="height:14px;width:60%;background:#e3e0e8;border-radius:6px;margin-top:16px;"></div>
+          <div style="height:12px;width:80%;background:#e9e7ed;border-radius:6px;margin-top:10px;"></div>
+          <div style="height:12px;width:50%;background:#e9e7ed;border-radius:6px;margin-top:10px;"></div>
+        </div>
+        <!-- overlay + bottom sheet -->
+        <div style="position:absolute;inset:40px 0 0;background:rgba(31,29,41,.5);"></div>
+        <div style="position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:22px 22px 0 0;padding:22px 20px 26px;box-shadow:0 -10px 30px rgba(0,0,0,.18);">
+          <div style="width:40px;height:4px;border-radius:3px;background:#e0dde6;margin:0 auto 16px;"></div>
+          <div style="width:54px;height:54px;border-radius:50%;margin:0 auto 12px;background:#fde7ea;display:flex;align-items:center;justify-content:center;"><img src="https://img.icons8.com/ios-filled/100/B03A4A/trash.png" style="width:26px;height:26px;" alt=""></div>
+          <div style="text-align:center;font-size:17px;font-weight:700;">Hủy đặt chỗ?</div>
+          <div style="text-align:center;font-size:13px;color:#5b5870;margin-top:7px;line-height:1.6;">Bạn có chắc muốn hủy lượt đặt tại Club Lumière?</div>
+          <div style="display:flex;gap:10px;margin-top:18px;">
+            <div style="flex:1;text-align:center;font-size:14px;font-weight:600;color:#5b5870;background:#fff;border:1px solid #e0d6f7;border-radius:11px;padding:13px;">Để sau</div>
+            <div style="flex:1;text-align:center;font-size:14px;font-weight:600;color:#fff;background:#b03a4a;border-radius:11px;padding:13px;">Đồng ý hủy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- mobile frame: toast success ở trên + success modal -->
+    <div>
+      <div style="font-size:12px;color:#8a879a;margin-bottom:8px;font-weight:600;">Toast trên + Modal thành công</div>
+      <div style="position:relative;width:390px;height:560px;background:#f5f4f2;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);border:1px solid #e3e0da;">
+        <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;background:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #1f1d29;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#1f1d29;border-radius:1px;"></span></span></div>
+        <div style="padding:18px;filter:blur(1px);opacity:.55;">
+          <div style="height:150px;border-radius:14px;background:linear-gradient(140deg,#8a6ad0,#5d3da8);"></div>
+          <div style="height:14px;width:55%;background:#e3e0e8;border-radius:6px;margin-top:16px;"></div>
+          <div style="height:12px;width:80%;background:#e9e7ed;border-radius:6px;margin-top:10px;"></div>
+        </div>
+        <!-- toast nổi góc trên -->
+        <div style="position:absolute;top:50px;left:14px;right:14px;display:flex;align-items:flex-start;gap:10px;background:#e6f7ee;border:1px solid #bfe7d2;border-radius:13px;padding:12px 13px;box-shadow:0 10px 24px rgba(23,117,68,.18);">
+          <img src="https://img.icons8.com/ios-filled/100/177544/checkmark.png" style="width:18px;height:18px;flex:none;margin-top:1px;" alt="">
+          <div style="flex:1;"><div style="font-size:13px;font-weight:700;color:#177544;">Đã lấy mã thành công</div><div style="font-size:11.5px;color:#3a6b52;margin-top:2px;">Lưu vào ví ưu đãi.</div></div>
+          <span style="color:#177544;font-size:15px;line-height:1;">×</span>
+        </div>
+        <!-- overlay + modal giữa -->
+        <div style="position:absolute;inset:40px 0 0;background:rgba(31,29,41,.5);display:flex;align-items:center;justify-content:center;padding:24px;">
+          <div style="width:100%;background:#fff;border-radius:18px;padding:26px 20px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.3);">
+            <div style="width:58px;height:58px;border-radius:50%;margin:0 auto 14px;background:#e6f7ee;display:flex;align-items:center;justify-content:center;"><img src="https://img.icons8.com/ios-filled/100/177544/checkmark.png" style="width:28px;height:28px;" alt=""></div>
+            <div style="font-size:17px;font-weight:700;">Đặt chỗ thành công!</div>
+            <div style="font-size:12.5px;color:#5b5870;margin-top:7px;line-height:1.6;">Mã đặt chỗ đã gửi vào tài khoản của bạn.</div>
+            <div style="margin-top:18px;font-size:14px;font-weight:600;color:#fff;background:#6d28d9;border-radius:11px;padding:13px;">Xem chi tiết</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- mobile frame: toast dưới (info + lỗi) -->
+    <div>
+      <div style="font-size:12px;color:#8a879a;margin-bottom:8px;font-weight:600;">Toast góc dưới (info / lỗi)</div>
+      <div style="position:relative;width:390px;height:560px;background:#f5f4f2;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);border:1px solid #e3e0da;">
+        <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;background:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #1f1d29;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#1f1d29;border-radius:1px;"></span></span></div>
+        <div style="padding:18px;">
+          <div style="height:150px;border-radius:14px;background:linear-gradient(140deg,#3a8fb0,#2d5fae);"></div>
+          <div style="height:14px;width:55%;background:#e3e0e8;border-radius:6px;margin-top:16px;"></div>
+          <div style="height:12px;width:80%;background:#e9e7ed;border-radius:6px;margin-top:10px;"></div>
+          <div style="height:12px;width:65%;background:#e9e7ed;border-radius:6px;margin-top:10px;"></div>
+        </div>
+        <!-- toast dưới chồng nhau -->
+        <div style="position:absolute;left:14px;right:14px;bottom:62px;display:flex;align-items:flex-start;gap:10px;background:#fde7ea;border:1px solid #f5c2cc;border-radius:13px;padding:12px 13px;box-shadow:0 10px 24px rgba(176,58,74,.18);">
+          <img src="https://img.icons8.com/ios-filled/100/B03A4A/cancel.png" style="width:18px;height:18px;flex:none;margin-top:1px;" alt="">
+          <div style="flex:1;"><div style="font-size:13px;font-weight:700;color:#b03a4a;">Không thể kết nối</div><div style="font-size:11.5px;color:#80323e;margin-top:2px;">Vui lòng thử lại sau.</div></div>
+          <span style="color:#b03a4a;font-size:15px;line-height:1;">×</span>
+        </div>
+        <div style="position:absolute;left:14px;right:14px;bottom:14px;display:flex;align-items:flex-start;gap:10px;background:#f1ebff;border:1px solid #ddccfa;border-radius:13px;padding:12px 13px;box-shadow:0 10px 24px rgba(109,40,217,.16);">
+          <img src="https://img.icons8.com/ios-filled/100/6D28D9/info.png" style="width:18px;height:18px;flex:none;margin-top:1px;" alt="">
+          <div style="flex:1;"><div style="font-size:13px;font-weight:700;color:#6d28d9;">Đã lưu hồ sơ</div><div style="font-size:11.5px;color:#5b4a85;margin-top:2px;">Thông tin của bạn đã cập nhật.</div></div>
+          <span style="color:#6d28d9;font-size:15px;line-height:1;">×</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic { renderVals(){ return {}; } }
+</script>
+</body>
+</html>

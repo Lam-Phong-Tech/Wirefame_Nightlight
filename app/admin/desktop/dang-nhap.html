@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../shared.js"></script>
+<script src="../../../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e7e5df;}
+  a{text-decoration:none;color:inherit;}
+  .btn{cursor:pointer;transition:filter .14s;}
+  .btn:active{filter:brightness(.96);}
+  ::-webkit-scrollbar{width:9px;height:9px;}
+  ::-webkit-scrollbar-thumb{background:#d7d4de;border-radius:5px;}
+</style>
+</helmet>
+
+<div style="width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;padding:34px 48px 64px;background:#e7e5df;font-family:'Inter',sans-serif;">
+
+  <!-- thanh quay lại mục lục -->
+  <div style="max-width:980px;margin:0 auto 18px;display:flex;align-items:center;gap:14px;">
+    <a href="../../../index.html" style="font-size:13px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:7px 14px;font-weight:600;">‹ Mục lục</a>
+    <div style="font-size:13px;color:#8a8780;">Admin CMS · Desktop — <b style="color:#2b2a26;">Đăng nhập</b></div>
+  </div>
+
+  <!-- ===================== KHUNG ĐĂNG NHẬP ===================== -->
+  <div style="width:980px;margin:0 auto;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.12);color:#1f1d29;display:flex;min-height:560px;">
+
+    <!-- ---------- PANEL BRAND (gradient) ---------- -->
+    <div style="width:420px;flex:none;background:linear-gradient(150deg,#6d28d9,#3a1f6e);color:#fff;padding:44px 40px;display:flex;flex-direction:column;position:relative;overflow:hidden;">
+      <div style="position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.07);top:-90px;right:-90px;"></div>
+      <div style="position:absolute;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.06);bottom:-70px;left:-50px;"></div>
+      <div style="font-weight:800;font-size:24px;position:relative;">nightlife<span style="color:#d6b4ff;">.hn</span></div>
+      <div style="margin-top:6px;position:relative;"><span style="font-size:10.5px;font-weight:700;letter-spacing:.1em;background:rgba(255,255,255,.16);border-radius:11px;padding:4px 11px;">ADMIN CMS</span></div>
+
+      <div style="margin-top:auto;position:relative;">
+        <div style="font-size:24px;font-weight:800;line-height:1.3;">Bảng điều khiển<br>quản trị hệ thống</div>
+        <div style="font-size:13.5px;color:#e7d8ff;margin-top:12px;line-height:1.6;">Quản lý quán, cast, đặt chỗ, hóa đơn, ưu đãi và báo cáo doanh thu trong một nơi.</div>
+        <div style="display:flex;gap:10px;margin-top:24px;">
+          <div style="display:flex;align-items:center;gap:8px;font-size:12.5px;color:#e7d8ff;"><img src="https://img.icons8.com/fluency/96/shield.png" style="width:20px;height:20px;" alt="">Bảo mật 2 lớp</div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:12.5px;color:#e7d8ff;"><img src="https://img.icons8.com/fluency/96/speed.png" style="width:20px;height:20px;" alt="">Realtime</div>
+        </div>
+      </div>
+    </div>
+    <!-- ---------- /PANEL BRAND ---------- -->
+
+    <!-- ---------- FORM ---------- -->
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:48px 56px;min-width:0;">
+      <div style="font-size:22px;font-weight:800;">Đăng nhập quản trị</div>
+      <div style="font-size:13px;color:#8a879a;margin-top:6px;">Nhập thông tin tài khoản admin để tiếp tục.</div>
+
+      <div style="margin-top:28px;">
+        <div style="font-size:12px;color:#8a879a;margin-bottom:6px;">Email</div>
+        <div style="display:flex;align-items:center;gap:10px;border:1px solid #ececec;border-radius:11px;padding:12px 14px;">
+          <img src="https://img.icons8.com/ios/100/9A98A6/new-post.png" style="width:17px;height:17px;" alt="">
+          <span style="font-size:13.5px;color:#1f1d29;">admin@nightlife.hn</span>
+        </div>
+      </div>
+
+      <div style="margin-top:16px;">
+        <div style="font-size:12px;color:#8a879a;margin-bottom:6px;">Mật khẩu</div>
+        <div style="display:flex;align-items:center;gap:10px;border:1px solid #ececec;border-radius:11px;padding:12px 14px;">
+          <img src="https://img.icons8.com/ios/100/9A98A6/lock--v1.png" style="width:17px;height:17px;" alt="">
+          <span style="flex:1;font-size:13.5px;color:#1f1d29;letter-spacing:2px;">••••••••••</span>
+          <img src="https://img.icons8.com/ios/100/9A98A6/visible--v1.png" style="width:18px;height:18px;cursor:pointer;" alt="">
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-top:14px;">
+        <label style="display:flex;align-items:center;gap:8px;font-size:12.5px;color:#5b5870;cursor:pointer;">
+          <span style="width:17px;height:17px;border-radius:5px;background:#6d28d9;display:flex;align-items:center;justify-content:center;"><img src="https://img.icons8.com/ios-filled/100/FFFFFF/checkmark.png" style="width:11px;height:11px;" alt=""></span>
+          Ghi nhớ đăng nhập
+        </label>
+        <a href="#" style="font-size:12.5px;color:#6d28d9;font-weight:600;">Quên mật khẩu?</a>
+      </div>
+
+      <a href="dashboard.html" class="btn" style="display:block;text-align:center;margin-top:22px;font-size:14px;font-weight:700;color:#fff;background:#6d28d9;border-radius:12px;padding:13px;">Đăng nhập</a>
+
+      <div style="display:flex;align-items:center;gap:12px;margin-top:22px;">
+        <div style="flex:1;height:1px;background:#ececec;"></div>
+        <span style="font-size:11.5px;color:#a8a5b4;">hoặc</span>
+        <div style="flex:1;height:1px;background:#ececec;"></div>
+      </div>
+
+      <div class="btn" style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:18px;border:1px solid #ececec;border-radius:12px;padding:11px;font-size:13px;font-weight:600;color:#5b5870;">
+        <img src="https://img.icons8.com/color/96/google-logo.png" style="width:18px;height:18px;" alt="">Đăng nhập với Google Workspace
+      </div>
+
+      <div style="font-size:11.5px;color:#a8a5b4;margin-top:24px;text-align:center;">© 2026 nightlife.hn · Khu vực dành riêng cho quản trị viên</div>
+    </div>
+    <!-- ---------- /FORM ---------- -->
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>

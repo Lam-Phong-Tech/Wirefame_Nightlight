@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../shared.js"></script>
+<script src="../../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e7e5df;}
+  a{text-decoration:none;color:inherit;}
+  .sectitle{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#a8a59d;font-weight:700;margin:30px 0 16px;}
+  /* skeleton shimmer */
+  .sk{position:relative;overflow:hidden;background:#e7e4ec;border-radius:8px;}
+  .sk::after{content:"";position:absolute;inset:0;transform:translateX(-100%);
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.65),transparent);
+    animation:shimmer 1.4s infinite;}
+  @keyframes shimmer{100%{transform:translateX(100%);}}
+  .btn{transition:transform .14s ease;}
+  .btn:hover{transform:translateY(-2px);}
+</style>
+</helmet>
+
+<div style="width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;padding:34px 48px 64px;background:#e7e5df;font-family:'Inter',sans-serif;color:#1f1d29;">
+
+  <div style="margin-bottom:8px;display:flex;align-items:center;gap:14px;">
+    <a href="../../index.html" style="font-size:13px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:7px 14px;font-weight:600;">‹ Mục lục</a>
+    <div style="font-size:13px;color:#8a8780;">Màn hệ thống · <b style="color:#2b2a26;">Showcase Loading &amp; Empty</b></div>
+  </div>
+  <h1 style="font-size:26px;font-weight:800;margin-top:14px;">Mẫu Loading &amp; Empty</h1>
+  <p style="font-size:14px;color:#6e6b64;margin-top:8px;max-width:700px;line-height:1.6;">Trạng thái tải dữ liệu (skeleton có hiệu ứng shimmer) và các màn trống (empty state) dùng chung. Trình bày cả desktop và mobile.</p>
+
+  <!-- ================= SKELETON — DESKTOP ================= -->
+  <div class="sectitle">A · Skeleton loading (Desktop)</div>
+
+  <!-- hero skeleton -->
+  <div style="width:1100px;background:#f5f4f2;border-radius:16px;padding:24px;box-shadow:0 3px 12px rgba(40,20,60,.06);">
+    <div class="sk" style="height:210px;border-radius:16px;"></div>
+    <div style="display:flex;gap:12px;margin-top:18px;align-items:center;">
+      <div class="sk" style="width:48px;height:48px;border-radius:50%;"></div>
+      <div style="flex:1;">
+        <div class="sk" style="height:16px;width:40%;"></div>
+        <div class="sk" style="height:12px;width:65%;margin-top:10px;"></div>
+      </div>
+    </div>
+
+    <!-- card grid skeleton -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px;">
+      <sc-for list="{{ four }}" as="x" hint-placeholder-count="4">
+        <div style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 3px 12px rgba(40,20,60,.06);">
+          <div class="sk" style="height:118px;border-radius:0;"></div>
+          <div style="padding:12px;">
+            <div class="sk" style="height:14px;width:75%;"></div>
+            <div class="sk" style="height:11px;width:50%;margin-top:9px;"></div>
+            <div class="sk" style="height:11px;width:35%;margin-top:9px;"></div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- list rows skeleton -->
+    <div style="margin-top:22px;display:flex;flex-direction:column;gap:10px;">
+      <sc-for list="{{ three }}" as="x" hint-placeholder-count="3">
+        <div style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #ececec;border-radius:14px;padding:12px 14px;">
+          <div class="sk" style="width:30px;height:30px;border-radius:9px;"></div>
+          <div class="sk" style="width:46px;height:46px;border-radius:50%;"></div>
+          <div style="flex:1;">
+            <div class="sk" style="height:14px;width:45%;"></div>
+            <div class="sk" style="height:11px;width:30%;margin-top:8px;"></div>
+          </div>
+          <div class="sk" style="height:12px;width:70px;"></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- ================= EMPTY STATES — DESKTOP ================= -->
+  <div class="sectitle">B · Empty states (Desktop)</div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;width:1100px;">
+
+    <sc-for list="{{ empties }}" as="e" hint-placeholder-count="4">
+      <div style="background:#f5f4f2;border-radius:16px;padding:40px 28px;text-align:center;box-shadow:0 3px 12px rgba(40,20,60,.06);">
+        <div style="width:72px;height:72px;border-radius:20px;margin:0 auto 16px;background:#efeaf8;display:flex;align-items:center;justify-content:center;opacity:.9;"><img src="{{ e.icon }}" style="width:38px;height:38px;opacity:.55;" alt=""></div>
+        <div style="font-size:17px;font-weight:700;">{{ e.title }}</div>
+        <div style="font-size:13px;color:#8a879a;margin-top:8px;line-height:1.6;max-width:300px;margin-left:auto;margin-right:auto;">{{ e.desc }}</div>
+        <a href="{{ e.href }}" class="btn" style="display:inline-block;margin-top:18px;font-size:14px;font-weight:600;color:#fff;background:#6d28d9;border-radius:11px;padding:12px 24px;box-shadow:0 8px 20px rgba(109,40,217,.24);">{{ e.cta }}</a>
+      </div>
+    </sc-for>
+
+  </div>
+
+  <!-- ================= MOBILE ================= -->
+  <div class="sectitle">C · Skeleton &amp; Empty (Mobile)</div>
+  <div style="display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;">
+
+    <!-- mobile skeleton frame -->
+    <div>
+      <div style="font-size:12px;color:#8a879a;margin-bottom:8px;font-weight:600;">Skeleton đang tải</div>
+      <div style="width:390px;background:#f5f4f2;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);border:1px solid #e3e0da;">
+        <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;background:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #1f1d29;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#1f1d29;border-radius:1px;"></span></span></div>
+        <div style="background:#fff;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f0eef2;">
+          <span style="font-weight:800;font-size:18px;color:#6d28d9;">nightlife<span style="color:#1f1d29;">.hn</span></span>
+          <div class="sk" style="width:64px;height:22px;border-radius:12px;"></div>
+        </div>
+        <div style="padding:16px 18px 22px;">
+          <div class="sk" style="height:96px;border-radius:13px;"></div>
+          <div class="sk" style="height:14px;width:55%;margin-top:16px;"></div>
+          <div style="display:flex;gap:12px;margin-top:14px;">
+            <div style="flex:1;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 12px rgba(40,20,60,.06);">
+              <div class="sk" style="height:90px;border-radius:0;"></div>
+              <div style="padding:10px;"><div class="sk" style="height:12px;width:80%;"></div><div class="sk" style="height:10px;width:50%;margin-top:8px;"></div></div>
+            </div>
+            <div style="flex:1;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 12px rgba(40,20,60,.06);">
+              <div class="sk" style="height:90px;border-radius:0;"></div>
+              <div style="padding:10px;"><div class="sk" style="height:12px;width:80%;"></div><div class="sk" style="height:10px;width:50%;margin-top:8px;"></div></div>
+            </div>
+          </div>
+          <div style="margin-top:16px;display:flex;flex-direction:column;gap:10px;">
+            <sc-for list="{{ three }}" as="x" hint-placeholder-count="3">
+              <div style="display:flex;align-items:center;gap:11px;background:#fff;border:1px solid #ececec;border-radius:12px;padding:9px 11px;">
+                <div class="sk" style="width:38px;height:38px;border-radius:50%;"></div>
+                <div style="flex:1;"><div class="sk" style="height:12px;width:60%;"></div><div class="sk" style="height:9px;width:40%;margin-top:7px;"></div></div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- mobile empty frame -->
+    <div>
+      <div style="font-size:12px;color:#8a879a;margin-bottom:8px;font-weight:600;">Empty — Chưa có đặt chỗ</div>
+      <div style="width:390px;background:#f5f4f2;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);border:1px solid #e3e0da;display:flex;flex-direction:column;">
+        <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;background:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #1f1d29;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#1f1d29;border-radius:1px;"></span></span></div>
+        <div style="background:#fff;padding:12px 18px;border-bottom:1px solid #f0eef2;font-weight:700;font-size:16px;">Lịch sử đặt chỗ</div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 30px;">
+          <div style="width:84px;height:84px;border-radius:24px;margin:0 auto 18px;background:#efeaf8;display:flex;align-items:center;justify-content:center;"><img src="https://img.icons8.com/ios/100/6D28D9/calendar.png" style="width:42px;height:42px;opacity:.55;" alt=""></div>
+          <div style="font-size:17px;font-weight:700;">Chưa có đặt chỗ nào</div>
+          <div style="font-size:13px;color:#8a879a;margin-top:8px;line-height:1.6;">Khi bạn đặt bàn hoặc đặt cast, lịch sử sẽ hiển thị ở đây.</div>
+          <a href="../mobile/danh-sach-quan.html" style="display:inline-block;margin-top:20px;font-size:14px;font-weight:600;color:#fff;background:#6d28d9;border-radius:11px;padding:13px 26px;box-shadow:0 8px 20px rgba(109,40,217,.24);">Khám phá quán</a>
+        </div>
+        <div style="height:64px;background:#fff;border-top:1px solid #ececec;display:flex;align-items:center;justify-content:space-around;padding-bottom:6px;">
+          <a href="../mobile/trang-chu.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/home.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Trang chủ</span></a>
+          <a href="../mobile/danh-sach-cast.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/geisha.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Cast</span></a>
+          <a href="../mobile/uu-dai.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/gift.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Ưu đãi</span></a>
+          <a href="../mobile/lich-su-dat-cho.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios-filled/100/6D28D9/calendar.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#6d28d9;font-weight:600;">Đặt chỗ</span></a>
+          <a href="../mobile/tai-khoan.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/user.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Tài khoản</span></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals(){
+    return {
+      four: [1,2,3,4],
+      three: [1,2,3],
+      empties: [
+        { icon:'https://img.icons8.com/ios/100/6D28D9/calendar.png', title:'Chưa có đặt chỗ nào', desc:'Khi bạn đặt bàn hoặc đặt cast, lịch sử sẽ hiển thị tại đây.', cta:'Khám phá quán', href:'../desktop/danh-sach-quan.html' },
+        { icon:'https://img.icons8.com/ios/100/6D28D9/like.png', title:'Bạn chưa lưu mục nào', desc:'Nhấn biểu tượng trái tim trên quán hay cast để lưu vào danh sách yêu thích.', cta:'Tìm quán', href:'../desktop/danh-sach-quan.html' },
+        { icon:'https://img.icons8.com/ios/100/6D28D9/search.png', title:'Không tìm thấy kết quả', desc:'Thử đổi từ khóa hoặc bỏ bớt bộ lọc để xem nhiều quán hơn.', cta:'Xóa bộ lọc', href:'../desktop/danh-sach-quan.html' },
+        { icon:'https://img.icons8.com/ios/100/6D28D9/wallet.png', title:'Ví ưu đãi trống', desc:'Bạn chưa lấy mã nào. Khám phá Coupon Hot để nhận ưu đãi ngay.', cta:'Xem ưu đãi', href:'../desktop/uu-dai.html' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

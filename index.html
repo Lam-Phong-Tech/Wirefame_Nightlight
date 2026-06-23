@@ -78,6 +78,91 @@
       </sc-for>
     </div>
 
+    <!-- ============ KHÁCH — MÀN BỔ SUNG ============ -->
+    <div style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#a8a59d;font-weight:700;margin:42px 0 18px;">Khách — màn bổ sung (bấm được)</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <sc-for list="{{ newUserPages }}" as="p" hint-placeholder-count="6">
+        <a href="{{ p.href }}">
+          <div class="navcard" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 3px 12px rgba(40,20,60,.06);height:100%;cursor:pointer;">
+            <div style="height:120px;background:{{ p.grad }};position:relative;display:flex;align-items:flex-end;padding:14px;">
+              <div style="position:absolute;top:14px;left:14px;width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;">
+                <img src="{{ p.icon }}" style="width:28px;height:28px;" alt="" />
+              </div>
+              <span style="font-size:10.5px;font-weight:700;color:#fff;background:rgba(0,0,0,.28);border-radius:12px;padding:3px 10px;">{{ p.tag }}</span>
+            </div>
+            <div style="padding:14px 16px 18px;">
+              <div style="font-weight:700;font-size:16px;">{{ p.title }}</div>
+              <div style="font-size:12.5px;color:#8a879a;margin-top:6px;line-height:1.5;">{{ p.sub }}</div>
+              <div class="openlink" style="font-size:13px;font-weight:600;color:#5b5870;margin-top:14px;">Mở trang ›</div>
+            </div>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+
+    <!-- ============ ĐỐI TÁC (PARTNER) — BẤM ĐƯỢC ============ -->
+    <div style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#a8a59d;font-weight:700;margin:42px 0 18px;">Đối tác (Partner) — prototype bấm được</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <sc-for list="{{ partnerAppPages }}" as="p" hint-placeholder-count="2">
+        <a href="{{ p.href }}">
+          <div class="navcard" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 3px 12px rgba(40,20,60,.06);height:100%;cursor:pointer;">
+            <div style="height:120px;background:{{ p.grad }};position:relative;display:flex;align-items:flex-end;padding:14px;">
+              <div style="position:absolute;top:14px;left:14px;width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;">
+                <img src="{{ p.icon }}" style="width:28px;height:28px;" alt="" />
+              </div>
+              <span style="font-size:10.5px;font-weight:700;color:#fff;background:rgba(0,0,0,.28);border-radius:12px;padding:3px 10px;">{{ p.tag }}</span>
+            </div>
+            <div style="padding:14px 16px 18px;">
+              <div style="font-weight:700;font-size:16px;">{{ p.title }}</div>
+              <div style="font-size:12.5px;color:#8a879a;margin-top:6px;line-height:1.5;">{{ p.sub }}</div>
+              <div class="openlink" style="font-size:13px;font-weight:600;color:#5b5870;margin-top:14px;">Mở trang ›</div>
+            </div>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+
+    <!-- ============ ADMIN CMS ============ -->
+    <div style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#a8a59d;font-weight:700;margin:42px 0 18px;">Admin CMS — prototype bấm được</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <sc-for list="{{ adminPages }}" as="p" hint-placeholder-count="2">
+        <a href="{{ p.href }}">
+          <div class="navcard" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 3px 12px rgba(40,20,60,.06);height:100%;cursor:pointer;">
+            <div style="height:120px;background:{{ p.grad }};position:relative;display:flex;align-items:flex-end;padding:14px;">
+              <div style="position:absolute;top:14px;left:14px;width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;">
+                <img src="{{ p.icon }}" style="width:28px;height:28px;" alt="" />
+              </div>
+              <span style="font-size:10.5px;font-weight:700;color:#fff;background:rgba(0,0,0,.28);border-radius:12px;padding:3px 10px;">{{ p.tag }}</span>
+            </div>
+            <div style="padding:14px 16px 18px;">
+              <div style="font-weight:700;font-size:16px;">{{ p.title }}</div>
+              <div style="font-size:12.5px;color:#8a879a;margin-top:6px;line-height:1.5;">{{ p.sub }}</div>
+              <div class="openlink" style="font-size:13px;font-weight:600;color:#5b5870;margin-top:14px;">Mở trang ›</div>
+            </div>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+
+    <!-- ============ HỆ THỐNG & LỖI ============ -->
+    <div style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#a8a59d;font-weight:700;margin:42px 0 18px;">Hệ thống · Lỗi · Thông báo</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+      <sc-for list="{{ systemPages }}" as="p" hint-placeholder-count="8">
+        <a href="{{ p.href }}">
+          <div class="navcard" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 3px 12px rgba(40,20,60,.06);height:100%;cursor:pointer;">
+            <div style="height:88px;background:{{ p.grad }};position:relative;display:flex;align-items:center;justify-content:center;">
+              <img src="{{ p.icon }}" style="width:30px;height:30px;filter:brightness(0) invert(1);" alt="" />
+              <span style="position:absolute;top:10px;right:10px;font-size:9.5px;font-weight:700;color:#fff;background:rgba(0,0,0,.28);border-radius:10px;padding:2px 8px;">{{ p.tag }}</span>
+            </div>
+            <div style="padding:12px 14px 16px;">
+              <div style="font-weight:700;font-size:14px;">{{ p.title }}</div>
+              <div style="font-size:11.5px;color:#8a879a;margin-top:5px;line-height:1.5;">{{ p.sub }}</div>
+            </div>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+
     <div style="margin-top:48px;font-size:12px;color:#a8a5b4;text-align:center;">nightlife.hn · Mockup giao diện · Phương án C</div>
 
   </div>
@@ -170,7 +255,33 @@ class Component extends DCLogic {
         icon: "https://img.icons8.com/fluency/96/news.png",
       },
     ];
-    return { userPages, partnerPages };
+    const newUserPages = [
+      { title: "Blog / Cẩm nang", sub: "Danh sách bài viết (SEO) + chi tiết bài. Card mở sang trang chi tiết.", tag: "P15–P16", href: "app/desktop/blog.html", grad: "linear-gradient(140deg,#5ba6e0,#2d5fae)", icon: "https://img.icons8.com/fluency/96/news.png" },
+      { title: "Đã lưu / Yêu thích", sub: "Quán & Cast đã lưu, tab Quán/Cast, nút tim. (P19)", tag: "P19", href: "app/desktop/da-luu.html", grad: "linear-gradient(140deg,#e0598a,#a8336b)", icon: "https://img.icons8.com/fluency/96/like.png" },
+      { title: "Chi tiết mã / QR", sub: "Coupon: ảnh QR, mức giảm theo hạng, hạn dùng đếm ngược, trạng thái. (P9)", tag: "P9", href: "app/desktop/chi-tiet-ma.html", grad: "linear-gradient(140deg,#6d28d9,#3a1f6e)", icon: "https://img.icons8.com/fluency/96/qr-code.png" },
+      { title: "Gửi hóa đơn (Bill)", sub: "Form gửi hóa đơn + lịch sử duyệt (Pending/Duyệt/Từ chối) + điểm. (P14)", tag: "P14", href: "app/desktop/gui-hoa-don.html", grad: "linear-gradient(140deg,#5fae8a,#2d8a6a)", icon: "https://img.icons8.com/fluency/96/cheque.png" },
+      { title: "Đăng ký đối tác (Join Us)", sub: "Landing lợi ích + form đăng ký quán. Không yêu cầu giấy phép. (P17)", tag: "P17", href: "app/desktop/dang-ky-doi-tac.html", grad: "linear-gradient(140deg,#3a1f6e,#1a1030)", icon: "https://img.icons8.com/fluency/96/handshake.png" },
+      { title: "Trang pháp lý (Legal)", sub: "Chính sách bảo mật & hoạt động, 1 cột + mục lục. (P18)", tag: "P18", href: "app/desktop/legal.html", grad: "linear-gradient(140deg,#8a6ad0,#5d3da8)", icon: "https://img.icons8.com/fluency/96/privacy.png" },
+    ];
+    const partnerAppPages = [
+      { title: "Đối tác — Desktop", sub: "Đăng nhập · Dashboard · Quét QR · Đối soát · Đăng tin chờ duyệt (PA1–PA5).", tag: "Desktop · 5 màn", href: "app/partner/desktop/dashboard.html", grad: "linear-gradient(140deg,#3a1f6e,#1a1030)", icon: "https://img.icons8.com/fluency/96/handshake.png" },
+      { title: "Đối tác — Mobile", sub: "Bản điện thoại 390px của PA1–PA5, có màn quét QR camera nền tối.", tag: "Mobile · 5 màn", href: "app/partner/mobile/dashboard.html", grad: "linear-gradient(140deg,#6d28d9,#3a1f6e)", icon: "https://img.icons8.com/fluency/96/smartphone-tablet.png" },
+    ];
+    const adminPages = [
+      { title: "Admin CMS — Desktop", sub: "Tổng quan · Booking · Bill · Đối tác · Quán · Cast · Media · Campaign · Blog · Ranking · Báo cáo · Membership (AD1–AD12).", tag: "Desktop · 12 màn", href: "app/admin/desktop/dashboard.html", grad: "linear-gradient(140deg,#6d28d9,#3a1f6e)", icon: "https://img.icons8.com/fluency/96/dashboard-layout.png" },
+      { title: "Admin CMS — Mobile", sub: "Bản điện thoại của 12 màn quản trị, top bar + bottom nav admin.", tag: "Mobile · 12 màn", href: "app/admin/mobile/dashboard.html", grad: "linear-gradient(140deg,#3a1f6e,#1a1030)", icon: "https://img.icons8.com/fluency/96/smartphone-tablet.png" },
+    ];
+    const systemPages = [
+      { title: "403 — Người dùng", sub: "Truy cập bị từ chối (khách). Desktop + mobile.", tag: "Khách", href: "app/system/loi-403.html", grad: "linear-gradient(140deg,#d6336c,#7b2d6b)", icon: "https://img.icons8.com/ios-filled/100/lock-2.png" },
+      { title: "404 — Người dùng", sub: "Không tìm thấy trang + ô tìm kiếm. Desktop + mobile.", tag: "Khách", href: "app/system/loi-404.html", grad: "linear-gradient(140deg,#e0598a,#a8336b)", icon: "https://img.icons8.com/ios-filled/100/error.png" },
+      { title: "500 — Lỗi máy chủ", sub: "Lỗi máy chủ, mã sự cố, nút thử lại. Desktop + mobile.", tag: "Khách", href: "app/system/loi-500.html", grad: "linear-gradient(140deg,#8a6ad0,#5d3da8)", icon: "https://img.icons8.com/ios-filled/100/maintenance.png" },
+      { title: "Đang bảo trì", sub: "Trang bảo trì, thời gian dự kiến, liên hệ LINE.", tag: "Khách", href: "app/system/bao-tri.html", grad: "linear-gradient(140deg,#e0a23a,#c0782d)", icon: "https://img.icons8.com/ios-filled/100/wrench.png" },
+      { title: "Popup & Toast", sub: "Modal thông báo (thành công/cảnh báo/lỗi/xác nhận) + toast các loại.", tag: "Showcase", href: "app/system/popup-toast.html", grad: "linear-gradient(140deg,#6d28d9,#3a1f6e)", icon: "https://img.icons8.com/ios-filled/100/appointment-reminders.png" },
+      { title: "Loading & Empty", sub: "Skeleton loading (shimmer) + các trạng thái rỗng.", tag: "Showcase", href: "app/system/loading-empty.html", grad: "linear-gradient(140deg,#3a8fb0,#2d5fae)", icon: "https://img.icons8.com/ios-filled/100/hourglass.png" },
+      { title: "403 — Admin", sub: "Không đủ quyền theo vai trò (admin shell).", tag: "Admin", href: "app/admin/desktop/loi-403.html", grad: "linear-gradient(140deg,#3a1f6e,#1a1030)", icon: "https://img.icons8.com/ios-filled/100/lock-2.png" },
+      { title: "Thông báo & lỗi Admin", sub: "Trung tâm thông báo + banner lỗi/cảnh báo + toast admin. (kèm 404/500 admin)", tag: "Admin", href: "app/admin/desktop/thong-bao.html", grad: "linear-gradient(140deg,#5b5870,#2b2a33)", icon: "https://img.icons8.com/ios-filled/100/bell.png" },
+    ];
+    return { userPages, partnerPages, newUserPages, partnerAppPages, adminPages, systemPages };
   }
 }
 </script>

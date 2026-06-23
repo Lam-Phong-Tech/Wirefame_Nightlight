@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../shared.js"></script>
+<script src="../../../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e7e5df;}
+  a{text-decoration:none;color:inherit;}
+  .hscroll{scrollbar-width:none;}
+  .hscroll::-webkit-scrollbar{display:none;}
+  .btn{cursor:pointer;transition:filter .14s;}
+  .btn:active{filter:brightness(.96);}
+</style>
+</helmet>
+
+<div style="width:100%;min-height:100vh;box-sizing:border-box;padding:34px 24px 64px;background:#e7e5df;font-family:'Inter',sans-serif;">
+
+  <div style="max-width:390px;margin:0 auto 18px;display:flex;align-items:center;gap:12px;">
+    <a href="../../../index.html" style="font-size:12.5px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:6px 13px;font-weight:600;">‹ Mục lục</a>
+    <div style="font-size:12px;color:#8a8780;">Admin · Mobile — Tổng quan</div>
+  </div>
+
+  <div style="margin:0 auto;width:390px;background:#f5f4f2;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);color:#1f1d29;border:1px solid #e3e0da;">
+
+    <!-- status bar -->
+    <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;background:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #1f1d29;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#1f1d29;border-radius:1px;"></span></span></div>
+
+    <!-- TOP APP BAR -->
+    <div style="background:#fff;border-bottom:1px solid #ececec;padding:11px 16px;display:flex;align-items:center;gap:12px;">
+      <span class="btn" style="width:38px;height:38px;border-radius:11px;background:#f5f4f2;display:flex;align-items:center;justify-content:center;flex:none;"><img src="https://img.icons8.com/ios/100/1F1D29/menu--v6.png" style="width:20px;height:20px;" alt=""></span>
+      <div style="flex:1;min-width:0;"><div style="font-size:16px;font-weight:800;line-height:1.1;">Tổng quan</div><div style="font-size:11px;color:#8a879a;">Cập nhật 23/06 · 21:00</div></div>
+      <span style="position:relative;width:38px;height:38px;border-radius:11px;background:#f5f4f2;display:flex;align-items:center;justify-content:center;flex:none;"><img src="https://img.icons8.com/ios/100/1F1D29/bell.png" style="width:19px;height:19px;" alt=""><span style="position:absolute;top:7px;right:8px;width:8px;height:8px;border-radius:50%;background:#d6336c;border:1.5px solid #fff;"></span></span>
+      <span style="width:38px;height:38px;border-radius:50%;background:linear-gradient(140deg,#6d28d9,#3a1f6e);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;flex:none;">A</span>
+    </div>
+
+    <!-- CONTENT -->
+    <div style="padding:14px 16px 16px;">
+
+      <!-- alert -->
+      <div style="display:flex;align-items:flex-start;gap:10px;background:#fff7ed;border:1px solid #fde3c4;border-radius:14px;padding:12px 14px;margin-bottom:14px;">
+        <img src="https://img.icons8.com/fluency/96/error.png" style="width:20px;height:20px;flex:none;" alt="">
+        <div style="font-size:12.5px;color:#8a5a17;line-height:1.45;">Đang chờ xử lý: <b>7 hóa đơn</b>, <b>3 hồ sơ đối tác</b> và <b>18 yêu cầu đặt chỗ</b>.</div>
+      </div>
+
+      <!-- KPI cards 2x2 -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px;">
+        <div style="background:#fff;border:1px solid #ececec;border-radius:15px;padding:14px;">
+          <div style="display:flex;align-items:center;gap:7px;font-size:11.5px;color:#8a879a;"><img src="https://img.icons8.com/fluency/96/shop.png" style="width:17px;height:17px;" alt="">Quán</div>
+          <div style="font-size:25px;font-weight:800;margin-top:5px;">124</div>
+          <div style="font-size:10.5px;color:#1f8a52;margin-top:2px;">▲ 4 mới tuần này</div>
+        </div>
+        <div style="background:#fff;border:1px solid #ececec;border-radius:15px;padding:14px;">
+          <div style="display:flex;align-items:center;gap:7px;font-size:11.5px;color:#8a879a;"><img src="https://img.icons8.com/fluency/96/geisha.png" style="width:17px;height:17px;" alt="">Cast</div>
+          <div style="font-size:25px;font-weight:800;margin-top:5px;">356</div>
+          <div style="font-size:10.5px;color:#1f8a52;margin-top:2px;">▲ 12 mới</div>
+        </div>
+        <div style="background:#fff;border:1px solid #ececec;border-radius:15px;padding:14px;">
+          <div style="display:flex;align-items:center;gap:7px;font-size:11.5px;color:#8a879a;"><img src="https://img.icons8.com/fluency/96/planner.png" style="width:17px;height:17px;" alt="">Booking mới</div>
+          <div style="font-size:25px;font-weight:800;margin-top:5px;">18</div>
+          <div style="font-size:10.5px;color:#b06a00;margin-top:2px;">● cần điều phối</div>
+        </div>
+        <div style="background:#fff;border:1px solid #ececec;border-radius:15px;padding:14px;">
+          <div style="display:flex;align-items:center;gap:7px;font-size:11.5px;color:#8a879a;"><img src="https://img.icons8.com/fluency/96/cheque.png" style="width:17px;height:17px;" alt="">Bill chờ</div>
+          <div style="font-size:25px;font-weight:800;margin-top:5px;">7</div>
+          <div style="font-size:10.5px;color:#b06a00;margin-top:2px;">● chờ duyệt</div>
+        </div>
+      </div>
+
+      <!-- mini chart -->
+      <div style="background:#fff;border:1px solid #ececec;border-radius:15px;padding:16px;margin-top:12px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+          <div style="font-weight:700;font-size:14px;">Doanh thu 7 ngày</div>
+          <div style="font-size:11px;color:#1f8a52;font-weight:600;">▲ 16%</div>
+        </div>
+        <div style="display:flex;align-items:flex-end;gap:9px;height:108px;">
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;justify-content:flex-end;height:100%;"><div style="width:100%;background:#6d28d9;height:46%;border-radius:5px 5px 0 0;"></div><span style="font-size:10px;color:#8a879a;">T2</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;justify-content:flex-end;height:100%;"><div style="width:100%;background:#6d28d9;height:62%;border-radius:5px 5px 0 0;"></div><span style="font-size:10px;color:#8a879a;">T3</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;justify-content:flex-end;height:100%;"><div style="width:100%;background:#6d28d9;height:40%;border-radius:5px 5px 0 0;"></div><span style="font-size:10px;color:#8a879a;">T4</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;justify-content:flex-end;height:100%;"><div style="width:100%;background:#6d28d9;height:74%;border-radius:5px 5px 0 0;"></div><span style="font-size:10px;color:#8a879a;">T5</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;justify-content:flex-end;height:100%;"><div style="width:100%;background:#6d28d9;height:96%;border-radius:5px 5px 0 0;"></div><span style="font-size:10px;color:#8a879a;">T6</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;justify-content:flex-end;height:100%;"><div style="width:100%;background:#6d28d9;height:88%;border-radius:5px 5px 0 0;"></div><span style="font-size:10px;color:#8a879a;">T7</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;justify-content:flex-end;height:100%;"><div style="width:100%;background:#e0d6f7;height:54%;border-radius:5px 5px 0 0;"></div><span style="font-size:10px;color:#8a879a;">CN</span></div>
+        </div>
+      </div>
+
+      <!-- booking gần đây -->
+      <div style="background:#fff;border:1px solid #ececec;border-radius:15px;overflow:hidden;margin-top:12px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 15px;border-bottom:1px solid #f1f0f3;"><div style="font-weight:700;font-size:14px;">Booking gần đây</div><a href="booking.html" style="font-size:12px;color:#6d28d9;font-weight:600;">Xem tất cả ›</a></div>
+        <div style="display:flex;align-items:center;gap:10px;padding:12px 15px;border-bottom:1px solid #f4f3f6;"><span style="width:34px;height:34px;border-radius:10px;flex:none;background:linear-gradient(140deg,#d6336c,#7b2d6b);"></span><div style="flex:1;min-width:0;"><div style="font-size:13px;font-weight:600;">Minh H. · Club Lumière</div><div style="font-size:11px;color:#8a879a;">4 người · 21:30</div></div><span style="font-size:10.5px;font-weight:600;color:#b06a00;background:#fdefd6;border-radius:10px;padding:3px 9px;flex:none;">Mới</span></div>
+        <div style="display:flex;align-items:center;gap:10px;padding:12px 15px;border-bottom:1px solid #f4f3f6;"><span style="width:34px;height:34px;border-radius:10px;flex:none;background:linear-gradient(140deg,#3a8fb0,#2d5fae);"></span><div style="flex:1;min-width:0;"><div style="font-size:13px;font-weight:600;">Yuki T. · KTV Hoàng Gia</div><div style="font-size:11px;color:#8a879a;">2 người · 20:00 · Michi</div></div><span style="font-size:10.5px;font-weight:600;color:#177544;background:#e6f7ee;border-radius:10px;padding:3px 9px;flex:none;">Hoàn tất</span></div>
+        <div style="display:flex;align-items:center;gap:10px;padding:12px 15px;border-bottom:1px solid #f4f3f6;"><span style="width:34px;height:34px;border-radius:10px;flex:none;background:linear-gradient(140deg,#8a6ad0,#5d3da8);"></span><div style="flex:1;min-width:0;"><div style="font-size:13px;font-weight:600;">Tuấn A. · Sakura Lounge</div><div style="font-size:11px;color:#8a879a;">6 người · 22:00</div></div><span style="font-size:10.5px;font-weight:600;color:#b06a00;background:#fdefd6;border-radius:10px;padding:3px 9px;flex:none;">Mới</span></div>
+        <div style="display:flex;align-items:center;gap:10px;padding:12px 15px;"><span style="width:34px;height:34px;border-radius:10px;flex:none;background:linear-gradient(140deg,#3a9fb0,#2d6fae);"></span><div style="flex:1;min-width:0;"><div style="font-size:13px;font-weight:600;">Kenji M. · Roppongi Night</div><div style="font-size:11px;color:#8a879a;">3 người · 23:00</div></div><span style="font-size:10.5px;font-weight:600;color:#b03a4a;background:#fde7ea;border-radius:10px;padding:3px 9px;flex:none;">Đã hủy</span></div>
+      </div>
+
+    </div>
+
+    <!-- ADMIN BOTTOM NAV -->
+    <div style="height:64px;background:#fff;border-top:1px solid #ececec;display:flex;align-items:center;justify-content:space-around;padding-bottom:6px;">
+      <a href="dashboard.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:44px;"><img src="https://img.icons8.com/ios-filled/100/6D28D9/dashboard-layout.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#6d28d9;font-weight:600;">Tổng quan</span></a>
+      <a href="booking.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:44px;"><img src="https://img.icons8.com/ios/100/B6B3C0/planner.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Booking</span></a>
+      <a href="bill.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:44px;"><img src="https://img.icons8.com/ios/100/B6B3C0/cheque.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Bill</span></a>
+      <a href="doi-tac.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:44px;"><img src="https://img.icons8.com/ios/100/B6B3C0/handshake.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Đối tác</span></a>
+      <a href="quan.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:44px;"><img src="https://img.icons8.com/ios/100/B6B3C0/menu-2.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Thêm</span></a>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>

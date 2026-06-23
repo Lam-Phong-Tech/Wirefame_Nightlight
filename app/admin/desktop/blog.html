@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../shared.js"></script>
+<script src="../../../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e7e5df;}
+  a{text-decoration:none;color:inherit;}
+  .navi{transition:background .14s,color .14s;}
+  .navi:hover{background:#f6f4fb;color:#6d28d9;}
+  .btn{cursor:pointer;transition:filter .14s;}
+  .btn:active{filter:brightness(.96);}
+  .row:hover{background:#faf9fc;}
+  ::-webkit-scrollbar{width:9px;height:9px;}
+  ::-webkit-scrollbar-thumb{background:#d7d4de;border-radius:5px;}
+</style>
+</helmet>
+
+<div style="width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;padding:34px 48px 64px;background:#e7e5df;font-family:'Inter',sans-serif;">
+
+  <div style="max-width:1180px;margin-bottom:18px;display:flex;align-items:center;gap:14px;">
+    <a href="../../../index.html" style="font-size:13px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:7px 14px;font-weight:600;">‹ Mục lục</a>
+    <div style="font-size:13px;color:#8a8780;">Admin CMS · Desktop — <b style="color:#2b2a26;">Blog / Nội dung (AD11)</b></div>
+  </div>
+
+  <div style="width:1180px;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.12);color:#1f1d29;display:flex;min-height:720px;">
+
+    <div style="width:236px;flex:none;border-right:1px solid #ececec;display:flex;flex-direction:column;padding:20px 0;background:#fff;">
+      <div style="padding:0 20px 6px;font-weight:800;font-size:18px;color:#6d28d9;">nightlife<span style="color:#1f1d29;">.hn</span></div>
+      <div style="padding:0 20px 16px;"><span style="font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#6d28d9;background:#f1ebff;border-radius:11px;padding:3px 10px;">ADMIN CMS</span></div>
+
+      <div style="padding:0 12px;display:flex;flex-direction:column;gap:2px;overflow:auto;">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#a8a5b4;padding:8px 13px 4px;">VẬN HÀNH</div>
+        <a href="dashboard.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/dashboard-layout.png" style="width:20px;height:20px;" alt="">Tổng quan</a>
+        <a href="booking.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/planner.png" style="width:20px;height:20px;" alt="">Đặt chỗ</a>
+        <a href="bill.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/cheque.png" style="width:20px;height:20px;" alt="">Duyệt hóa đơn <span style="margin-left:auto;font-size:10.5px;font-weight:700;color:#fff;background:#d6336c;border-radius:10px;padding:1px 7px;">7</span></a>
+        <a href="doi-tac.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/handshake.png" style="width:20px;height:20px;" alt="">Duyệt đối tác <span style="margin-left:auto;font-size:10.5px;font-weight:700;color:#fff;background:#d6336c;border-radius:10px;padding:1px 7px;">3</span></a>
+
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#a8a5b4;padding:12px 13px 4px;">NỘI DUNG</div>
+        <a href="quan.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/shop.png" style="width:20px;height:20px;" alt="">Quán / Địa điểm</a>
+        <a href="cast.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/geisha.png" style="width:20px;height:20px;" alt="">Cast</a>
+        <a href="media.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/stack-of-photos.png" style="width:20px;height:20px;" alt="">Thư viện media</a>
+        <a href="campaign.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/discount.png" style="width:20px;height:20px;" alt="">Campaign / Ưu đãi</a>
+        <a href="blog.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;background:#f1ebff;color:#6d28d9;font-weight:600;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/news.png" style="width:20px;height:20px;" alt="">Blog / Nội dung</a>
+        <a href="ranking.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/trophy.png" style="width:20px;height:20px;" alt="">Xếp hạng thủ công</a>
+
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#a8a5b4;padding:12px 13px 4px;">PHÂN TÍCH</div>
+        <a href="bao-cao.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/combo-chart.png" style="width:20px;height:20px;" alt="">Báo cáo doanh thu</a>
+        <a href="membership.html" class="navi" style="display:flex;align-items:center;gap:11px;padding:10px 13px;border-radius:11px;color:#5b5870;font-size:13.5px;"><img src="https://img.icons8.com/fluency/96/vip.png" style="width:20px;height:20px;" alt="">Membership &amp; điểm</a>
+      </div>
+
+      <div style="margin-top:auto;padding:14px 16px 0;border-top:1px solid #ececec;display:flex;align-items:center;gap:10px;">
+        <span style="width:36px;height:36px;border-radius:50%;background:linear-gradient(140deg,#6d28d9,#3a1f6e);flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;">A</span>
+        <div style="flex:1;"><div style="font-size:13px;font-weight:600;">Admin Trung</div><div style="font-size:11px;color:#8a879a;">Quản trị viên</div></div>
+        <a href="dang-nhap.html" title="Đăng xuất"><img src="https://img.icons8.com/ios/100/8A879A/exit.png" style="width:18px;height:18px;" alt=""></a>
+      </div>
+    </div>
+
+    <div style="flex:1;background:#f5f4f2;display:flex;flex-direction:column;min-width:0;">
+
+      <div style="background:#fff;border-bottom:1px solid #ececec;padding:14px 26px;display:flex;align-items:center;justify-content:space-between;">
+        <div><div style="font-size:18px;font-weight:800;">Blog / Nội dung</div><div style="font-size:12px;color:#8a879a;margin-top:1px;">Quản lý bài viết &amp; chuyên mục</div></div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div style="display:flex;align-items:center;gap:8px;border:1px solid #ececec;border-radius:11px;padding:9px 14px;width:280px;color:#9a98a6;font-size:13px;"><img src="https://img.icons8.com/ios/100/9A98A6/search--v1.png" style="width:15px;height:15px;" alt="">Tìm quán, cast, booking…</div>
+          <div style="position:relative;"><img src="https://img.icons8.com/fluency/96/bell.png" style="width:24px;height:24px;" alt=""><span style="position:absolute;top:-3px;right:-3px;width:16px;height:16px;border-radius:50%;background:#d6336c;color:#fff;font-size:9.5px;font-weight:700;display:flex;align-items:center;justify-content:center;">5</span></div>
+          <span style="width:36px;height:36px;border-radius:50%;background:linear-gradient(140deg,#6d28d9,#3a1f6e);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;">A</span>
+        </div>
+      </div>
+
+      <div style="padding:24px 26px;overflow:auto;">
+
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+          <div style="font-size:15px;font-weight:700;">Bài viết</div>
+          <div class="btn" style="background:#6d28d9;color:#fff;border-radius:10px;padding:10px 16px;font-size:12.5px;font-weight:600;">+ Viết bài</div>
+        </div>
+
+        <div style="background:#fff;border-radius:16px;overflow:hidden;">
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr .9fr 1fr;background:#faf9fc;font-size:11.5px;color:#8a879a;font-weight:600;padding:11px 20px;">
+            <div>Tiêu đề</div><div>Chuyên mục</div><div>Tác giả</div><div>Ngày</div><div>Trạng thái</div>
+          </div>
+
+          <div class="row" style="display:grid;grid-template-columns:2fr 1fr 1fr .9fr 1fr;padding:13px 20px;font-size:13px;border-bottom:1px solid #f4f3f6;align-items:center;">
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:40px;height:30px;border-radius:6px;background:linear-gradient(120deg,#6d28d9,#d6336c);flex:none;"></span><span style="font-weight:600;">Top 10 bar sang chảnh nhất Hà Nội 2026</span></div>
+            <div><span style="font-size:10.5px;font-weight:600;color:#6d28d9;background:#f1ebff;border-radius:8px;padding:2px 8px;">Cẩm nang</span></div>
+            <div style="color:#5b5870;">Admin Trung</div>
+            <div style="color:#5b5870;">22/06/2026</div>
+            <div><span style="font-size:11px;font-weight:600;color:#177544;background:#e6f7ee;border-radius:8px;padding:3px 9px;">Đã đăng</span></div>
+          </div>
+
+          <div class="row" style="display:grid;grid-template-columns:2fr 1fr 1fr .9fr 1fr;padding:13px 20px;font-size:13px;border-bottom:1px solid #f4f3f6;align-items:center;">
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:40px;height:30px;border-radius:6px;background:linear-gradient(120deg,#3a1f6e,#6d28d9);flex:none;"></span><span style="font-weight:600;">Hướng dẫn đặt cast lần đầu cho người mới</span></div>
+            <div><span style="font-size:10.5px;font-weight:600;color:#6d28d9;background:#f1ebff;border-radius:8px;padding:2px 8px;">Hướng dẫn</span></div>
+            <div style="color:#5b5870;">Mai Linh</div>
+            <div style="color:#5b5870;">20/06/2026</div>
+            <div><span style="font-size:11px;font-weight:600;color:#177544;background:#e6f7ee;border-radius:8px;padding:3px 9px;">Đã đăng</span></div>
+          </div>
+
+          <div class="row" style="display:grid;grid-template-columns:2fr 1fr 1fr .9fr 1fr;padding:13px 20px;font-size:13px;border-bottom:1px solid #f4f3f6;align-items:center;">
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:40px;height:30px;border-radius:6px;background:linear-gradient(120deg,#d6336c,#f59e0b);flex:none;"></span><span style="font-weight:600;">Review Club Lumière: không gian &amp; dịch vụ</span></div>
+            <div><span style="font-size:10.5px;font-weight:600;color:#6d28d9;background:#f1ebff;border-radius:8px;padding:2px 8px;">Review</span></div>
+            <div style="color:#5b5870;">Admin Trung</div>
+            <div style="color:#5b5870;">18/06/2026</div>
+            <div><span style="font-size:11px;font-weight:600;color:#177544;background:#e6f7ee;border-radius:8px;padding:3px 9px;">Đã đăng</span></div>
+          </div>
+
+          <div class="row" style="display:grid;grid-template-columns:2fr 1fr 1fr .9fr 1fr;padding:13px 20px;font-size:13px;border-bottom:1px solid #f4f3f6;align-items:center;">
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:40px;height:30px;border-radius:6px;background:linear-gradient(120deg,#6d28d9,#1e3a8a);flex:none;"></span><span style="font-weight:600;">Văn hóa KTV Nhật Bản tại Việt Nam</span></div>
+            <div><span style="font-size:10.5px;font-weight:600;color:#6d28d9;background:#f1ebff;border-radius:8px;padding:2px 8px;">Văn hóa</span></div>
+            <div style="color:#5b5870;">Hữu Nam</div>
+            <div style="color:#5b5870;">16/06/2026</div>
+            <div><span style="font-size:11px;font-weight:600;color:#b06a00;background:#fdefd6;border-radius:8px;padding:3px 9px;">Nháp</span></div>
+          </div>
+
+          <div class="row" style="display:grid;grid-template-columns:2fr 1fr 1fr .9fr 1fr;padding:13px 20px;font-size:13px;border-bottom:1px solid #f4f3f6;align-items:center;">
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:40px;height:30px;border-radius:6px;background:linear-gradient(120deg,#f59e0b,#d6336c);flex:none;"></span><span style="font-weight:600;">Bí kíp săn ưu đãi cuối tuần</span></div>
+            <div><span style="font-size:10.5px;font-weight:600;color:#6d28d9;background:#f1ebff;border-radius:8px;padding:2px 8px;">Ưu đãi</span></div>
+            <div style="color:#5b5870;">Mai Linh</div>
+            <div style="color:#5b5870;">14/06/2026</div>
+            <div><span style="font-size:11px;font-weight:600;color:#177544;background:#e6f7ee;border-radius:8px;padding:3px 9px;">Đã đăng</span></div>
+          </div>
+
+          <div class="row" style="display:grid;grid-template-columns:2fr 1fr 1fr .9fr 1fr;padding:13px 20px;font-size:13px;border-bottom:1px solid #f4f3f6;align-items:center;">
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:40px;height:30px;border-radius:6px;background:linear-gradient(120deg,#0ea5a4,#6d28d9);flex:none;"></span><span style="font-weight:600;">Spa &amp; massage: chọn gói nào phù hợp?</span></div>
+            <div><span style="font-size:10.5px;font-weight:600;color:#6d28d9;background:#f1ebff;border-radius:8px;padding:2px 8px;">Cẩm nang</span></div>
+            <div style="color:#5b5870;">Hữu Nam</div>
+            <div style="color:#5b5870;">12/06/2026</div>
+            <div><span style="font-size:11px;font-weight:600;color:#b06a00;background:#fdefd6;border-radius:8px;padding:3px 9px;">Nháp</span></div>
+          </div>
+
+          <div class="row" style="display:grid;grid-template-columns:2fr 1fr 1fr .9fr 1fr;padding:13px 20px;font-size:13px;align-items:center;">
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:40px;height:30px;border-radius:6px;background:linear-gradient(120deg,#1e3a8a,#d6336c);flex:none;"></span><span style="font-weight:600;">Lịch sự kiện đêm Sài Gòn tháng 7</span></div>
+            <div><span style="font-size:10.5px;font-weight:600;color:#6d28d9;background:#f1ebff;border-radius:8px;padding:2px 8px;">Sự kiện</span></div>
+            <div style="color:#5b5870;">Admin Trung</div>
+            <div style="color:#5b5870;">10/06/2026</div>
+            <div><span style="font-size:11px;font-weight:600;color:#b06a00;background:#fdefd6;border-radius:8px;padding:3px 9px;">Nháp</span></div>
+          </div>
+        </div>
+
+        <div style="background:#fff;border-radius:16px;overflow:hidden;margin-top:18px;">
+          <div style="padding:16px 20px;border-bottom:1px solid #f1f0f3;display:flex;align-items:center;gap:9px;">
+            <img src="https://img.icons8.com/fluency/96/news.png" style="width:20px;height:20px;" alt="">
+            <div style="font-weight:700;font-size:15px;">Trình soạn thảo bài viết</div>
+            <span style="font-size:11px;font-weight:600;color:#b06a00;background:#fdefd6;border-radius:8px;padding:3px 9px;">Nháp</span>
+          </div>
+
+          <div style="padding:20px;display:grid;grid-template-columns:1fr;gap:16px;">
+
+            <div>
+              <div style="font-size:12px;color:#8a879a;margin-bottom:6px;">Tiêu đề</div>
+              <div style="border:1px solid #ececec;border-radius:10px;padding:11px 12px;font-size:15px;font-weight:600;color:#1f1d29;">Top 10 bar sang chảnh nhất Hà Nội 2026</div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div>
+                <div style="font-size:12px;color:#8a879a;margin-bottom:6px;">Chuyên mục</div>
+                <div style="border:1px solid #ececec;border-radius:10px;padding:11px 12px;font-size:13px;color:#1f1d29;display:flex;align-items:center;justify-content:space-between;">Cẩm nang <img src="https://img.icons8.com/ios/100/8A879A/expand-arrow.png" style="width:14px;height:14px;" alt=""></div>
+              </div>
+              <div>
+                <div style="font-size:12px;color:#8a879a;margin-bottom:6px;">Tác giả</div>
+                <div style="border:1px solid #ececec;border-radius:10px;padding:11px 12px;font-size:13px;color:#1f1d29;">Admin Trung</div>
+              </div>
+            </div>
+
+            <div>
+              <div style="font-size:12px;color:#8a879a;margin-bottom:6px;">Ảnh bìa</div>
+              <div style="width:100%;height:140px;border-radius:10px;background:linear-gradient(120deg,#6d28d9,#d6336c);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;">Ảnh bìa (16:9) — kéo thả hoặc tải lên</div>
+            </div>
+
+            <div>
+              <div style="font-size:12px;color:#8a879a;margin-bottom:6px;">Nội dung</div>
+              <div style="display:flex;gap:6px;border:1px solid #ececec;border-bottom:none;border-radius:10px 10px 0 0;padding:8px 10px;background:#faf9fc;">
+                <div style="width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;" class="navi"><img src="https://img.icons8.com/ios/100/5B5870/bold.png" style="width:16px;height:16px;" alt=""></div>
+                <div style="width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;" class="navi"><img src="https://img.icons8.com/ios/100/5B5870/italic.png" style="width:16px;height:16px;" alt=""></div>
+                <div style="width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;" class="navi"><img src="https://img.icons8.com/ios/100/5B5870/bulleted-list.png" style="width:16px;height:16px;" alt=""></div>
+                <div style="width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;" class="navi"><img src="https://img.icons8.com/ios/100/5B5870/link--v1.png" style="width:16px;height:16px;" alt=""></div>
+                <div style="width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;" class="navi"><img src="https://img.icons8.com/ios/100/5B5870/image.png" style="width:16px;height:16px;" alt=""></div>
+              </div>
+              <div style="border:1px solid #ececec;border-radius:0 0 10px 10px;padding:14px;min-height:120px;font-size:13px;color:#5b5870;line-height:1.6;">
+                <p style="margin-bottom:10px;">Hà Nội về đêm là một thế giới riêng với hàng loạt rooftop bar và cocktail lounge sang trọng. Từ những quầy bar view hồ lãng mạn đến không gian speakeasy ẩn mình trong phố cổ, mỗi địa điểm đều mang một cá tính riêng dành cho người sành chơi.</p>
+                <p>Trong bài viết này, chúng tôi điểm qua 10 quán bar đáng trải nghiệm nhất năm 2026, kèm gợi ý đồ uống signature, khung giờ vàng và mức chi tiêu trung bình để bạn dễ dàng lên kế hoạch cho buổi tối hoàn hảo.</p>
+              </div>
+            </div>
+
+            <div style="border:1px solid #ececec;border-radius:12px;padding:14px;background:#faf9fc;">
+              <div style="font-size:13px;font-weight:700;margin-bottom:10px;">SEO meta</div>
+              <div style="margin-bottom:12px;">
+                <div style="font-size:11px;color:#8a879a;margin-bottom:4px;">Meta title</div>
+                <div style="border:1px solid #ececec;border-radius:8px;padding:9px 11px;font-size:12.5px;color:#5b5870;background:#fff;">Top 10 bar sang chảnh Hà Nội 2026 | nightlife.hn</div>
+              </div>
+              <div>
+                <div style="font-size:11px;color:#8a879a;margin-bottom:4px;">Meta description</div>
+                <div style="border:1px solid #ececec;border-radius:8px;padding:9px 11px;font-size:12.5px;color:#5b5870;background:#fff;line-height:1.5;">Khám phá 10 quán bar sang chảnh nhất Hà Nội 2026 — rooftop view đẹp, cocktail signature, khung giờ vàng và mức chi tiêu gợi ý cho buổi tối đẳng cấp.</div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="padding:14px 20px;border-top:1px solid #f1f0f3;display:flex;justify-content:flex-end;gap:10px;">
+            <div class="btn" style="color:#5b5870;border:1px solid #e0d6f7;background:#fff;border-radius:10px;padding:9px 16px;font-size:12.5px;font-weight:600;">Lưu nháp</div>
+            <div class="btn" style="color:#fff;background:#6d28d9;border-radius:10px;padding:9px 18px;font-size:12.5px;font-weight:600;">Đăng bài</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>

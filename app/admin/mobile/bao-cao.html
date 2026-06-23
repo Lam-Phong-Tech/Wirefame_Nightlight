@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../shared.js"></script>
+<script src="../../../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e7e5df;}
+  a{text-decoration:none;color:inherit;}
+  .hscroll{scrollbar-width:none;}
+  .hscroll::-webkit-scrollbar{display:none;}
+  .btn{cursor:pointer;transition:filter .14s;}
+  .btn:active{filter:brightness(.96);}
+</style>
+</helmet>
+
+<div style="width:100%;min-height:100vh;box-sizing:border-box;padding:34px 24px 64px;background:#e7e5df;font-family:'Inter',sans-serif;">
+
+  <div style="max-width:390px;margin:0 auto 18px;display:flex;align-items:center;gap:12px;">
+    <a href="../../../index.html" style="font-size:12.5px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:6px 13px;font-weight:600;">‹ Mục lục</a>
+    <div style="font-size:12px;color:#8a8780;">Admin · Mobile — Báo cáo</div>
+  </div>
+
+  <div style="margin:0 auto;width:390px;background:#f5f4f2;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);color:#1f1d29;border:1px solid #e3e0da;">
+
+    <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;background:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #1f1d29;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#1f1d29;border-radius:1px;"></span></span></div>
+
+    <div style="background:#fff;border-bottom:1px solid #ececec;padding:11px 16px;display:flex;align-items:center;gap:12px;">
+      <span class="btn" style="width:38px;height:38px;border-radius:11px;background:#f5f4f2;display:flex;align-items:center;justify-content:center;flex:none;"><img src="https://img.icons8.com/ios/100/1F1D29/menu--v6.png" style="width:20px;height:20px;" alt=""></span>
+      <div style="flex:1;min-width:0;"><div style="font-size:16px;font-weight:800;line-height:1.1;">Báo cáo doanh thu</div><div style="font-size:11px;color:#8a879a;">Tháng 6/2026</div></div>
+      <span style="position:relative;width:38px;height:38px;border-radius:11px;background:#f5f4f2;display:flex;align-items:center;justify-content:center;flex:none;"><img src="https://img.icons8.com/ios/100/1F1D29/bell.png" style="width:19px;height:19px;" alt=""><span style="position:absolute;top:7px;right:8px;width:8px;height:8px;border-radius:50%;background:#d6336c;border:1.5px solid #fff;"></span></span>
+      <span style="width:38px;height:38px;border-radius:50%;background:linear-gradient(140deg,#6d28d9,#3a1f6e);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;flex:none;">A</span>
+    </div>
+
+    <!-- tab -->
+    <div class="hscroll" style="background:#fff;padding:0 16px 12px;display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid #ececec;">
+      <span style="flex:none;cursor:pointer;font-size:12.5px;border-radius:16px;padding:8px 15px;font-weight:600;background:#6d28d9;color:#fff;">Gộp</span>
+      <span style="flex:none;cursor:pointer;font-size:12.5px;border-radius:16px;padding:8px 15px;font-weight:600;background:#f3f2f5;color:#5b5870;">Thuần</span>
+      <span style="flex:none;cursor:pointer;font-size:12.5px;border-radius:16px;padding:8px 15px;font-weight:600;background:#f3f2f5;color:#5b5870;">Hoa hồng</span>
+      <span style="flex:none;cursor:pointer;font-size:12.5px;border-radius:16px;padding:8px 15px;font-weight:600;background:#f3f2f5;color:#5b5870;">Giảm</span>
+    </div>
+
+    <div style="padding:14px 16px 16px;">
+
+      <!-- KPI 2x2 -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px;">
+        <div style="background:#fff;border:1px solid #ececec;border-radius:15px;padding:14px;">
+          <img src="https://img.icons8.com/fluency/96/money-bag.png" style="width:26px;height:26px;" alt="">
+          <div style="font-size:11px;color:#8a879a;margin-top:7px;">Doanh thu đã duyệt</div>
+          <div style="font-size:18px;font-weight:800;margin-top:4px;">182tr</div>
+          <div style="font-size:10.5px;color:#177544;font-weight:600;margin-top:3px;">▲ 16% so T5</div>
+        </div>
+        <div style="background:#fff;border:1px solid #ececec;border-radius:15px;padding:14px;">
+          <img src="https://img.icons8.com/fluency/96/discount.png" style="width:26px;height:26px;" alt="">
+          <div style="font-size:11px;color:#8a879a;margin-top:7px;">Hoa hồng nền tảng</div>
+          <div style="font-size:18px;font-weight:800;margin-top:4px;">27.3tr</div>
+          <div style="font-size:10.5px;color:#8a879a;margin-top:3px;">15% doanh thu</div>
+        </div>
+        <div style="background:#fff;border:1px solid #ececec;border-radius:15px;padding:14px;">
+          <img src="https://img.icons8.com/fluency/96/tags.png" style="width:26px;height:26px;" alt="">
+          <div style="font-size:11px;color:#8a879a;margin-top:7px;">Tổng đã giảm</div>
+          <div style="font-size:18px;font-weight:800;margin-top:4px;">14.5tr</div>
+          <div style="font-size:10.5px;color:#8a879a;margin-top:3px;">qua 86 hóa đơn</div>
+        </div>
+        <div style="background:#fff;border:1px solid #ececec;border-radius:15px;padding:14px;">
+          <img src="https://img.icons8.com/fluency/96/cheque.png" style="width:26px;height:26px;" alt="">
+          <div style="font-size:11px;color:#8a879a;margin-top:7px;">Hóa đơn đã duyệt</div>
+          <div style="font-size:18px;font-weight:800;margin-top:4px;">312</div>
+          <div style="font-size:10.5px;color:#177544;font-weight:600;margin-top:3px;">▲ 22 đơn</div>
+        </div>
+      </div>
+
+      <!-- mini chart -->
+      <div style="background:#fff;border:1px solid #ececec;border-radius:15px;padding:16px;margin-top:12px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;"><div style="font-weight:700;font-size:14px;">Doanh thu 6 tháng</div><div style="font-size:11px;color:#8a879a;">triệu đồng</div></div>
+        <div style="display:flex;align-items:flex-end;gap:10px;height:108px;">
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;justify-content:flex-end;height:100%;"><div style="width:100%;background:#6d28d9;height:48%;border-radius:5px 5px 0 0;"></div><span style="font-size:10px;color:#8a879a;">T1</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;justify-content:flex-end;height:100%;"><div style="width:100%;background:#6d28d9;height:56%;border-radius:5px 5px 0 0;"></div><span style="font-size:10px;color:#8a879a;">T2</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;justify-content:flex-end;height:100%;"><div style="width:100%;background:#6d28d9;height:64%;border-radius:5px 5px 0 0;"></div><span style="font-size:10px;color:#8a879a;">T3</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;justify-content:flex-end;height:100%;"><div style="width:100%;background:#6d28d9;height:72%;border-radius:5px 5px 0 0;"></div><span style="font-size:10px;color:#8a879a;">T4</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;justify-content:flex-end;height:100%;"><div style="width:100%;background:#6d28d9;height:84%;border-radius:5px 5px 0 0;"></div><span style="font-size:10px;color:#8a879a;">T5</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;justify-content:flex-end;height:100%;"><div style="width:100%;background:#6d28d9;height:100%;border-radius:5px 5px 0 0;"></div><span style="font-size:10px;color:#8a879a;">T6</span></div>
+        </div>
+      </div>
+
+      <!-- chi tiết theo quán -->
+      <div style="background:#fff;border:1px solid #ececec;border-radius:15px;overflow:hidden;margin-top:12px;">
+        <div style="padding:13px 15px;border-bottom:1px solid #f1f0f3;font-weight:700;font-size:14px;">Doanh thu theo quán</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:11px 15px;border-bottom:1px solid #f4f3f6;font-size:13px;"><span>Club Lumière</span><span style="font-weight:700;color:#6d28d9;">52.4tr</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:11px 15px;border-bottom:1px solid #f4f3f6;font-size:13px;"><span>KTV Hoàng Gia</span><span style="font-weight:700;color:#6d28d9;">41.2tr</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:11px 15px;border-bottom:1px solid #f4f3f6;font-size:13px;"><span>Sakura Lounge</span><span style="font-weight:700;color:#6d28d9;">33.8tr</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:11px 15px;font-size:13px;"><span>Casino Diamond</span><span style="font-weight:700;color:#6d28d9;">28.1tr</span></div>
+      </div>
+
+    </div>
+
+    <div style="height:64px;background:#fff;border-top:1px solid #ececec;display:flex;align-items:center;justify-content:space-around;padding-bottom:6px;">
+      <a href="dashboard.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:44px;"><img src="https://img.icons8.com/ios/100/B6B3C0/dashboard-layout.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Tổng quan</span></a>
+      <a href="booking.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:44px;"><img src="https://img.icons8.com/ios/100/B6B3C0/planner.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Booking</span></a>
+      <a href="bill.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:44px;"><img src="https://img.icons8.com/ios/100/B6B3C0/cheque.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Bill</span></a>
+      <a href="doi-tac.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:44px;"><img src="https://img.icons8.com/ios/100/B6B3C0/handshake.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Đối tác</span></a>
+      <a href="quan.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:44px;"><img src="https://img.icons8.com/ios-filled/100/6D28D9/menu-2.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#6d28d9;font-weight:600;">Thêm</span></a>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>
