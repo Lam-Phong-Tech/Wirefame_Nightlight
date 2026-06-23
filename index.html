@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e7e5df;}
+  a{text-decoration:none;color:inherit;}
+  .navcard{transition:transform .16s ease, box-shadow .16s ease;}
+  .navcard:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(40,20,60,.14);}
+  .navcard:hover .openlink{color:#6d28d9;}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#e7e5df;font-family:'Inter',sans-serif;color:#1f1d29;padding:48px 24px 72px;">
+
+  <div style="max-width:1080px;margin:0 auto;">
+
+    <!-- header -->
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+      <div style="font-weight:800;font-size:22px;color:#6d28d9;">nightlife<span style="color:#1f1d29;">.hn</span></div>
+      <div style="font-size:13px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:6px 14px;font-weight:600;">Phương án C · Daylight Discovery</div>
+    </div>
+    <div style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#8a8780;font-weight:600;margin-top:14px;">Mục lục giao diện</div>
+    <h1 style="font-size:34px;font-weight:800;margin-top:8px;text-wrap:pretty;">Chọn một màn hình để xem</h1>
+    <p style="font-size:15px;color:#6e6b64;margin-top:10px;max-width:680px;line-height:1.6;">Nhấn vào bất kỳ thẻ nào bên dưới để mở trực tiếp màn hình đó. Mỗi thẻ là một bộ giao diện đã dựng (kèm bản desktop &amp; mobile).</p>
+
+    <!-- ============ NGƯỜI DÙNG ============ -->
+    <div style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#a8a59d;font-weight:700;margin:42px 0 18px;">Giao diện người dùng</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <sc-for list="{{ userPages }}" as="p" hint-placeholder-count="6">
+        <a href="{{ p.href }}">
+          <div class="navcard" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 3px 12px rgba(40,20,60,.06);height:100%;cursor:pointer;">
+            <div style="height:120px;background:{{ p.grad }};position:relative;display:flex;align-items:flex-end;padding:14px;">
+              <div style="position:absolute;top:14px;left:14px;width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;">
+                <img src="{{ p.icon }}" style="width:28px;height:28px;" alt="" />
+              </div>
+              <span style="font-size:10.5px;font-weight:700;color:#fff;background:rgba(0,0,0,.28);border-radius:12px;padding:3px 10px;">{{ p.tag }}</span>
+            </div>
+            <div style="padding:14px 16px 18px;">
+              <div style="font-weight:700;font-size:16px;">{{ p.title }}</div>
+              <div style="font-size:12.5px;color:#8a879a;margin-top:6px;line-height:1.5;">{{ p.sub }}</div>
+              <div class="openlink" style="font-size:13px;font-weight:600;color:#5b5870;margin-top:14px;">Mở trang ›</div>
+            </div>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+
+    <!-- ============ ĐỐI TÁC & NỘI DUNG ============ -->
+    <div style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#a8a59d;font-weight:700;margin:42px 0 18px;">Đối tác &amp; Nội dung</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <sc-for list="{{ partnerPages }}" as="p" hint-placeholder-count="3">
+        <a href="{{ p.href }}">
+          <div class="navcard" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 3px 12px rgba(40,20,60,.06);height:100%;cursor:pointer;">
+            <div style="height:120px;background:{{ p.grad }};position:relative;display:flex;align-items:flex-end;padding:14px;">
+              <div style="position:absolute;top:14px;left:14px;width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;">
+                <img src="{{ p.icon }}" style="width:28px;height:28px;" alt="" />
+              </div>
+              <span style="font-size:10.5px;font-weight:700;color:#fff;background:rgba(0,0,0,.28);border-radius:12px;padding:3px 10px;">{{ p.tag }}</span>
+            </div>
+            <div style="padding:14px 16px 18px;">
+              <div style="font-weight:700;font-size:16px;">{{ p.title }}</div>
+              <div style="font-size:12.5px;color:#8a879a;margin-top:6px;line-height:1.5;">{{ p.sub }}</div>
+              <div class="openlink" style="font-size:13px;font-weight:600;color:#5b5870;margin-top:14px;">Mở trang ›</div>
+            </div>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+
+    <div style="margin-top:48px;font-size:12px;color:#a8a5b4;text-align:center;">nightlife.hn · Mockup giao diện · Phương án C</div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const userPages = [
+      {
+        title: "Trang chủ tối ưu",
+        sub: "Màn hình chính — bố cục theo mức ưu tiên hành động (Search → Danh mục → Gợi ý → Coupon → Xếp hạng).",
+        tag: "Trang chủ",
+        href: "Phương án C - Trang chủ tối ưu.dc.html",
+        grad: "linear-gradient(140deg,#d6336c,#7b2d6b)",
+        icon: "https://img.icons8.com/fluency/96/home.png",
+      },
+      {
+        title: "Bộ trang giao diện",
+        sub: "Danh sách quán · Chi tiết quán · Danh sách Cast · Chi tiết Cast · Ưu đãi/Sự kiện · Đăng nhập.",
+        tag: "7 màn",
+        href: "Phương án C - Các trang.dc.html",
+        grad: "linear-gradient(140deg,#3a8fb0,#2d5fae)",
+        icon: "https://img.icons8.com/fluency/96/list.png",
+      },
+      {
+        title: "Trang Xếp hạng",
+        sub: "Tab khu vực (Tổng hợp · HN · HCM · ĐN · HP) × toggle Cast/Quán, Top 5 + vương miện.",
+        tag: "Ranking",
+        href: "Phương án C - Trang xếp hạng.dc.html",
+        grad: "linear-gradient(140deg,#e0a23a,#c0782d)",
+        icon: "https://img.icons8.com/fluency/96/trophy.png",
+      },
+      {
+        title: "Booking & Coupon",
+        sub: "Form đặt chỗ · Lịch sử đặt chỗ 3 trạng thái · Chi tiết mã QR · Ví coupon. (P7–P10)",
+        tag: "P7–P10",
+        href: "Phương án C - Booking & Coupon.dc.html",
+        grad: "linear-gradient(140deg,#e0598a,#a8336b)",
+        icon: "https://img.icons8.com/fluency/96/planner.png",
+      },
+      {
+        title: "Tài khoản & Hóa đơn",
+        sub: "Hồ sơ + hạng + điểm thưởng · Gửi hóa đơn & lịch sử duyệt. (P13–P14)",
+        tag: "P13–P14",
+        href: "Phương án C - Tài khoản & Hóa đơn.dc.html",
+        grad: "linear-gradient(140deg,#5fae8a,#2d8a6a)",
+        icon: "https://img.icons8.com/fluency/96/user-male-circle.png",
+      },
+      {
+        title: "Trang chủ — 3 phương án",
+        sub: "So sánh 3 hướng phong cách trang chủ ban đầu (tham khảo lịch sử thiết kế).",
+        tag: "Tham khảo",
+        href: "Trang chủ - 3 phương án.dc.html",
+        grad: "linear-gradient(140deg,#8a6ad0,#5d3da8)",
+        icon: "https://img.icons8.com/fluency/96/idea.png",
+      },
+    ];
+    const partnerPages = [
+      {
+        title: "Cổng Đối tác (Partner)",
+        sub: "Đăng nhập · Dashboard tối thiểu (đặt chỗ · lượt xem · khách đến). (PA1–PA5)",
+        tag: "P0 · PA1–PA5",
+        href: "Phương án C - Đối tác (Partner).dc.html",
+        grad: "linear-gradient(140deg,#3a1f6e,#1a1030)",
+        icon: "https://img.icons8.com/fluency/96/handshake.png",
+      },
+      {
+        title: "Blog · Đối tác · Legal",
+        sub: "Blog (danh sách + chi tiết) SEO · Đăng ký đối tác 'Join Us' · Trang pháp lý. (P15–P18)",
+        tag: "P15–P18",
+        href: "Phương án C - Blog & Đối tác & Legal.dc.html",
+        grad: "linear-gradient(140deg,#5ba6e0,#2d5fae)",
+        icon: "https://img.icons8.com/fluency/96/news.png",
+      },
+    ];
+    return { userPages, partnerPages };
+  }
+}
+</script>
+</body>
+</html>
