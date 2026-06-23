@@ -1,11 +1,11 @@
 /* nightlife.hn — Theme engine (Sáng/Tối) dùng chung cho prototype.
-   Mọi màn chỉ dùng inline style; engine remap màu nền/chữ/viền sang bảng tối khi bật Tối.
-   - Khớp CẢ dạng #hex LẪN rgb(...) (vì framework chuẩn hoá style thành rgb).
+   Mọi màn chỉ dùng inline style; engine remap màu nền/chữ/viền theo bảng tối.
+   Thiết kế: HAI phép biến đổi THUẦN & idempotent (sáng→tối và tối→sáng qua bản đồ nghịch đảo),
+   không lưu "bản gốc" -> không thể kẹt màu khi toggle qua lại, và highlight động vẫn đổi đúng.
+   - Khớp CẢ #hex LẪN rgb(...) (framework chuẩn hoá style thành rgb).
    - Giữ nguyên: tím #6d28d9, chữ trắng, gradient hero, ảnh, rgba overlay, màu trạng thái lạ.
-   - Lưu lựa chọn vào localStorage 'nl_theme'. Tự áp lại sau mỗi lần render (MutationObserver có guard).
    Nạp SAU support.js: <script src="<path>/theme.js"></script> */
 (function () {
-  // ---- bảng remap (light hex -> dark hex) ----
   var BG = {
     '#e7e5df': '#0f0d15', '#fff': '#1b1726', '#ffffff': '#1b1726', '#fafafa': '#1b1726',
     '#f5f4f2': '#15121e', '#f3f2f5': '#262131', '#faf9fc': '#201b2c', '#f9f8fb': '#201b2c',
@@ -32,8 +32,10 @@
     if (h.length < 6) return null;
     return parseInt(h.slice(0, 2), 16) + ',' + parseInt(h.slice(2, 4), 16) + ',' + parseInt(h.slice(4, 6), 16);
   }
-  function canon(map) { var c = {}; for (var k in map) { var key = hexKey(k); if (key) c[key] = map[k]; } return c; }
-  var BGc = canon(BG), TXc = canon(TX), BDc = canon(BD);
+  function fwd(map) { var c = {}; for (var k in map) { var key = hexKey(k); if (key) c[key] = map[k]; } return c; }   // light(rgbkey) -> dark hex
+  function inv(map) { var c = {}; for (var k in map) { var key = hexKey(map[k]); if (key && !(key in c)) c[key] = k; } return c; } // dark(rgbkey) -> light hex (first wins)
+  var BGc = fwd(BG), TXc = fwd(TX), BDc = fwd(BD);
+  var BGi = inv(BG), TXi = inv(TX), BDi = inv(BD);
 
   function tokKey(tok) {
     if (tok.charAt(0) === '#') return hexKey(tok);
@@ -45,20 +47,20 @@
       var k = tokKey(tok); return (k && c[k]) ? c[k] : tok;
     });
   }
-  function dk(s) {
+  function transform(s, dark) {
     if (!s) return s;
     return s.split(';').map(function (decl) {
       var i = decl.indexOf(':'); if (i < 0) return decl;
       var prop = decl.slice(0, i), val = decl.slice(i + 1), p = prop.trim().toLowerCase();
-      if (/gradient|url\(/i.test(val)) return decl;          // chừa gradient & ảnh
-      if (p.indexOf('background') >= 0) val = mapColors(val, BGc);
-      else if (p === 'color') val = mapColors(val, TXc);
-      else if (p.indexOf('border') >= 0) val = mapColors(val, BDc);
+      if (/gradient|url\(/i.test(val)) return decl;
+      var c = p.indexOf('background') >= 0 ? (dark ? BGc : BGi)
+        : p === 'color' ? (dark ? TXc : TXi)
+        : p.indexOf('border') >= 0 ? (dark ? BDc : BDi) : null;
+      if (c) val = mapColors(val, c);
       return prop + ':' + val;
     }).join(';');
   }
 
-  var orig = new WeakMap();           // el -> style sáng gốc (do React đặt)
   var applying = false, scheduled = false, btn = null, observer = null;
   function isDark() { try { return localStorage.getItem('nl_theme') === 'dark'; } catch (e) { return false; } }
 
@@ -68,10 +70,9 @@
     for (var i = 0; i < els.length; i++) {
       var el = els[i];
       if (btn && (el === btn || btn.contains(el))) continue;
-      var o = orig.get(el);
-      if (o === undefined) { o = el.getAttribute('style'); orig.set(el, o); }  // nắm bản sáng 1 lần
-      var want = dark ? dk(o) : o;
-      if (el.getAttribute('style') !== want) el.setAttribute('style', want);
+      var cur = el.getAttribute('style');
+      var want = transform(cur, dark);   // thuần & idempotent theo cả 2 chiều
+      if (cur !== want) el.setAttribute('style', want);
     }
     if (dark) { document.documentElement.style.background = '#0f0d15'; document.body.style.background = '#0f0d15'; }
     else { document.documentElement.style.background = ''; document.body.style.background = ''; }
@@ -79,7 +80,7 @@
 
   function apply() {
     applying = true;
-    if (observer) observer.disconnect();          // tránh bắt chính lệnh ghi của mình
+    if (observer) observer.disconnect();
     try { walk(); } catch (e) {}
     styleBtn();
     if (observer) observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['style'] });
@@ -118,10 +119,9 @@
     if (!document.body) { setTimeout(init, 30); return; }
     makeBtn();
     observer = new MutationObserver(function () {
-      if (applying) return;                         // bỏ qua lệnh ghi của chính engine
-      // Chỉ áp lại cho node MỚI (orig nắm 1 lần, không xoá -> tránh nắm nhầm giá trị tối).
+      if (applying) return;
       if (!document.getElementById('nl-theme-btn')) document.body.appendChild(btn);
-      if (isDark()) schedule();
+      schedule();   // re-áp sau mỗi render; ở chế độ sáng đây là no-op (transform idempotent)
     });
     apply();
     setTimeout(apply, 120); setTimeout(apply, 400); setTimeout(apply, 1000);
