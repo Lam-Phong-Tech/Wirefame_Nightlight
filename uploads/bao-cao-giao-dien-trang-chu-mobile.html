@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Báo cáo giao diện Trang chủ Mobile — Phân tích vietkara.info</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink:#FF789D;        /* hồng chủ đạo */
+    --coral:#FE6168;       /* đỏ san hô / CTA */
+    --pink-link:#EC4899;   /* hồng cho link & nhãn */
+    --pink-soft:#FDEBF0;   /* hồng nhạt nền */
+    --ink:#181818;         /* nền tối header/section */
+    --ink2:#2D2427;        /* nền tối phụ (nâu đậm) */
+    --text:#2C3E50;        /* chữ chính */
+    --muted:#6B7280;       /* chữ phụ */
+    --line:#E5E7EB;        /* đường kẻ nhạt */
+    --line2:#D9D9D9;
+    --gold:#E8B84B; --silver:#B9C2CC; --bronze:#C8814B; --rankblue:#5BA6E0; --rankgreen:#5BC08A;
+    --paper:#FBFAF8;
+    --maxw:980px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;color:var(--text);
+    background:
+      radial-gradient(1200px 600px at 100% -5%, #FFF1F5 0%, rgba(255,241,245,0) 55%),
+      radial-gradient(900px 500px at -10% 8%, #FFF6EF 0%, rgba(255,246,239,0) 50%),
+      var(--paper);
+    line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  code,.mono{font-family:"JetBrains Mono",monospace}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:64px 0 30px;position:relative}
+  .kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+  .kicker .dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--coral))}
+  h1{font-size:clamp(30px,5vw,46px);line-height:1.08;font-weight:900;letter-spacing:-.02em;margin:18px 0 10px}
+  h1 .grad{background:linear-gradient(100deg,var(--coral),var(--pink-link));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{font-size:18px;color:#3a4756;max-width:760px}
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .chip{font-size:12.5px;font-weight:600;color:var(--text);background:#fff;border:1px solid var(--line);border-radius:8px;padding:7px 12px;display:inline-flex;gap:7px;align-items:center}
+  .chip b{color:var(--coral)}
+
+  /* ---------- TOC ---------- */
+  .toc{margin:30px 0 8px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:0 10px 30px rgba(20,20,40,.05)}
+  .toc h4{margin:0 0 12px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .toc ol{margin:0;padding:0;list-style:none;counter-reset:t;display:grid;grid-template-columns:1fr 1fr;gap:6px 26px}
+  .toc li{counter-increment:t}
+  .toc a{display:flex;gap:12px;align-items:baseline;text-decoration:none;color:var(--text);padding:7px 8px;border-radius:9px;font-weight:600;font-size:14.5px}
+  .toc a:hover{background:var(--pink-soft);color:var(--coral)}
+  .toc a::before{content:counter(t,decimal-leading-zero);font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--coral);font-weight:700}
+  @media(max-width:680px){.toc ol{grid-template-columns:1fr}}
+
+  /* ---------- SECTION ---------- */
+  section{padding:42px 0;border-top:1px solid var(--line)}
+  .sec-no{font-family:"JetBrains Mono",monospace;font-size:13px;font-weight:700;color:var(--coral);letter-spacing:.05em}
+  h2{font-size:clamp(23px,3.4vw,30px);font-weight:800;letter-spacing:-.01em;margin:6px 0 6px}
+  h3{font-size:18px;font-weight:700;margin:30px 0 10px;display:flex;align-items:center;gap:10px}
+  h3 .b{width:6px;height:20px;border-radius:3px;background:linear-gradient(180deg,var(--pink),var(--coral))}
+  p{margin:12px 0}
+  .sub{color:var(--muted);font-size:15px;max-width:760px;margin-top:2px}
+
+  /* ---------- QUOTE / TRANSCRIPT ---------- */
+  .quote{position:relative;background:linear-gradient(180deg,#fff,#fffdfb);border:1px solid var(--line);border-left:4px solid var(--coral);border-radius:14px;padding:20px 22px;margin:18px 0}
+  .quote .ts{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:700;color:#fff;background:var(--ink);padding:3px 9px;border-radius:6px;margin-bottom:12px}
+  .quote .speaker{font-weight:700;color:var(--coral)}
+  .quote p{margin:8px 0;font-size:15.5px;color:#34414f}
+  .note{font-size:13px;color:var(--muted);font-style:italic;margin-top:8px}
+
+  /* ---------- REQ CARDS ---------- */
+  .reqgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:18px}
+  .req{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;position:relative;overflow:hidden}
+  .req::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:linear-gradient(180deg,var(--pink),var(--coral))}
+  .req .rn{font-family:"JetBrains Mono",monospace;font-weight:700;color:var(--coral);font-size:13px}
+  .req h4{margin:6px 0 6px;font-size:16px}
+  .req p{margin:0;font-size:14px;color:#46535f}
+
+  /* ---------- FLOW / SECTION MAP ---------- */
+  .map{display:flex;flex-direction:column;gap:8px;margin:18px 0;counter-reset:m}
+  .mrow{counter-increment:m;display:grid;grid-template-columns:46px 1fr;gap:14px;align-items:stretch;background:#fff;border:1px solid var(--line);border-radius:12px;padding:0;overflow:hidden}
+  .mrow .idx{background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-weight:700;font-size:14px}
+  .mrow .mbody{padding:13px 16px}
+  .mrow h4{margin:0 0 3px;font-size:15.5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .mrow .jp{font-size:12px;color:var(--muted);font-weight:500}
+  .mrow p{margin:0;font-size:13.5px;color:#4a5662}
+  .pill-tab{font-size:11px;font-weight:700;color:var(--pink-link);background:var(--pink-soft);border-radius:6px;padding:2px 8px}
+
+  /* ---------- DESIGN TOKENS ---------- */
+  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:16px}
+  .sw{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+  .sw .chip-c{height:64px}
+  .sw .info{padding:9px 11px}
+  .sw .name{font-size:12.5px;font-weight:700}
+  .sw .hex{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);margin-top:1px}
+  .sw .role{font-size:11px;color:var(--muted);margin-top:4px}
+
+  .specbox{background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px 4px;margin-top:14px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  tr:last-child td{border-bottom:none}
+  td code{font-size:12.5px;background:var(--pink-soft);color:#b03a63;padding:2px 7px;border-radius:6px}
+  .t-name{font-weight:700}
+
+  /* ---------- WIREFRAME ---------- */
+  .wfwrap{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start;margin-top:18px}
+  @media(max-width:760px){.wfwrap{grid-template-columns:1fr}}
+  .phone{justify-self:center}
+  .legend{display:flex;flex-direction:column;gap:7px}
+  .lrow{display:grid;grid-template-columns:30px 1fr;gap:11px;align-items:start;font-size:14px}
+  .lrow .ln{width:26px;height:26px;border-radius:8px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-weight:700;font-size:12.5px;flex-shrink:0}
+  .lrow b{display:block;font-size:14.5px}
+  .lrow span{color:#4f5b66;font-size:13.5px}
+  .wf-detail{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:26px}
+  @media(max-width:680px){.wf-detail{grid-template-columns:1fr}}
+  .wf-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}
+  .wf-card h4{margin:0 0 4px;font-size:15px}
+  .wf-card p{font-size:13px;color:var(--muted);margin:0 0 12px}
+
+  /* ---------- CALLOUT ---------- */
+  .callout{display:grid;grid-template-columns:44px 1fr;gap:14px;background:linear-gradient(135deg,#fff,var(--pink-soft));border:1px solid #F6C9D8;border-radius:14px;padding:16px 18px;margin:18px 0}
+  .callout .ic{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--pink),var(--coral));display:flex;align-items:center;justify-content:center;font-size:22px}
+  .callout h4{margin:0 0 4px;font-size:15.5px;color:#b03a63}
+  .callout p{margin:0;font-size:14px;color:#5a4750}
+  .callout ul{margin:6px 0 0;padding-left:18px;font-size:14px;color:#5a4750}
+  .callout li{margin:3px 0}
+
+  /* ---------- CHECKLIST ---------- */
+  .checks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+  @media(max-width:680px){.checks{grid-template-columns:1fr}}
+  .ck{display:flex;gap:11px;background:#fff;border:1px solid var(--line);border-radius:11px;padding:12px 14px;font-size:14px}
+  .ck .box{width:19px;height:19px;border:2px solid var(--coral);border-radius:5px;flex-shrink:0;margin-top:2px;position:relative}
+  .ck .box::after{content:"";position:absolute;left:5px;top:1px;width:5px;height:9px;border:solid var(--coral);border-width:0 2px 2px 0;transform:rotate(45deg);opacity:.0}
+  .ck b{font-weight:600}
+  .ck span{display:block;color:var(--muted);font-size:12.5px;margin-top:1px}
+
+  footer.foot{border-top:1px solid var(--line);margin-top:30px;padding:26px 0 60px;color:var(--muted);font-size:13px}
+  .foot a{color:var(--coral);text-decoration:none}
+  .tag{display:inline-block;font-size:11px;font-weight:700;color:#fff;background:var(--coral);border-radius:5px;padding:1px 7px;vertical-align:middle}
+  .tag.alt{background:var(--ink)}
+  .tag.soft{background:var(--pink-soft);color:#b03a63}
+  hr.soft{border:none;border-top:1px dashed var(--line2);margin:26px 0}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker"><span class="dot"></span>Báo cáo phân tích &amp; đề xuất thiết kế</span>
+    <h1>Giao diện <span class="grad">Trang chủ Mobile</span><br>cho dự án karaoke/quán</h1>
+    <p class="lead">Trích yêu cầu khách hàng từ biên bản họp (phút 17:13) và phân tích chi tiết giao diện mobile của <b>vietkara.info</b> — trang mẫu khách đưa ra — kèm hệ thống thiết kế, wireframe và checklist để đội ngũ dựng giao diện.</p>
+    <div class="meta-row">
+      <span class="chip">📄 Nguồn: <b>captions__2_.vtt</b></span>
+      <span class="chip">🔗 Site mẫu: <b>vietkara.info</b> (bản mobile)</span>
+      <span class="chip">📱 Khung phân tích: <b>390 × 844</b></span>
+      <span class="chip">🎯 Mục tiêu: <b>dựng trang chủ mobile</b></span>
+    </div>
+
+    <nav class="toc">
+      <h4>Nội dung báo cáo</h4>
+      <ol>
+        <li><a href="#req">Yêu cầu khách hàng (phút 17:13)</a></li>
+        <li><a href="#analyze">Phân tích giao diện vietkara.info</a></li>
+        <li><a href="#design">Hệ thống thiết kế (màu, font, component)</a></li>
+        <li><a href="#wire">Wireframe trang chủ mobile</a></li>
+        <li><a href="#mapping">Mapping yêu cầu → component</a></li>
+        <li><a href="#reco">Khuyến nghị &amp; khác biệt</a></li>
+        <li><a href="#checklist">Checklist triển khai</a></li>
+      </ol>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ 1. REQUIREMENTS ============ -->
+<section id="req">
+  <div class="wrap">
+    <div class="sec-no">01 — INPUT</div>
+    <h2>Yêu cầu khách hàng tại phút 17:13</h2>
+    <p class="sub">Đoạn khách (anh — chủ dự án) mô tả mong muốn cho trang chủ bản mobile, trích &amp; làm sạch từ phụ đề tự động (16:50 → 17:42).</p>
+
+    <div class="quote">
+      <span class="ts">⏱ 16:50 → 17:42</span>
+      <p><span class="speaker">Dev:</span> "…Anh có gợi ý nào thì em sẽ xây dựng lại trang chủ bản mobile theo ý của anh."</p>
+      <p><span class="speaker">Khách:</span> "Anh thấy cái trang hôm nọ anh gửi trong nhóm — trang <b>Việt Kara</b> ấy — nó có phần <b>ranking</b>, anh thấy khá hay. Các em xem để tham khảo. Nó sẽ có như một cái <b>tab</b> chẳng hạn, đúng không? Ví dụ tab là <b>video</b>, sau đó video sẽ hiện ở <b>Hà Nội</b> này, à <b>thành phố Hồ Chí Minh</b> chẳng hạn — kích vào đó thì nó ra <b>danh sách</b>. Tương tự, các <b>quán xếp hạng</b> cũng vậy: các quán từ 1 đến 5… (1 đến 10 cũng được) nhưng anh muốn làm <b>từ 1 đến 5 quán thôi</b> — ở Hà Nội này, ở TP. Hồ Chí Minh này, và một cái là <b>tổng hợp ở các chỗ khác</b>."</p>
+      <p><span class="speaker">Dev:</span> "Dạ vâng, em hiểu rồi ạ."</p>
+      <p class="note">* Văn bản đã được làm sạch từ phụ đề auto (YouTube), giữ nguyên ý. "Việt Kara" = vietkara.info.</p>
+    </div>
+
+    <h3><span class="b"></span>Bóc tách thành yêu cầu cụ thể</h3>
+    <div class="reqgrid">
+      <div class="req">
+        <div class="rn">YC-01</div>
+        <h4>Dựng lại Trang chủ — bản Mobile</h4>
+        <p>Trang chủ là một trong những trang quan trọng nhất (khách nhấn mạnh ở 16:37). Thiết kế ưu tiên mobile-first.</p>
+      </div>
+      <div class="req">
+        <div class="rn">YC-02</div>
+        <h4>Lấy vietkara.info làm tham chiếu</h4>
+        <p>Đặc biệt thích khối <b>ranking / xếp hạng</b>. Dùng làm chuẩn bố cục &amp; tương tác, không sao chép nội dung.</p>
+      </div>
+      <div class="req">
+        <div class="rn">YC-03</div>
+        <h4>Cấu trúc Tab theo thành phố</h4>
+        <p>Mỗi khối có tab lọc: <span class="pill-tab">Tất cả</span> <span class="pill-tab">Hà Nội</span> <span class="pill-tab">TP.HCM</span>. Bấm tab → đổi danh sách tương ứng.</p>
+      </div>
+      <div class="req">
+        <div class="rn">YC-04</div>
+        <h4>Khối Video theo thành phố</h4>
+        <p>Tab "Video": hiển thị video theo Hà Nội / TP.HCM; chạm vào ra danh sách video của thành phố đó.</p>
+      </div>
+      <div class="req">
+        <div class="rn">YC-05</div>
+        <h4>Khối Xếp hạng quán — Top 5</h4>
+        <p>Bảng xếp hạng quán theo thành phố, <b>giới hạn Top 1→5</b> (không phải 1→10) cho mỗi thành phố.</p>
+      </div>
+      <div class="req">
+        <div class="rn">YC-06</div>
+        <h4>Phạm vi: HN · HCM · Tổng hợp</h4>
+        <p>Ba nhóm: <b>Hà Nội</b>, <b>TP. Hồ Chí Minh</b>, và <b>Tổng hợp</b> (các tỉnh/khu vực khác).</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="ic">🗓</div>
+      <div>
+        <h4>Mốc thời gian thống nhất trong buổi họp (≈ 18:30 → 19:50)</h4>
+        <p>Đội dev tự triển khai trước theo cấu trúc đã thống nhất; dự kiến <b>thứ Hai có giao diện + data hiển thị</b>, sau đó tổ chức buổi họp review để khách góp ý chỉnh sửa. Khách sẽ tổng hợp danh sách yêu cầu để dev làm theo cho nhanh.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. ANALYSIS ============ -->
+<section id="analyze">
+  <div class="wrap">
+    <div class="sec-no">02 — TEARDOWN</div>
+    <h2>Phân tích giao diện vietkara.info (bản mobile)</h2>
+    <p class="sub">Trang chủ mobile xếp dọc thành 9 khối. Điểm mấu chốt: <b>khối Video</b> và <b>2 khối Ranking</b> đều dùng đúng mô-típ <b>Tab theo thành phố</b> mà khách mô tả.</p>
+
+    <div class="map">
+      <div class="mrow"><div class="idx">1</div><div class="mbody">
+        <h4>Header dính (sticky) <span class="jp">ヘッダー</span></h4>
+        <p>Nền tối. Trái: nút menu (☰). Giữa: logo + tagline "Produced by VIETNAM × KARAOKE". Phải: nút đăng nhập (🔒). Cả 3 nổi trên nền hồng bo góc.</p>
+      </div></div>
+      <div class="mrow"><div class="idx">2</div><div class="mbody">
+        <h4>Breadcrumb</h4>
+        <p>Thanh nền sáng mảnh hiển thị vị trí hiện tại ("Trang chủ").</p>
+      </div></div>
+      <div class="mrow"><div class="idx">3</div><div class="mbody">
+        <h4>Nổi bật / Close-up <span class="jp">クローズアップ</span></h4>
+        <p>Tiêu đề khối nền tối, chữ trắng canh giữa. Bên dưới là <b>carousel</b> full-width: ảnh quán + overlay (vị trí · tên quán · model), nút ‹ › và chấm chỉ trang, kèm nút CTA hồng.</p>
+      </div></div>
+      <div class="mrow"><div class="idx">4</div><div class="mbody">
+        <h4>Menu chính <span class="jp">メインメニュー</span></h4>
+        <p>Lưới card danh mục có ảnh + thanh nhãn hồng: <b>2 card lớn</b> (Tìm quán · Tìm cast) + <b>4 card nhỏ</b> (Ưu đãi · Sự kiện · Gravure · Blog). Card chưa sẵn sàng ghi "đang chuẩn bị".</p>
+      </div></div>
+      <div class="mrow"><div class="idx">5</div><div class="mbody">
+        <h4>Video SNS mới <span class="jp">新着SNS動画コンテンツ</span> &nbsp;<span class="pill-tab">Tất cả</span><span class="pill-tab">Hà Nội</span><span class="pill-tab">HCM</span></h4>
+        <p><b>Mô-típ khách thích #1.</b> Hàng tab lọc theo thành phố. Bên dưới là <b>card video cuộn ngang</b>: avatar tròn + tên quán + nhãn vị trí + thumbnail video.</p>
+      </div></div>
+      <div class="mrow"><div class="idx">6</div><div class="mbody">
+        <h4>Xếp hạng quán <span class="jp">店舗アクセスランキング</span> &nbsp;<span class="pill-tab">Tất cả</span><span class="pill-tab">Hà Nội</span><span class="pill-tab">HCM</span></h4>
+        <p><b>Mô-típ khách thích #2.</b> Tab thành phố + thanh phụ ghi kỳ ("Tháng 5/2026" · "Cập nhật 31/5"). Danh sách dọc, mỗi dòng: avatar tròn · <b>vương miện thứ hạng</b> (vàng/bạc/đồng…) · tên quán · nhãn vị trí.</p>
+      </div></div>
+      <div class="mrow"><div class="idx">7</div><div class="mbody">
+        <h4>Xếp hạng cast <span class="jp">キャストアクセスランキング</span> &nbsp;<span class="pill-tab">Tất cả</span><span class="pill-tab">Hà Nội</span><span class="pill-tab">HCM</span></h4>
+        <p>Cùng cấu trúc khối #6, dành cho nhân sự/cast. (Hiện chưa có dữ liệu → trạng thái rỗng "Chưa có dữ liệu".)</p>
+      </div></div>
+      <div class="mrow"><div class="idx">8</div><div class="mbody">
+        <h4>Tin mới <span class="jp">新着情報</span></h4>
+        <p>Feed cập nhật mới nhất: mỗi dòng có avatar tròn + ngày + tên quán + nội dung ("Cập nhật cast …"). Có chèn banner quảng cáo giữa các khối.</p>
+      </div></div>
+      <div class="mrow"><div class="idx">9</div><div class="mbody">
+        <h4>Footer</h4>
+        <p>Nền tối. Hàng link (Tìm quán · Tìm cast · Gravure · Ưu đãi · Sự kiện · Liên hệ · Chính sách · Điều khoản) + cảnh báo độ tuổi + bản quyền.</p>
+      </div></div>
+    </div>
+
+    <div class="callout">
+      <div class="ic">🧩</div>
+      <div>
+        <h4>Phát hiện quan trọng</h4>
+        <p>Cấu trúc <b>Tab thành phố (Tất cả · Hà Nội · TP.HCM)</b> được dùng <b>nhất quán cho cả 3 khối</b> Video, Xếp hạng quán và Xếp hạng cast — đây chính xác là điều khách yêu cầu. Vietkara hiển thị tới 10+ hạng; khách chỉ muốn <b>Top 5</b>. Ngoài ra có thêm các thành phần phụ trợ (sticky header, nút back-to-top, banner quảng cáo, trạng thái rỗng) cần lưu ý khi dựng.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. DESIGN SYSTEM ============ -->
+<section id="design">
+  <div class="wrap">
+    <div class="sec-no">03 — DESIGN SYSTEM</div>
+    <h2>Hệ thống thiết kế</h2>
+    <p class="sub">Trích trực tiếp từ CSS thực tế của vietkara.info để bạn tái dựng đồng bộ. Bạn có thể giữ tông này hoặc điều chỉnh theo nhận diện thương hiệu của khách.</p>
+
+    <h3><span class="b"></span>Bảng màu</h3>
+    <div class="swatches">
+      <div class="sw"><div class="chip-c" style="background:#FF789D"></div><div class="info"><div class="name">Pink — chủ đạo</div><div class="hex">#FF789D</div><div class="role">Tab active · nhãn · CTA</div></div></div>
+      <div class="sw"><div class="chip-c" style="background:#FE6168"></div><div class="info"><div class="name">Coral — nhấn</div><div class="hex">#FE6168</div><div class="role">Overlay · nút · gradient</div></div></div>
+      <div class="sw"><div class="chip-c" style="background:#EC4899"></div><div class="info"><div class="name">Pink link</div><div class="hex">#EC4899</div><div class="role">Link · nhãn vị trí</div></div></div>
+      <div class="sw"><div class="chip-c" style="background:#FDEBF0"></div><div class="info"><div class="name">Pink soft</div><div class="hex">#FDEBF0</div><div class="role">Nền nhạt · chip</div></div></div>
+      <div class="sw"><div class="chip-c" style="background:#181818"></div><div class="info"><div class="name">Ink — nền tối</div><div class="hex">#181818</div><div class="role">Header · tiêu đề khối</div></div></div>
+      <div class="sw"><div class="chip-c" style="background:#2D2427"></div><div class="info"><div class="name">Ink 2 — nâu đậm</div><div class="hex">#2D2427</div><div class="role">Footer · nền phụ</div></div></div>
+      <div class="sw"><div class="chip-c" style="background:#2C3E50"></div><div class="info"><div class="name">Text</div><div class="hex">#2C3E50</div><div class="role">Chữ chính</div></div></div>
+      <div class="sw"><div class="chip-c" style="background:#6B7280"></div><div class="info"><div class="name">Muted</div><div class="hex">#6B7280</div><div class="role">Chữ phụ</div></div></div>
+      <div class="sw"><div class="chip-c" style="background:#D9D9D9"></div><div class="info"><div class="name">Divider</div><div class="hex">#D9D9D9</div><div class="role">Đường kẻ · tab off</div></div></div>
+    </div>
+
+    <h3><span class="b"></span>Màu huy hiệu thứ hạng (vương miện)</h3>
+    <div class="swatches">
+      <div class="sw"><div class="chip-c" style="background:#E8B84B"></div><div class="info"><div class="name">Hạng 1 — Vàng</div><div class="hex">#E8B84B</div></div></div>
+      <div class="sw"><div class="chip-c" style="background:#B9C2CC"></div><div class="info"><div class="name">Hạng 2 — Bạc</div><div class="hex">#B9C2CC</div></div></div>
+      <div class="sw"><div class="chip-c" style="background:#C8814B"></div><div class="info"><div class="name">Hạng 3 — Đồng</div><div class="hex">#C8814B</div></div></div>
+      <div class="sw"><div class="chip-c" style="background:#5BC08A"></div><div class="info"><div class="name">Hạng 4 — Xanh lá</div><div class="hex">#5BC08A</div></div></div>
+      <div class="sw"><div class="chip-c" style="background:#5BA6E0"></div><div class="info"><div class="name">Hạng 5 — Xanh dương</div><div class="hex">#5BA6E0</div></div></div>
+    </div>
+
+    <h3><span class="b"></span>Typography &amp; thông số</h3>
+    <div class="specbox">
+      <table>
+        <thead><tr><th style="width:30%">Hạng mục</th><th>Giá trị thực tế trên vietkara.info</th></tr></thead>
+        <tbody>
+          <tr><td class="t-name">Font chữ</td><td><code>Inter</code> + fallback hệ thống (system-ui, -apple-system, Segoe UI, Roboto). Hỗ trợ tiếng Việt tốt.</td></tr>
+          <tr><td class="t-name">Trọng số dùng</td><td>400 (body) · 600–700 (tên quán, nhãn) · 800–900 (tiêu đề khối)</td></tr>
+          <tr><td class="t-name">Nền trang</td><td><code>#FFFFFF</code> — sáng, để ảnh quán/cast nổi bật</td></tr>
+          <tr><td class="t-name">Tiêu đề khối</td><td>Thanh nền tối, chữ trắng <b>canh giữa</b>, in đậm, kèm gạch chân hồng</td></tr>
+          <tr><td class="t-name">Tab</td><td>Pill bo góc. Active = nền hồng <code>#FF789D</code> chữ trắng; Off = nền xám nhạt chữ tối</td></tr>
+          <tr><td class="t-name">Bo góc</td><td>Card &amp; nút bo mềm (≈ 8–14px); avatar &amp; logo bo tròn 50%</td></tr>
+          <tr><td class="t-name">Thành phần phụ trợ</td><td>Header sticky · nút back-to-top (góc phải dưới) · banner quảng cáo dính đáy · trạng thái rỗng "Chưa có dữ liệu"</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. WIREFRAME ============ -->
+<section id="wire">
+  <div class="wrap">
+    <div class="sec-no">04 — BLUEPRINT</div>
+    <h2>Wireframe Trang chủ Mobile</h2>
+    <p class="sub">Bố cục đề xuất (vẽ lại theo cấu trúc vietkara, đã rút gọn Ranking về Top 5 theo yêu cầu khách). Đối chiếu số thứ tự với chú thích bên cạnh.</p>
+
+    <div class="wfwrap">
+      <div class="phone">
+        <!-- PHONE WIREFRAME -->
+        <svg width="320" height="1180" viewBox="0 0 320 1180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wireframe trang chủ mobile" style="filter:drop-shadow(0 18px 40px rgba(20,20,40,.12))">
+          <defs>
+            <linearGradient id="g-pc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF789D"/><stop offset="1" stop-color="#FE6168"/></linearGradient>
+          </defs>
+          <!-- frame -->
+          <rect x="4" y="4" width="312" height="1172" rx="26" fill="#fff" stroke="#222" stroke-width="2.5"/>
+          <rect x="14" y="14" width="292" height="1152" rx="18" fill="#FBFAF8"/>
+
+          <!-- 1 header -->
+          <rect x="14" y="14" width="292" height="50" rx="0" fill="#181818"/>
+          <rect x="26" y="29" width="22" height="20" rx="5" fill="url(#g-pc)"/>
+          <rect x="132" y="26" width="56" height="14" rx="3" fill="#FF9CB6"/>
+          <rect x="142" y="44" width="36" height="6" rx="3" fill="#6b5b60"/>
+          <rect x="272" y="29" width="22" height="20" rx="5" fill="url(#g-pc)"/>
+          <circle cx="9" cy="40" r="0"/>
+          <text x="300" y="58" font-size="10" fill="#FE6168" font-family="monospace" font-weight="700" text-anchor="end">①</text>
+
+          <!-- 2 breadcrumb -->
+          <rect x="14" y="64" width="292" height="20" fill="#fff" stroke="#eee"/>
+          <rect x="26" y="71" width="40" height="7" rx="3" fill="#cfd6dd"/>
+          <text x="300" y="78" font-size="9" fill="#FE6168" font-family="monospace" font-weight="700" text-anchor="end">②</text>
+
+          <!-- 3 close-up -->
+          <rect x="14" y="84" width="292" height="22" fill="#2D2427"/>
+          <rect x="120" y="91" width="80" height="8" rx="4" fill="#fff" opacity=".8"/>
+          <rect x="14" y="106" width="292" height="150" fill="#ECEFF2"/>
+          <path d="M22 181 l10 -10 v20 z" fill="#9aa6b1"/>
+          <path d="M298 181 l-10 -10 v20 z" fill="#9aa6b1"/>
+          <rect x="14" y="224" width="292" height="32" fill="url(#g-pc)" opacity=".92"/>
+          <rect x="26" y="231" width="120" height="7" rx="3" fill="#fff" opacity=".85"/>
+          <rect x="26" y="243" width="80" height="7" rx="3" fill="#fff" opacity=".6"/>
+          <rect x="130" y="262" width="64" height="3" rx="2" fill="#cfd6dd"/>
+          <rect x="92" y="270" width="136" height="22" rx="11" fill="url(#g-pc)"/>
+          <text x="306" y="120" font-size="10" fill="#FE6168" font-family="monospace" font-weight="700" text-anchor="end">③</text>
+
+          <!-- 4 main menu -->
+          <rect x="14" y="300" width="292" height="22" fill="#181818"/>
+          <rect x="118" y="307" width="84" height="8" rx="4" fill="#fff" opacity=".8"/>
+          <!-- 2 big -->
+          <g>
+            <rect x="26" y="332" width="130" height="58" rx="8" fill="#E7EBEF"/><rect x="26" y="374" width="130" height="16" rx="0" fill="url(#g-pc)"/>
+            <rect x="164" y="332" width="130" height="58" rx="8" fill="#E7EBEF"/><rect x="164" y="374" width="130" height="16" rx="0" fill="url(#g-pc)"/>
+          </g>
+          <!-- 4 small -->
+          <g>
+            <rect x="26" y="398" width="62" height="46" rx="7" fill="#E7EBEF"/><rect x="26" y="432" width="62" height="12" fill="url(#g-pc)"/>
+            <rect x="94" y="398" width="62" height="46" rx="7" fill="#E7EBEF"/><rect x="94" y="432" width="62" height="12" fill="url(#g-pc)"/>
+            <rect x="162" y="398" width="62" height="46" rx="7" fill="#E7EBEF"/><rect x="162" y="432" width="62" height="12" fill="url(#g-pc)"/>
+            <rect x="230" y="398" width="64" height="46" rx="7" fill="#E7EBEF"/><rect x="230" y="432" width="64" height="12" fill="#cdb6bd"/>
+          </g>
+          <text x="306" y="316" font-size="10" fill="#FE6168" font-family="monospace" font-weight="700" text-anchor="end">④</text>
+
+          <!-- 5 video -->
+          <rect x="14" y="460" width="292" height="22" fill="#181818"/>
+          <rect x="110" y="467" width="100" height="8" rx="4" fill="#fff" opacity=".8"/>
+          <!-- tabs -->
+          <rect x="26" y="490" width="76" height="22" rx="6" fill="url(#g-pc)"/><rect x="44" y="498" width="40" height="6" rx="3" fill="#fff"/>
+          <rect x="110" y="490" width="86" height="22" rx="6" fill="#E2E5E9"/><rect x="132" y="498" width="42" height="6" rx="3" fill="#aeb6bf"/>
+          <rect x="204" y="490" width="90" height="22" rx="6" fill="#E2E5E9"/><rect x="228" y="498" width="42" height="6" rx="3" fill="#aeb6bf"/>
+          <!-- horizontal video cards -->
+          <rect x="26" y="522" width="150" height="96" rx="9" fill="#fff" stroke="#e3e6ea"/>
+          <circle cx="48" cy="544" r="12" fill="#dfe4e9"/><rect x="68" y="538" width="80" height="7" rx="3" fill="#c2cad2"/><rect x="68" y="549" width="60" height="5" rx="2" fill="#EC4899" opacity=".5"/>
+          <rect x="36" y="564" width="130" height="44" rx="6" fill="#E7EBEF"/>
+          <rect x="186" y="522" width="150" height="96" rx="9" fill="#fff" stroke="#e3e6ea"/>
+          <circle cx="208" cy="544" r="12" fill="#dfe4e9"/><rect x="228" y="538" width="80" height="7" rx="3" fill="#c2cad2"/>
+          <rect x="196" y="564" width="130" height="44" rx="6" fill="#E7EBEF"/>
+          <text x="306" y="476" font-size="10" fill="#FE6168" font-family="monospace" font-weight="700" text-anchor="end">⑤</text>
+
+          <!-- 6 ranking shops -->
+          <rect x="14" y="632" width="292" height="22" fill="#181818"/>
+          <rect x="104" y="639" width="112" height="8" rx="4" fill="#fff" opacity=".8"/>
+          <rect x="26" y="662" width="76" height="22" rx="6" fill="url(#g-pc)"/><rect x="44" y="670" width="40" height="6" rx="3" fill="#fff"/>
+          <rect x="110" y="662" width="86" height="22" rx="6" fill="#E2E5E9"/>
+          <rect x="204" y="662" width="90" height="22" rx="6" fill="#E2E5E9"/>
+          <rect x="26" y="690" width="268" height="16" fill="#FDEBF0"/><rect x="34" y="695" width="70" height="6" rx="3" fill="#d98aa6"/><rect x="226" y="695" width="60" height="6" rx="3" fill="#d98aa6"/>
+          <!-- rank rows top 5 -->
+          <g font-family="monospace" font-weight="700" font-size="8" text-anchor="middle">
+            <!-- row template -->
+            <g>
+              <rect x="26" y="710" width="268" height="34" fill="#fff" stroke="#eef0f2"/>
+              <circle cx="46" cy="727" r="13" fill="#e3e8ec"/>
+              <path d="M64 720 l6 -6 6 6 6 -6 v8 h-18 z" fill="#E8B84B"/><text x="73" y="727" fill="#7a5a16">1</text>
+              <rect x="92" y="720" width="120" height="7" rx="3" fill="#c2cad2"/><rect x="92" y="731" width="80" height="5" rx="2" fill="#EC4899" opacity=".5"/>
+            </g>
+            <g>
+              <rect x="26" y="744" width="268" height="34" fill="#fff" stroke="#eef0f2"/>
+              <circle cx="46" cy="761" r="13" fill="#e3e8ec"/>
+              <path d="M64 754 l6 -6 6 6 6 -6 v8 h-18 z" fill="#B9C2CC"/><text x="73" y="761" fill="#5b626b">2</text>
+              <rect x="92" y="754" width="110" height="7" rx="3" fill="#c2cad2"/><rect x="92" y="765" width="80" height="5" rx="2" fill="#EC4899" opacity=".5"/>
+            </g>
+            <g>
+              <rect x="26" y="778" width="268" height="34" fill="#fff" stroke="#eef0f2"/>
+              <circle cx="46" cy="795" r="13" fill="#e3e8ec"/>
+              <path d="M64 788 l6 -6 6 6 6 -6 v8 h-18 z" fill="#C8814B"/><text x="73" y="795" fill="#fff">3</text>
+              <rect x="92" y="788" width="118" height="7" rx="3" fill="#c2cad2"/><rect x="92" y="799" width="80" height="5" rx="2" fill="#EC4899" opacity=".5"/>
+            </g>
+            <g>
+              <rect x="26" y="812" width="268" height="34" fill="#fff" stroke="#eef0f2"/>
+              <circle cx="46" cy="829" r="13" fill="#e3e8ec"/>
+              <path d="M64 822 l6 -6 6 6 6 -6 v8 h-18 z" fill="#5BC08A"/><text x="73" y="829" fill="#fff">4</text>
+              <rect x="92" y="822" width="104" height="7" rx="3" fill="#c2cad2"/><rect x="92" y="833" width="80" height="5" rx="2" fill="#EC4899" opacity=".5"/>
+            </g>
+            <g>
+              <rect x="26" y="846" width="268" height="34" fill="#fff" stroke="#eef0f2"/>
+              <circle cx="46" cy="863" r="13" fill="#e3e8ec"/>
+              <path d="M64 856 l6 -6 6 6 6 -6 v8 h-18 z" fill="#5BA6E0"/><text x="73" y="863" fill="#fff">5</text>
+              <rect x="92" y="856" width="112" height="7" rx="3" fill="#c2cad2"/><rect x="92" y="867" width="80" height="5" rx="2" fill="#EC4899" opacity=".5"/>
+            </g>
+          </g>
+          <text x="306" y="648" font-size="10" fill="#FE6168" font-family="monospace" font-weight="700" text-anchor="end">⑥</text>
+
+          <!-- 7 ranking cast (collapsed) -->
+          <rect x="14" y="888" width="292" height="22" fill="#181818"/>
+          <rect x="104" y="895" width="112" height="8" rx="4" fill="#fff" opacity=".8"/>
+          <rect x="26" y="918" width="76" height="22" rx="6" fill="url(#g-pc)"/>
+          <rect x="110" y="918" width="86" height="22" rx="6" fill="#E2E5E9"/>
+          <rect x="204" y="918" width="90" height="22" rx="6" fill="#E2E5E9"/>
+          <rect x="26" y="948" width="268" height="40" rx="6" fill="#fff" stroke="#eef0f2"/>
+          <text x="160" y="972" font-size="9" fill="#aab2bb" text-anchor="middle" font-family="monospace">Cùng cấu trúc khối ⑥ (cast)</text>
+          <text x="306" y="904" font-size="10" fill="#FE6168" font-family="monospace" font-weight="700" text-anchor="end">⑦</text>
+
+          <!-- 8 news -->
+          <rect x="14" y="998" width="292" height="22" fill="#181818"/>
+          <rect x="130" y="1005" width="60" height="8" rx="4" fill="#fff" opacity=".8"/>
+          <g>
+            <rect x="26" y="1028" width="268" height="30" fill="#fff" stroke="#eef0f2"/><circle cx="44" cy="1043" r="11" fill="#e3e8ec"/><rect x="64" y="1034" width="50" height="5" rx="2" fill="#EC4899" opacity=".5"/><rect x="64" y="1044" width="140" height="6" rx="3" fill="#c2cad2"/>
+            <rect x="26" y="1060" width="268" height="30" fill="#fff" stroke="#eef0f2"/><circle cx="44" cy="1075" r="11" fill="#e3e8ec"/><rect x="64" y="1066" width="50" height="5" rx="2" fill="#EC4899" opacity=".5"/><rect x="64" y="1076" width="120" height="6" rx="3" fill="#c2cad2"/>
+          </g>
+          <text x="306" y="1014" font-size="10" fill="#FE6168" font-family="monospace" font-weight="700" text-anchor="end">⑧</text>
+
+          <!-- 9 footer -->
+          <rect x="14" y="1100" width="292" height="66" rx="0" fill="#2D2427"/>
+          <rect x="14" y="1148" width="292" height="18" fill="#181818"/>
+          <g fill="#7d6e72">
+            <rect x="30" y="1116" width="50" height="6" rx="3"/><rect x="90" y="1116" width="50" height="6" rx="3"/><rect x="150" y="1116" width="50" height="6" rx="3"/><rect x="210" y="1116" width="60" height="6" rx="3"/>
+            <rect x="30" y="1130" width="50" height="6" rx="3"/><rect x="90" y="1130" width="50" height="6" rx="3"/><rect x="150" y="1130" width="60" height="6" rx="3"/>
+          </g>
+          <text x="306" y="1116" font-size="10" fill="#FE6168" font-family="monospace" font-weight="700" text-anchor="end">⑨</text>
+
+          <!-- back to top floating -->
+          <circle cx="288" cy="1078" r="13" fill="url(#g-pc)"/><path d="M288 1073 l-5 6 h10 z" fill="#fff"/>
+        </svg>
+      </div>
+
+      <div class="legend">
+        <div class="lrow"><div class="ln">1</div><div><b>Header sticky</b><span>☰ menu · logo + tagline · 🔒 đăng nhập. Dính khi cuộn.</span></div></div>
+        <div class="lrow"><div class="ln">2</div><div><b>Breadcrumb</b><span>Hiển thị vị trí hiện tại — "Trang chủ".</span></div></div>
+        <div class="lrow"><div class="ln">3</div><div><b>Khối Nổi bật (carousel)</b><span>Ảnh quán full-width + overlay + ‹ › + chấm trang + nút CTA.</span></div></div>
+        <div class="lrow"><div class="ln">4</div><div><b>Menu chính</b><span>Lưới 2 card lớn + 4 card nhỏ, mỗi card có thanh nhãn hồng.</span></div></div>
+        <div class="lrow"><div class="ln">5</div><div><b>Video SNS</b> <span class="tag soft">Tab thành phố</span><span>Tab Tất cả/HN/HCM + card video cuộn ngang. <i>(YC-03, YC-04)</i></span></div></div>
+        <div class="lrow"><div class="ln">6</div><div><b>Xếp hạng quán — Top 5</b> <span class="tag soft">Tab thành phố</span><span>Tab + thanh kỳ + 5 dòng có vương miện thứ hạng. <i>(YC-05, YC-06)</i></span></div></div>
+        <div class="lrow"><div class="ln">7</div><div><b>Xếp hạng cast</b><span>Tái dùng đúng cấu trúc khối 6 (tuỳ chọn nếu dự án có cast).</span></div></div>
+        <div class="lrow"><div class="ln">8</div><div><b>Tin mới</b><span>Feed cập nhật: avatar + ngày + tên quán + nội dung.</span></div></div>
+        <div class="lrow"><div class="ln">9</div><div><b>Footer</b><span>Hàng link + cảnh báo độ tuổi + bản quyền.</span></div></div>
+        <div class="lrow"><div class="ln">↑</div><div><b>Nút back-to-top</b><span>Nổi góc phải dưới khi cuộn.</span></div></div>
+      </div>
+    </div>
+
+    <div class="wf-detail">
+      <!-- Tab anatomy -->
+      <div class="wf-card">
+        <h4>Giải phẫu: Khối có Tab thành phố</h4>
+        <p>Mô-típ tái sử dụng cho Video &amp; Ranking (YC-03).</p>
+        <svg width="100%" viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="g-t" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF789D"/><stop offset="1" stop-color="#FE6168"/></linearGradient></defs>
+          <rect x="0" y="0" width="360" height="30" fill="#181818" rx="5"/><rect x="120" y="11" width="120" height="8" rx="4" fill="#fff" opacity=".8"/>
+          <text x="354" y="20" font-size="9" fill="#FE6168" text-anchor="end" font-family="monospace">Tiêu đề khối</text>
+          <!-- tabs -->
+          <rect x="0" y="42" width="100" height="30" rx="8" fill="url(#g-t)"/><text x="50" y="61" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">Tất cả</text>
+          <rect x="110" y="42" width="110" height="30" rx="8" fill="#E2E5E9"/><text x="165" y="61" font-size="11" fill="#7c858e" text-anchor="middle" font-weight="700">Hà Nội</text>
+          <rect x="230" y="42" width="130" height="30" rx="8" fill="#E2E5E9"/><text x="295" y="61" font-size="11" fill="#7c858e" text-anchor="middle" font-weight="700">TP.HCM</text>
+          <text x="50" y="90" font-size="8.5" fill="#FE6168" text-anchor="middle" font-family="monospace">active</text>
+          <!-- content -->
+          <rect x="0" y="100" width="360" height="20" rx="4" fill="#FDEBF0"/><text x="8" y="114" font-size="9" fill="#b03a63" font-family="monospace">Kỳ: Tháng 5/2026 · cập nhật 31/5 (chỉ khối ranking)</text>
+          <rect x="0" y="128" width="360" height="30" rx="6" fill="#fff" stroke="#e7eaed"/>
+          <rect x="0" y="164" width="360" height="30" rx="6" fill="#fff" stroke="#e7eaed"/>
+          <text x="180" y="183" font-size="10" fill="#aab2bb" text-anchor="middle">↑ danh sách đổi theo tab đang chọn</text>
+        </svg>
+      </div>
+
+      <!-- Rank item anatomy -->
+      <div class="wf-card">
+        <h4>Giải phẫu: Dòng xếp hạng quán</h4>
+        <p>Avatar · vương miện thứ hạng · tên · vị trí (YC-05).</p>
+        <svg width="100%" viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="40" width="360" height="64" rx="10" fill="#fff" stroke="#e7eaed"/>
+          <circle cx="44" cy="72" r="24" fill="#e3e8ec"/>
+          <text x="44" y="118" font-size="9" fill="#6B7280" text-anchor="middle" font-family="monospace">avatar</text>
+          <!-- crown -->
+          <path d="M86 58 l9 -10 9 10 9 -10 v13 h-27 z" fill="#E8B84B"/><text x="99" y="69" font-size="9" fill="#7a5a16" text-anchor="middle" font-weight="700" font-family="monospace">1</text>
+          <text x="99" y="34" font-size="9" fill="#FE6168" text-anchor="middle" font-family="monospace">vương miện</text>
+          <rect x="86" y="76" width="150" height="9" rx="4" fill="#c2cad2"/>
+          <text x="86" y="98" font-size="9" fill="#9aa3ac" font-family="monospace">tên quán →</text>
+          <rect x="86" y="90" width="110" height="7" rx="3" fill="#EC4899" opacity=".55"/>
+          <text x="330" y="156" font-size="9" fill="#6B7280" text-anchor="end" font-family="monospace">nhãn vị trí (hồng)</text>
+          <line x1="200" y1="93" x2="300" y2="150" stroke="#d9b3c2" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="180" y="186" font-size="9.5" fill="#FE6168" text-anchor="middle" font-weight="700">Lặp lại 5 dòng → Top 5</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. MAPPING ============ -->
+<section id="mapping">
+  <div class="wrap">
+    <div class="sec-no">05 — TRACEABILITY</div>
+    <h2>Mapping: Yêu cầu khách → Component cần dựng</h2>
+    <p class="sub">Bảng truy vết để khi review không sót yêu cầu nào.</p>
+    <div class="specbox">
+      <table>
+        <thead><tr><th style="width:14%">Mã</th><th style="width:30%">Yêu cầu</th><th style="width:30%">Component / màn hình</th><th>Ghi chú triển khai</th></tr></thead>
+        <tbody>
+          <tr><td><code>YC-01</code></td><td class="t-name">Trang chủ mobile</td><td>Layout mobile-first, các khối xếp dọc</td><td>Breakpoint chính ≤ 430px; container 100% width</td></tr>
+          <tr><td><code>YC-02</code></td><td class="t-name">Tham chiếu vietkara — ranking</td><td>Khối <b>Xếp hạng</b> (⑥/⑦)</td><td>Giữ mô-típ vương miện + tab; nội dung của khách</td></tr>
+          <tr><td><code>YC-03</code></td><td class="t-name">Tab theo thành phố</td><td><b>Component Tab</b> tái sử dụng (Tất cả/HN/HCM)</td><td>1 component dùng chung cho 3 khối; trạng thái active hồng</td></tr>
+          <tr><td><code>YC-04</code></td><td class="t-name">Video theo thành phố</td><td>Khối <b>Video</b> (⑤) — card cuộn ngang</td><td>Lazy-load thumbnail; lọc theo tab; chạm → trang/danh sách video</td></tr>
+          <tr><td><code>YC-05</code></td><td class="t-name">Xếp hạng quán Top 5</td><td>Khối <b>Ranking quán</b> (⑥) — list 5 dòng</td><td><b>Giới hạn cứng 5 item</b>/tab; vương miện vàng-bạc-đồng-lá-dương</td></tr>
+          <tr><td><code>YC-06</code></td><td class="t-name">HN · HCM · Tổng hợp</td><td>3 giá trị tab cho mọi khối lọc</td><td>"Tất cả/Tổng hợp" = gộp toàn bộ khu vực</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. RECOMMENDATIONS ============ -->
+<section id="reco">
+  <div class="wrap">
+    <div class="sec-no">06 — ADVICE</div>
+    <h2>Khuyến nghị &amp; điểm khác biệt so với vietkara</h2>
+
+    <div class="callout">
+      <div class="ic">✂️</div>
+      <div>
+        <h4>Rút gọn theo đúng yêu cầu khách</h4>
+        <ul>
+          <li><b>Top 5 thay vì 10+:</b> vietkara hiển thị nhiều hạng; khách chỉ muốn <b>5</b>. Có thể thêm nút "Xem tất cả" dẫn sang trang xếp hạng đầy đủ.</li>
+          <li><b>Tab thống nhất:</b> dùng <b>một component tab dùng chung</b> cho Video + Ranking để đồng bộ và dễ bảo trì.</li>
+          <li><b>Tổng hợp:</b> làm rõ nhãn — "Tất cả" (toàn quốc) vs "Hà Nội" vs "TP.HCM".</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="ic">⚡</div>
+      <div>
+        <h4>Cải thiện trải nghiệm mobile</h4>
+        <ul>
+          <li><b>Banner quảng cáo dính đáy</b> của vietkara che mất footer khi cuộn — nên cho phép đóng hoặc đặt non-sticky để không cản nội dung.</li>
+          <li><b>Trạng thái rỗng</b> ("Chưa có dữ liệu") cần thiết kế tử tế cho khối ranking/video khi data chưa về — tránh khoảng trắng trống trơn.</li>
+          <li><b>Skeleton loading</b> cho card video &amp; ranking để cảm giác nhanh hơn khi tải data.</li>
+          <li><b>Vùng chạm:</b> tab &amp; card tối thiểu 44px chiều cao để bấm dễ trên điện thoại.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="ic">🎨</div>
+      <div>
+        <h4>Về nhận diện</h4>
+        <p>Bảng màu hồng–san hô ở Phần 3 là của vietkara. Nếu khách muốn khác biệt, chỉ cần thay <b>2 biến màu</b> (pink &amp; coral) là đổi được toàn bộ tông; cấu trúc &amp; component giữ nguyên. Nên xác nhận với khách về <b>logo, tông màu, tên các thành phố/khu vực</b> trước khi dựng để tránh làm lại.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. CHECKLIST ============ -->
+<section id="checklist">
+  <div class="wrap">
+    <div class="sec-no">07 — DELIVERY</div>
+    <h2>Checklist triển khai trang chủ mobile</h2>
+    <p class="sub">Dùng để tự kiểm trước buổi review thứ Hai.</p>
+    <div class="checks">
+      <div class="ck"><div class="box"></div><div><b>Header sticky</b><span>Menu ☰ · logo · đăng nhập 🔒</span></div></div>
+      <div class="ck"><div class="box"></div><div><b>Carousel "Nổi bật"</b><span>Auto-slide · ‹ › · chấm trang · CTA</span></div></div>
+      <div class="ck"><div class="box"></div><div><b>Lưới Menu chính</b><span>2 card lớn + 4 card nhỏ</span></div></div>
+      <div class="ck"><div class="box"></div><div><b>Component Tab dùng chung</b><span>Tất cả / Hà Nội / TP.HCM</span></div></div>
+      <div class="ck"><div class="box"></div><div><b>Khối Video cuộn ngang</b><span>Lọc theo tab · lazy-load</span></div></div>
+      <div class="ck"><div class="box"></div><div><b>Ranking quán Top 5</b><span>Vương miện theo hạng · thanh kỳ</span></div></div>
+      <div class="ck"><div class="box"></div><div><b>Ranking cast (tuỳ chọn)</b><span>Tái dùng cấu trúc ranking</span></div></div>
+      <div class="ck"><div class="box"></div><div><b>Feed Tin mới</b><span>Avatar · ngày · tên · nội dung</span></div></div>
+      <div class="ck"><div class="box"></div><div><b>Footer</b><span>Link · cảnh báo độ tuổi · bản quyền</span></div></div>
+      <div class="ck"><div class="box"></div><div><b>Trạng thái rỗng &amp; loading</b><span>Empty state + skeleton</span></div></div>
+      <div class="ck"><div class="box"></div><div><b>Nút back-to-top</b><span>Hiện khi cuộn</span></div></div>
+      <div class="ck"><div class="box"></div><div><b>Responsive ≤ 430px</b><span>Vùng chạm ≥ 44px</span></div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <p><b>Báo cáo phân tích giao diện Trang chủ Mobile</b> — lập từ biên bản họp <code>captions__2_.vtt</code> (phút 16:50–17:42) và phân tích trực tiếp bản mobile của <a href="https://vietkara.info/">vietkara.info</a>.</p>
+    <p>Wireframe &amp; design tokens dùng để tham chiếu cấu trúc/UX; nội dung &amp; hình ảnh thực tế sẽ do dự án của khách cung cấp. Bảng màu trích từ CSS thực tế của site mẫu.</p>
+  </div>
+</footer>
+
+</body>
+</html>

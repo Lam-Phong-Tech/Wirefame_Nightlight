@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e7e5df;}
+  .hscroll{scrollbar-width:thin;scrollbar-color:#c9c6cf transparent;}
+  .hscroll::-webkit-scrollbar{height:7px;}
+  .hscroll::-webkit-scrollbar-thumb{background:#c9c6cf;border-radius:4px;}
+</style>
+</helmet>
+
+<div style="width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;padding:48px;background:#e7e5df;font-family:'Inter',sans-serif;">
+
+  <div style="margin-bottom:36px;max-width:1100px;">
+    <div style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#8a8780;font-weight:600;">Phương án C · Daylight Discovery</div>
+    <h1 style="font-size:30px;font-weight:800;color:#2b2a26;margin-top:8px;">Blog · Đối tác · Legal — P15 · P16 · P17 · P18</h1>
+    <p style="font-size:15px;color:#6e6b64;margin-top:8px;max-width:760px;line-height:1.6;">Blog (danh sách + chi tiết) phục vụ SEO &amp; quảng bá quán · Đăng ký đối tác "Join Us" · Trang chính sách. Bộ lọc chuyên mục blog bấm lọc thật. Mỗi màn có desktop + mobile.</p>
+  </div>
+
+  <!-- ============================ P15 · BLOG LIST ============================ -->
+  <div style="margin-bottom:18px;font-size:14px;font-weight:700;color:#2b2a26;">P15 · Blog — Danh sách</div>
+  <div style="display:flex;gap:40px;align-items:flex-start;margin-bottom:64px;">
+
+    <!-- desktop -->
+    <div style="flex:none;width:1100px;background:#f5f4f2;border-radius:6px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.12);color:#1f1d29;">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 34px;background:#fff;border-bottom:1px solid #ececec;">
+        <div style="display:flex;align-items:center;gap:34px;"><div style="font-weight:800;font-size:20px;color:#6d28d9;">nightlife<span style="color:#1f1d29;">.hn</span></div><div style="display:flex;gap:22px;font-size:14px;color:#5b5870;font-weight:500;"><span>Trang chủ</span><span>Tìm quán</span><span>Cast</span><span>Bảng xếp hạng</span><span>Tour</span><span style="color:#6d28d9;font-weight:600;">Blog</span></div></div>
+        <div style="display:flex;align-items:center;gap:14px;"><div style="font-size:13px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:6px 12px;font-weight:600;">VI · 日本語</div><div style="font-size:13px;color:#5b5870;">Đăng nhập</div><div style="font-size:13px;font-weight:600;color:#fff;background:#6d28d9;border-radius:22px;padding:9px 18px;">Đăng ký đối tác</div></div>
+      </div>
+
+      <div style="padding:26px 34px 0;"><h2 style="font-size:26px;font-weight:800;">Blog &amp; Cẩm nang</h2><p style="font-size:13.5px;color:#5b5870;margin-top:5px;">Hướng dẫn khu vực, văn hoá về đêm &amp; mẹo trải nghiệm cho khách.</p></div>
+
+      <!-- featured -->
+      <div style="padding:18px 34px 0;">
+        <div style="border-radius:18px;overflow:hidden;display:flex;background:#fff;box-shadow:0 4px 16px rgba(40,20,60,.07);">
+          <div style="width:46%;flex:none;background:linear-gradient(140deg,#7b2d6b,#3a1f6e);min-height:220px;"></div>
+          <div style="padding:28px;display:flex;flex-direction:column;justify-content:center;">
+            <span style="font-size:11px;color:#c0246a;background:#fce4ef;border-radius:9px;padding:4px 10px;font-weight:700;width:fit-content;">Nổi bật · Cẩm nang khu vực</span>
+            <h3 style="font-size:24px;font-weight:800;margin-top:12px;line-height:1.2;max-width:420px;">Hướng dẫn trọn vẹn một đêm ở Tây Hồ cho khách Nhật</h3>
+            <p style="font-size:13.5px;color:#5b5870;margin-top:10px;line-height:1.6;max-width:440px;">Từ lounge sang trọng đến quán ăn khuya — lộ trình gợi ý, mức giá tham khảo và lưu ý đặt chỗ.</p>
+            <div style="display:flex;align-items:center;gap:10px;margin-top:16px;font-size:12.5px;color:#8a879a;">21/06/2026 · 6 phút đọc<span style="color:#6d28d9;font-weight:600;margin-left:auto;">Đọc tiếp ›</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- category chips -->
+      <div class="hscroll" style="padding:20px 34px 0;display:flex;gap:9px;overflow-x:auto;">
+        <div onClick="{{ kAll }}" style="{{ sKAll }}">Tất cả</div>
+        <div onClick="{{ kCamnang }}" style="{{ sKCamnang }}">Cẩm nang khu vực</div>
+        <div onClick="{{ kVanhoa }}" style="{{ sKVanhoa }}">Văn hoá Nhật</div>
+        <div onClick="{{ kSukien }}" style="{{ sKSukien }}">Sự kiện</div>
+        <div onClick="{{ kMeo }}" style="{{ sKMeo }}">Mẹo đặt chỗ</div>
+      </div>
+
+      <div style="padding:18px 34px 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+        <sc-for list="{{ posts }}" as="p" hint-placeholder-count="6">
+          <div style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 3px 12px rgba(40,20,60,.06);">
+            <div style="height:140px;background:{{ p.grad }};"></div>
+            <div style="padding:14px;"><span style="font-size:10.5px;font-weight:700;border-radius:9px;padding:3px 9px;color:{{ p.tagColor }};background:{{ p.tagBg }};">{{ p.catLabel }}</span><div style="font-weight:700;font-size:15px;margin-top:9px;line-height:1.35;">{{ p.title }}</div><div style="font-size:12px;color:#8a879a;margin-top:9px;">{{ p.meta }}</div></div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- mobile -->
+    <div style="flex:none;width:390px;background:#f5f4f2;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);color:#1f1d29;border:1px solid #e3e0da;">
+      <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;background:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #1f1d29;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#1f1d29;border-radius:1px;"></span></span></div>
+      <div style="background:#fff;padding:8px 18px 12px;"><h2 style="font-size:19px;font-weight:800;">Blog &amp; Cẩm nang</h2>
+        <div class="hscroll" style="display:flex;gap:7px;margin-top:11px;overflow-x:auto;">
+          <div onClick="{{ kAll }}" style="{{ mKAll }}">Tất cả</div>
+          <div onClick="{{ kCamnang }}" style="{{ mKCamnang }}">Cẩm nang</div>
+          <div onClick="{{ kVanhoa }}" style="{{ mKVanhoa }}">Văn hoá Nhật</div>
+          <div onClick="{{ kSukien }}" style="{{ mKSukien }}">Sự kiện</div>
+        </div>
+      </div>
+      <div style="padding:12px 18px;display:flex;flex-direction:column;gap:12px;">
+        <sc-for list="{{ posts }}" as="p" hint-placeholder-count="6">
+          <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 12px rgba(40,20,60,.06);">
+            <div style="height:120px;background:{{ p.grad }};"></div>
+            <div style="padding:12px;"><span style="font-size:9.5px;font-weight:700;border-radius:8px;padding:3px 8px;color:{{ p.tagColor }};background:{{ p.tagBg }};">{{ p.catLabel }}</span><div style="font-weight:700;font-size:13.5px;margin-top:8px;line-height:1.35;">{{ p.title }}</div><div style="font-size:11px;color:#8a879a;margin-top:7px;">{{ p.meta }}</div></div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="height:64px;background:#fff;border-top:1px solid #ececec;display:flex;align-items:center;justify-content:space-around;padding-bottom:6px;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/home.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Trang chủ</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/geisha.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Cast</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/gift.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Ưu đãi</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios-filled/100/6D28D9/news.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#6d28d9;font-weight:600;">Blog</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/user.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Tài khoản</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================ P16 · BLOG DETAIL ============================ -->
+  <div style="margin-bottom:18px;font-size:14px;font-weight:700;color:#2b2a26;">P16 · Blog — Chi tiết</div>
+  <div style="display:flex;gap:40px;align-items:flex-start;margin-bottom:64px;">
+
+    <!-- desktop -->
+    <div style="flex:none;width:1100px;background:#f5f4f2;border-radius:6px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.12);color:#1f1d29;">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 34px;background:#fff;border-bottom:1px solid #ececec;">
+        <div style="display:flex;align-items:center;gap:34px;"><div style="font-weight:800;font-size:20px;color:#6d28d9;">nightlife<span style="color:#1f1d29;">.hn</span></div><div style="display:flex;gap:22px;font-size:14px;color:#5b5870;font-weight:500;"><span>Trang chủ</span><span>Tìm quán</span><span>Cast</span><span>Bảng xếp hạng</span><span>Tour</span><span style="color:#6d28d9;font-weight:600;">Blog</span></div></div>
+        <div style="display:flex;align-items:center;gap:14px;"><div style="font-size:13px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:6px 12px;font-weight:600;">VI · 日本語</div><div style="font-size:13px;color:#5b5870;">Đăng nhập</div></div>
+      </div>
+      <div style="padding:18px 34px 0;font-size:12.5px;color:#8a879a;">Trang chủ › Blog › <span style="color:#1f1d29;">Cẩm nang khu vực</span></div>
+
+      <div style="display:flex;gap:28px;padding:18px 34px 32px;">
+        <!-- article -->
+        <div style="flex:1;">
+          <span style="font-size:11px;color:#1f7a8c;background:#e0f2f5;border-radius:9px;padding:4px 10px;font-weight:700;">Cẩm nang khu vực</span>
+          <h2 style="font-size:30px;font-weight:800;margin-top:12px;line-height:1.18;">Hướng dẫn trọn vẹn một đêm ở Tây Hồ cho khách Nhật</h2>
+          <div style="display:flex;align-items:center;gap:10px;margin-top:12px;font-size:12.5px;color:#8a879a;"><span style="width:30px;height:30px;border-radius:50%;background:linear-gradient(140deg,#8a6ad0,#5d3da8);"></span>Đội ngũ NightLife · 21/06/2026 · 6 phút đọc</div>
+          <div style="height:300px;border-radius:16px;background:linear-gradient(140deg,#7b2d6b,#3a1f6e);margin-top:18px;"></div>
+          <p style="font-size:14.5px;line-height:1.8;color:#3a384a;margin-top:20px;">Tây Hồ về đêm là một trong những khu sôi động và sang trọng bậc nhất Hà Nội, đặc biệt được khách Nhật ưa chuộng nhờ nhiều lounge và bar có nhân viên nói tiếng Nhật.</p>
+          <h3 style="font-size:18px;font-weight:700;margin-top:22px;">1. Bắt đầu với một lounge cao cấp</h3>
+          <p style="font-size:14.5px;line-height:1.8;color:#3a384a;margin-top:10px;">Khởi đầu buổi tối tại Club Lumière hoặc Sakura Lounge — không gian tinh tế, phù hợp tiếp khách đối tác. Nên đặt chỗ trước qua NightLife để nhận ưu đãi và được sắp xếp phòng VIP.</p>
+          <h3 style="font-size:18px;font-weight:700;margin-top:22px;">2. Lưu ý về giá &amp; đặt chỗ</h3>
+          <p style="font-size:14.5px;line-height:1.8;color:#3a384a;margin-top:10px;">Bảng giá trên trang chỉ mang tính tham khảo. Mọi đặt chỗ được Admin điều phối trực tiếp với quán, và bạn có thể dùng mã giảm giá theo hạng thành viên.</p>
+          <div style="margin-top:22px;background:#faf7ff;border:1px solid #ece4fb;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:13px;"><img src="https://img.icons8.com/fluency/96/idea.png" style="width:28px;height:28px;" alt=""><div style="font-size:13px;color:#5b5870;line-height:1.6;">Mẹo: đăng nhập hội viên để nhận giảm tới 10% và tích điểm cho mỗi hóa đơn.</div></div>
+        </div>
+
+        <!-- sidebar -->
+        <div style="width:300px;flex:none;display:flex;flex-direction:column;gap:16px;">
+          <div style="background:#fff;border:1px solid #ececec;border-radius:16px;padding:18px;"><div style="font-weight:700;font-size:15px;margin-bottom:12px;">Bài liên quan</div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div style="display:flex;gap:11px;align-items:center;"><span style="width:54px;height:54px;border-radius:10px;flex:none;background:linear-gradient(140deg,#d6336c,#7b2d6b);"></span><div style="font-size:13px;font-weight:600;line-height:1.35;">Văn hoá karaoke Nhật tại Hà Nội</div></div>
+              <div style="display:flex;gap:11px;align-items:center;"><span style="width:54px;height:54px;border-radius:10px;flex:none;background:linear-gradient(140deg,#8a6ad0,#5d3da8);"></span><div style="font-size:13px;font-weight:600;line-height:1.35;">Bản đồ Quận 1 về đêm cho khách Nhật</div></div>
+              <div style="display:flex;gap:11px;align-items:center;"><span style="width:54px;height:54px;border-radius:10px;flex:none;background:linear-gradient(140deg,#e0a23a,#c0782d);"></span><div style="font-size:13px;font-weight:600;line-height:1.35;">5 mẹo đặt bàn nhanh cuối tuần</div></div>
+            </div>
+          </div>
+          <div style="border-radius:16px;overflow:hidden;background:linear-gradient(140deg,#6d28d9,#3a1f6e);padding:22px;color:#fff;"><div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#d9c9f7;font-weight:700;">Quảng cáo</div><div style="font-size:18px;font-weight:800;margin-top:8px;line-height:1.25;">Club Lumière — ưu đãi −30% cuối tuần</div><div style="margin-top:14px;background:#fff;color:#6d28d9;text-align:center;border-radius:10px;padding:11px;font-weight:700;font-size:13px;">Xem ngay</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- mobile -->
+    <div style="flex:none;width:390px;background:#f5f4f2;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);color:#1f1d29;border:1px solid #e3e0da;">
+      <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;background:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #1f1d29;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#1f1d29;border-radius:1px;"></span></span></div>
+      <div style="background:#fff;padding:8px 18px 10px;display:flex;align-items:center;gap:12px;"><span style="font-size:20px;color:#5b5870;">‹</span><span style="font-weight:700;font-size:14px;color:#8a879a;">Blog</span></div>
+      <div style="padding:6px 18px 18px;">
+        <span style="font-size:10px;color:#1f7a8c;background:#e0f2f5;border-radius:8px;padding:3px 9px;font-weight:700;">Cẩm nang khu vực</span>
+        <h2 style="font-size:21px;font-weight:800;margin-top:10px;line-height:1.2;">Một đêm trọn vẹn ở Tây Hồ cho khách Nhật</h2>
+        <div style="display:flex;align-items:center;gap:9px;margin-top:10px;font-size:11.5px;color:#8a879a;"><span style="width:26px;height:26px;border-radius:50%;background:linear-gradient(140deg,#8a6ad0,#5d3da8);"></span>NightLife · 21/06 · 6 phút</div>
+        <div style="height:180px;border-radius:14px;background:linear-gradient(140deg,#7b2d6b,#3a1f6e);margin-top:14px;"></div>
+        <p style="font-size:13.5px;line-height:1.75;color:#3a384a;margin-top:14px;">Tây Hồ về đêm là khu sang trọng bậc nhất Hà Nội, được khách Nhật ưa chuộng nhờ nhiều lounge có nhân viên nói tiếng Nhật.</p>
+        <h3 style="font-size:16px;font-weight:700;margin-top:16px;">1. Bắt đầu với một lounge cao cấp</h3>
+        <p style="font-size:13.5px;line-height:1.75;color:#3a384a;margin-top:8px;">Khởi đầu tại Club Lumière hoặc Sakura Lounge — nên đặt chỗ trước qua NightLife để nhận ưu đãi.</p>
+        <div style="margin-top:16px;background:#faf7ff;border:1px solid #ece4fb;border-radius:12px;padding:13px;font-size:12px;color:#5b5870;line-height:1.6;">Mẹo: đăng nhập hội viên để giảm tới 10% &amp; tích điểm mỗi hóa đơn.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================ P17 · JOIN US ============================ -->
+  <div style="margin-bottom:18px;font-size:14px;font-weight:700;color:#2b2a26;">P17 · Đăng ký đối tác — "Join Us"</div>
+  <div style="display:flex;gap:40px;align-items:flex-start;margin-bottom:64px;">
+
+    <!-- desktop -->
+    <div style="flex:none;width:1100px;background:#f5f4f2;border-radius:6px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.12);color:#1f1d29;">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 34px;background:#fff;border-bottom:1px solid #ececec;">
+        <div style="display:flex;align-items:center;gap:34px;"><div style="font-weight:800;font-size:20px;color:#6d28d9;">nightlife<span style="color:#1f1d29;">.hn</span></div><div style="display:flex;gap:22px;font-size:14px;color:#5b5870;font-weight:500;"><span>Trang chủ</span><span>Tìm quán</span><span>Cast</span><span>Bảng xếp hạng</span><span>Tour</span><span>Blog</span></div></div>
+        <div style="display:flex;align-items:center;gap:14px;"><div style="font-size:13px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:6px 12px;font-weight:600;">VI · 日本語</div><div style="font-size:13px;color:#5b5870;">Đăng nhập</div></div>
+      </div>
+
+      <div style="display:flex;gap:0;">
+        <!-- pitch -->
+        <div style="width:44%;flex:none;background:radial-gradient(120% 100% at 25% 20%,rgba(214,51,108,.5),transparent 55%),linear-gradient(150deg,#3a1f6e,#1a1030);padding:44px;color:#fff;">
+          <div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#d9c9f7;font-weight:700;">Hợp tác cùng NightLife</div>
+          <h2 style="font-size:32px;font-weight:800;line-height:1.18;margin-top:12px;max-width:330px;">Đưa quán của bạn đến hàng nghìn khách mỗi đêm</h2>
+          <div style="margin-top:26px;display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;gap:12px;align-items:flex-start;"><img src="https://img.icons8.com/fluency/96/conference-call.png" style="width:26px;height:26px;" alt=""><div><div style="font-weight:600;font-size:14px;">Tiếp cận khách mục tiêu</div><div style="font-size:12.5px;color:#cbbfe0;margin-top:2px;">Khách Nhật &amp; khách cao cấp tìm quán mỗi tối.</div></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start;"><img src="https://img.icons8.com/fluency/96/qr-code.png" style="width:26px;height:26px;" alt=""><div><div style="font-weight:600;font-size:14px;">Tài khoản đối tác</div><div style="font-size:12.5px;color:#cbbfe0;margin-top:2px;">Tự quét mã, đối soát dịch vụ, đăng thông tin.</div></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start;"><img src="https://img.icons8.com/fluency/96/bar-chart.png" style="width:26px;height:26px;" alt=""><div><div style="font-weight:600;font-size:14px;">Lên Top xếp hạng</div><div style="font-size:12.5px;color:#cbbfe0;margin-top:2px;">Gói tài trợ giúp quán hiển thị nổi bật.</div></div></div>
+          </div>
+          <div style="margin-top:28px;font-size:12px;color:#b6abc9;">Không yêu cầu giấy phép kinh doanh khi đăng ký.</div>
+        </div>
+
+        <!-- form -->
+        <div style="flex:1;background:#fff;padding:40px;">
+          <h2 style="font-size:22px;font-weight:800;">Đăng ký hợp tác</h2>
+          <p style="font-size:13px;color:#8a879a;margin-top:5px;">Gửi thông tin — Admin sẽ liên hệ &amp; kiểm duyệt trước khi hiển thị.</p>
+          <div style="margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div style="grid-column:span 2;"><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Tên quán / cơ sở</label><div style="margin-top:6px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#9a98a6;">VD: Club Lumière</div></div>
+            <div><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Loại hình</label><div style="margin-top:6px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#3a384a;display:flex;align-items:center;justify-content:space-between;">Bar / Lounge<span style="color:#8a879a;">▾</span></div></div>
+            <div><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Khu vực</label><div style="margin-top:6px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#3a384a;display:flex;align-items:center;justify-content:space-between;">Hà Nội<span style="color:#8a879a;">▾</span></div></div>
+            <div><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Người liên hệ</label><div style="margin-top:6px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#9a98a6;">Họ tên</div></div>
+            <div><label style="font-size:12.5px;font-weight:600;color:#5b5870;">SĐT / Telegram</label><div style="margin-top:6px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#9a98a6;">0912 345 678</div></div>
+            <div style="grid-column:span 2;"><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Giới thiệu ngắn</label><div style="margin-top:6px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#9a98a6;min-height:64px;">Mô tả quán, dịch vụ nổi bật…</div></div>
+            <div style="grid-column:span 2;"><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Hình ảnh quán <span style="color:#8a879a;font-weight:500;">(tuỳ chọn)</span></label><div style="margin-top:6px;border:1.5px dashed #d9c9f7;border-radius:11px;padding:18px;text-align:center;background:#faf7ff;"><img src="https://img.icons8.com/fluency/96/add-image.png" style="width:28px;height:28px;" alt=""><div style="font-size:12.5px;color:#6d28d9;font-weight:600;margin-top:5px;">Tải ảnh lên</div></div></div>
+          </div>
+          <div style="margin-top:18px;background:#6d28d9;color:#fff;text-align:center;border-radius:12px;padding:14px;font-weight:700;font-size:15px;">Gửi đăng ký hợp tác</div>
+          <div style="margin-top:10px;font-size:12px;color:#8a879a;text-align:center;">Yêu cầu sẽ gửi tới Admin qua Telegram để kiểm duyệt.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- mobile -->
+    <div style="flex:none;width:390px;background:#fff;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);color:#1f1d29;border:1px solid #e3e0da;">
+      <div style="height:40px;background:#3a1f6e;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;color:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #fff;border-radius:3px;display:inline-block;"></span></div>
+      <div style="background:radial-gradient(120% 100% at 25% 0%,rgba(214,51,108,.5),transparent 55%),linear-gradient(150deg,#3a1f6e,#1a1030);padding:0 22px 22px;color:#fff;">
+        <div style="font-weight:800;font-size:18px;padding-top:14px;">nightlife<span style="color:#c9a7ff;">.hn</span></div>
+        <h2 style="font-size:23px;font-weight:800;line-height:1.2;margin-top:18px;max-width:250px;">Đưa quán đến hàng nghìn khách mỗi đêm</h2>
+        <div style="font-size:11.5px;color:#cbbfe0;margin-top:10px;">Không yêu cầu giấy phép khi đăng ký.</div>
+      </div>
+      <div style="padding:18px;margin-top:-14px;background:#fff;border-radius:22px 22px 0 0;position:relative;">
+        <h3 style="font-size:17px;font-weight:800;">Đăng ký hợp tác</h3>
+        <div style="display:flex;flex-direction:column;gap:11px;margin-top:14px;">
+          <div><label style="font-size:11.5px;font-weight:600;color:#5b5870;">Tên quán</label><div style="margin-top:5px;border:1px solid #e2e0e8;border-radius:10px;padding:11px 12px;font-size:13px;color:#9a98a6;">Club Lumière</div></div>
+          <div style="display:flex;gap:10px;"><div style="flex:1;"><label style="font-size:11.5px;font-weight:600;color:#5b5870;">Loại hình</label><div style="margin-top:5px;border:1px solid #e2e0e8;border-radius:10px;padding:11px 12px;font-size:12.5px;color:#3a384a;">Bar/Lounge</div></div><div style="flex:1;"><label style="font-size:11.5px;font-weight:600;color:#5b5870;">Khu vực</label><div style="margin-top:5px;border:1px solid #e2e0e8;border-radius:10px;padding:11px 12px;font-size:12.5px;color:#3a384a;">Hà Nội</div></div></div>
+          <div><label style="font-size:11.5px;font-weight:600;color:#5b5870;">SĐT / Telegram</label><div style="margin-top:5px;border:1px solid #e2e0e8;border-radius:10px;padding:11px 12px;font-size:13px;color:#9a98a6;">0912 345 678</div></div>
+        </div>
+        <div style="margin-top:14px;background:#6d28d9;color:#fff;text-align:center;border-radius:11px;padding:13px;font-weight:700;font-size:14px;">Gửi đăng ký</div>
+        <div style="margin-top:9px;font-size:11px;color:#8a879a;text-align:center;">Gửi tới Admin qua Telegram để kiểm duyệt.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================ P18 · LEGAL ============================ -->
+  <div style="margin-bottom:18px;font-size:14px;font-weight:700;color:#2b2a26;">P18 · Trang chính sách (Legal)</div>
+  <div style="display:flex;gap:40px;align-items:flex-start;">
+
+    <!-- desktop -->
+    <div style="flex:none;width:1100px;background:#f5f4f2;border-radius:6px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.12);color:#1f1d29;">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 34px;background:#fff;border-bottom:1px solid #ececec;">
+        <div style="display:flex;align-items:center;gap:34px;"><div style="font-weight:800;font-size:20px;color:#6d28d9;">nightlife<span style="color:#1f1d29;">.hn</span></div><div style="display:flex;gap:22px;font-size:14px;color:#5b5870;font-weight:500;"><span>Trang chủ</span><span>Tìm quán</span><span>Cast</span><span>Bảng xếp hạng</span><span>Tour</span><span>Blog</span></div></div>
+        <div style="display:flex;align-items:center;gap:14px;"><div style="font-size:13px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:6px 12px;font-weight:600;">VI · 日本語</div><div style="font-size:13px;color:#5b5870;">Đăng nhập</div></div>
+      </div>
+
+      <div style="display:flex;gap:28px;padding:30px 34px 36px;">
+        <!-- TOC -->
+        <div style="width:240px;flex:none;">
+          <div style="background:#fff;border:1px solid #ececec;border-radius:14px;padding:8px;position:sticky;top:20px;">
+            <div style="font-size:13px;font-weight:600;color:#6d28d9;background:#f1ebff;border-radius:9px;padding:10px 13px;">Chính sách bảo mật</div>
+            <div style="font-size:13px;font-weight:500;color:#5b5870;padding:10px 13px;">Chính sách hoạt động</div>
+            <div style="font-size:13px;font-weight:500;color:#5b5870;padding:10px 13px;">Điều khoản sử dụng</div>
+            <div style="font-size:13px;font-weight:500;color:#5b5870;padding:10px 13px;">Liên hệ &amp; hợp tác</div>
+          </div>
+        </div>
+        <!-- content -->
+        <div style="flex:1;max-width:680px;">
+          <h2 style="font-size:28px;font-weight:800;">Chính sách bảo mật</h2>
+          <div style="font-size:12.5px;color:#8a879a;margin-top:6px;">Cập nhật lần cuối: 21/06/2026</div>
+          <p style="font-size:14.5px;line-height:1.8;color:#3a384a;margin-top:18px;">NightLife tôn trọng và bảo vệ thông tin cá nhân của người dùng. Chúng tôi chỉ thu thập dữ liệu cần thiết để cung cấp dịch vụ đặt chỗ và ưu đãi.</p>
+          <h3 style="font-size:18px;font-weight:700;margin-top:22px;">1. Thông tin chúng tôi thu thập</h3>
+          <p style="font-size:14.5px;line-height:1.8;color:#3a384a;margin-top:10px;">Tên, số điện thoại, lịch sử đặt chỗ và sử dụng mã ưu đãi nhằm phục vụ điều phối và tích điểm thành viên.</p>
+          <h3 style="font-size:18px;font-weight:700;margin-top:22px;">2. Mục đích sử dụng</h3>
+          <p style="font-size:14.5px;line-height:1.8;color:#3a384a;margin-top:10px;">Dữ liệu dùng để xác nhận đặt chỗ, gửi thông báo qua Telegram, đối soát hóa đơn và chăm sóc khách hàng. Chúng tôi không bán dữ liệu cho bên thứ ba.</p>
+          <h3 style="font-size:18px;font-weight:700;margin-top:22px;">3. Quyền của người dùng</h3>
+          <p style="font-size:14.5px;line-height:1.8;color:#3a384a;margin-top:10px;">Người dùng có thể yêu cầu chỉnh sửa hoặc xóa thông tin cá nhân bằng cách liên hệ Admin qua LINE.</p>
+          <div style="margin-top:24px;background:#faf7ff;border:1px solid #ece4fb;border-radius:14px;padding:16px 18px;font-size:13px;color:#5b5870;line-height:1.6;">Nội dung chính sách cuối cùng sẽ do phía khách hàng cung cấp &amp; rà soát pháp lý trước khi phát hành.</div>
+        </div>
+      </div>
+      <div style="padding:24px 34px;background:#fff;border-top:1px solid #ececec;display:flex;justify-content:space-between;align-items:center;color:#8a879a;font-size:12px;"><span>© 2026 Nightlife Hà Nội · Điều khoản · Chính sách bảo mật</span><span>Liên hệ hợp tác · Telegram · Zalo · LINE</span></div>
+    </div>
+
+    <!-- mobile -->
+    <div style="flex:none;width:390px;background:#f5f4f2;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);color:#1f1d29;border:1px solid #e3e0da;">
+      <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;background:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #1f1d29;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#1f1d29;border-radius:1px;"></span></span></div>
+      <div style="background:#fff;padding:8px 18px 10px;display:flex;align-items:center;gap:12px;"><span style="font-size:20px;color:#5b5870;">‹</span><span style="font-weight:800;font-size:16px;">Chính sách</span></div>
+      <div style="padding:6px 18px 0;display:flex;gap:7px;flex-wrap:wrap;">
+        <span style="font-size:11.5px;background:#6d28d9;color:#fff;border-radius:14px;padding:6px 12px;font-weight:600;">Bảo mật</span>
+        <span style="font-size:11.5px;background:#fff;border:1px solid #ececec;color:#5b5870;border-radius:14px;padding:6px 12px;">Hoạt động</span>
+        <span style="font-size:11.5px;background:#fff;border:1px solid #ececec;color:#5b5870;border-radius:14px;padding:6px 12px;">Điều khoản</span>
+      </div>
+      <div style="padding:14px 18px 22px;">
+        <h2 style="font-size:21px;font-weight:800;">Chính sách bảo mật</h2>
+        <div style="font-size:11.5px;color:#8a879a;margin-top:5px;">Cập nhật: 21/06/2026</div>
+        <p style="font-size:13.5px;line-height:1.75;color:#3a384a;margin-top:14px;">NightLife chỉ thu thập dữ liệu cần thiết để cung cấp dịch vụ đặt chỗ &amp; ưu đãi.</p>
+        <h3 style="font-size:15px;font-weight:700;margin-top:16px;">1. Thông tin thu thập</h3>
+        <p style="font-size:13.5px;line-height:1.75;color:#3a384a;margin-top:8px;">Tên, SĐT, lịch sử đặt chỗ &amp; mã ưu đãi để điều phối và tích điểm.</p>
+        <h3 style="font-size:15px;font-weight:700;margin-top:16px;">2. Quyền của người dùng</h3>
+        <p style="font-size:13.5px;line-height:1.75;color:#3a384a;margin-top:8px;">Có thể yêu cầu sửa/xóa thông tin bằng cách liên hệ Admin qua LINE.</p>
+        <div style="margin-top:16px;background:#faf7ff;border:1px solid #ece4fb;border-radius:12px;padding:13px;font-size:12px;color:#5b5870;line-height:1.6;">Nội dung pháp lý cuối do khách hàng cung cấp &amp; rà soát.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {};
+
+  get POSTS(){
+    return [
+      ['Cẩm nang đi chơi đêm khu Tây Hồ','camnang','21/06 · 5 phút đọc','#3a9fb0','#2d6fae'],
+      ['Văn hoá karaoke Nhật tại Hà Nội','vanhoa','20/06 · 7 phút đọc','#d6336c','#7b2d6b'],
+      ['Bản đồ Quận 1 về đêm cho khách Nhật','camnang','19/06 · 6 phút đọc','#8a6ad0','#5d3da8'],
+      ['Midnight Festival Tây Hồ trở lại','sukien','18/06 · 3 phút đọc','#e0a23a','#c0782d'],
+      ['5 mẹo đặt bàn nhanh cuối tuần','meo','16/06 · 4 phút đọc','#e0598a','#a8336b'],
+      ['Lounge nào hợp tiếp khách đối tác?','camnang','14/06 · 5 phút đọc','#5fae8a','#2d8a6a'],
+    ];
+  }
+
+  catMeta(c){
+    return {
+      camnang:{label:'Cẩm nang khu vực',color:'#1f7a8c',bg:'#e0f2f5'},
+      vanhoa:{label:'Văn hoá Nhật',color:'#c0246a',bg:'#fce4ef'},
+      sukien:{label:'Sự kiện',color:'#b06a00',bg:'#fdefd6'},
+      meo:{label:'Mẹo đặt chỗ',color:'#6d28d9',bg:'#f1ebff'},
+    }[c];
+  }
+
+  renderVals(){
+    const cat = this.state.cat || 'all';
+    const posts = this.POSTS
+      .filter(p => cat==='all' || p[1]===cat)
+      .map(p => { const cm=this.catMeta(p[1]); return {
+        title:p[0], meta:p[2], grad:'linear-gradient(140deg,'+p[3]+','+p[4]+')',
+        catLabel:cm.label, tagColor:cm.color, tagBg:cm.bg
+      };});
+
+    const base='display:inline-flex;align-items:center;justify-content:center;font-size:12.5px;border-radius:16px;padding:7px 14px;font-weight:600;cursor:pointer;white-space:nowrap;';
+    const on='background:#6d28d9;color:#fff;border:1px solid #6d28d9;';
+    const off='background:#fff;color:#5b5870;border:1px solid #ececec;';
+    const K=(a)=>base+(a?on:off);
+    const baseM='display:inline-flex;align-items:center;justify-content:center;font-size:11px;border-radius:14px;padding:6px 11px;font-weight:600;cursor:pointer;white-space:nowrap;';
+    const KM=(a)=>baseM+(a?on:off);
+
+    return {
+      posts,
+      kAll:()=>this.setState({cat:'all'}),
+      kCamnang:()=>this.setState({cat:'camnang'}),
+      kVanhoa:()=>this.setState({cat:'vanhoa'}),
+      kSukien:()=>this.setState({cat:'sukien'}),
+      kMeo:()=>this.setState({cat:'meo'}),
+      sKAll:K(cat==='all'), sKCamnang:K(cat==='camnang'), sKVanhoa:K(cat==='vanhoa'), sKSukien:K(cat==='sukien'), sKMeo:K(cat==='meo'),
+      mKAll:KM(cat==='all'), mKCamnang:KM(cat==='camnang'), mKVanhoa:KM(cat==='vanhoa'), mKSukien:KM(cat==='sukien'),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e7e5df;}
+  .hscroll{scrollbar-width:thin;scrollbar-color:#c9c6cf transparent;}
+  .hscroll::-webkit-scrollbar{height:7px;}
+  .hscroll::-webkit-scrollbar-thumb{background:#c9c6cf;border-radius:4px;}
+</style>
+</helmet>
+
+<div style="width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;padding:48px;background:#e7e5df;font-family:'Inter',sans-serif;">
+
+  <div style="margin-bottom:36px;max-width:1100px;">
+    <div style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#8a8780;font-weight:600;">Phương án C · Daylight Discovery</div>
+    <h1 style="font-size:30px;font-weight:800;color:#2b2a26;margin-top:8px;">P3 · Trang Xếp hạng (Ranking Page)</h1>
+    <p style="font-size:15px;color:#6e6b64;margin-top:8px;max-width:760px;line-height:1.6;">Tab khu vực (Tổng hợp · HN · HCM · ĐN · HP) × toggle Cast/Quán, giới hạn Top&nbsp;5, vương miện hạng, nút Gọi/Chi tiết, badge tài trợ. Bấm tab/toggle/danh mục để đổi danh sách thật. Desktop trái · mobile phải.</p>
+  </div>
+
+  <div style="display:flex;gap:56px;align-items:flex-start;">
+
+  <!-- ===================== DESKTOP ===================== -->
+  <div style="flex:none;width:1100px;">
+    <div style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#a8a59d;font-weight:700;margin-bottom:14px;">Desktop</div>
+    <div style="background:#f5f4f2;border-radius:6px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.12);color:#1f1d29;">
+
+      <!-- header -->
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 34px;background:#fff;border-bottom:1px solid #ececec;">
+        <div style="display:flex;align-items:center;gap:34px;">
+          <div style="font-weight:800;font-size:20px;color:#6d28d9;">nightlife<span style="color:#1f1d29;">.hn</span></div>
+          <div style="display:flex;gap:22px;font-size:14px;color:#5b5870;font-weight:500;"><span>Trang chủ</span><span>Tìm quán</span><span>Cast</span><span style="color:#6d28d9;font-weight:600;">Bảng xếp hạng</span><span>Tour</span><span>Blog</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div style="font-size:13px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:6px 12px;font-weight:600;">VI · 日本語</div>
+          <div style="font-size:13px;color:#5b5870;">Đăng nhập</div>
+          <div style="font-size:13px;font-weight:600;color:#fff;background:#6d28d9;border-radius:22px;padding:9px 18px;">Đăng ký đối tác</div>
+        </div>
+      </div>
+
+      <!-- hero strip -->
+      <div style="padding:26px 34px 0;">
+        <div style="border-radius:18px;overflow:hidden;background:radial-gradient(120% 120% at 85% 10%,rgba(214,51,108,.5),transparent 55%),linear-gradient(140deg,#3a1f6e,#7b2d6b);padding:28px 30px;color:#fff;display:flex;align-items:center;gap:16px;">
+          <img src="https://img.icons8.com/fluency/96/trophy.png" style="width:44px;height:44px;" alt="">
+          <div>
+            <h2 style="font-size:28px;font-weight:800;">Bảng xếp hạng</h2>
+            <p style="font-size:13.5px;color:#f0e6f4;margin-top:4px;">Top địa điểm &amp; cast nổi bật theo khu vực — cập nhật bởi đội ngũ NightLife.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- controls -->
+      <div style="padding:22px 34px 0;">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+          <div onClick="{{ rTonghop }}" style="{{ sRTonghop }}">Tổng hợp</div>
+          <div onClick="{{ rHn }}" style="{{ sRHn }}">Hà Nội</div>
+          <div onClick="{{ rHcm }}" style="{{ sRHcm }}">TP.HCM</div>
+          <div onClick="{{ rDn }}" style="{{ sRDn }}">Đà Nẵng</div>
+          <div onClick="{{ rHp }}" style="{{ sRHp }}">Hải Phòng</div>
+          <div style="margin-left:auto;display:flex;gap:8px;background:#fff;border:1px solid #ececec;border-radius:18px;padding:4px;">
+            <div onClick="{{ tCast }}" style="{{ sTCast }}">Cast</div>
+            <div onClick="{{ tQuan }}" style="{{ sTQuan }}">Quán</div>
+          </div>
+        </div>
+        <sc-if value="{{ showCat }}" hint-placeholder-val="{{ true }}">
+          <div class="hscroll" style="display:flex;gap:8px;margin-top:14px;overflow-x:auto;padding-bottom:4px;">
+            <div onClick="{{ cAll }}" style="{{ sCAll }}">Tất cả</div>
+            <div onClick="{{ cBar }}" style="{{ sCBar }}">Bar</div>
+            <div onClick="{{ cKaraoke }}" style="{{ sCKaraoke }}">Karaoke</div>
+            <div onClick="{{ cMassage }}" style="{{ sCMassage }}">Massage/Spa</div>
+            <div onClick="{{ cNhahang }}" style="{{ sCNhahang }}">Nhà hàng</div>
+            <div onClick="{{ cCasino }}" style="{{ sCCasino }}">Casino</div>
+          </div>
+        </sc-if>
+      </div>
+
+      <!-- period bar -->
+      <div style="padding:14px 34px 0;">
+        <div style="background:#f1ebff;border-radius:10px;padding:10px 16px;font-size:12.5px;color:#6d28d9;font-weight:600;display:flex;justify-content:space-between;align-items:center;">
+          <span>{{ headingLabel }}</span><span>Kỳ: Tháng 6/2026 · cập nhật 21/06</span>
+        </div>
+      </div>
+
+      <!-- list -->
+      <div style="padding:16px 34px 30px;display:flex;flex-direction:column;gap:12px;">
+        <sc-for list="{{ list }}" as="r" hint-placeholder-count="5">
+          <div style="display:flex;align-items:center;gap:16px;background:#fff;border:1px solid #ececec;border-radius:16px;padding:14px 16px;box-shadow:0 3px 12px rgba(40,20,60,.06);">
+            <span style="width:34px;height:34px;border-radius:10px;flex:none;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;color:{{ r.numColor }};background:{{ r.crown }};">{{ r.rank }}</span>
+            <span style="width:58px;height:58px;border-radius:14px;flex:none;background:{{ r.grad }};"></span>
+            <div style="flex:1;min-width:0;">
+              <div style="display:flex;align-items:center;gap:8px;">
+                <span style="font-weight:700;font-size:16px;">{{ r.name }}</span>
+                <sc-if value="{{ r.sponsor }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;color:#b06a00;background:#fdefd6;border-radius:8px;padding:2px 8px;font-weight:700;">Tài trợ</span></sc-if>
+              </div>
+              <div style="font-size:12.5px;color:#8a879a;margin-top:3px;">{{ r.area }}</div>
+              <div style="font-size:12.5px;color:#e8923a;margin-top:6px;font-weight:600;">{{ r.metric }}</div>
+            </div>
+            <div style="display:flex;gap:9px;flex:none;">
+              <span style="font-size:13px;color:#6d28d9;font-weight:600;border:1px solid #e0d6f7;border-radius:11px;padding:10px 16px;">Chi tiết</span>
+              <span style="font-size:13px;color:#fff;font-weight:600;background:#6d28d9;border-radius:11px;padding:10px 18px;display:flex;align-items:center;gap:7px;"><img src="{{ actionIcon }}" style="width:15px;height:15px;" alt="">{{ actionLabel }}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <!-- footer -->
+      <div style="padding:24px 34px;background:#fff;border-top:1px solid #ececec;display:flex;justify-content:space-between;align-items:center;color:#8a879a;font-size:12px;">
+        <span>© 2026 Nightlife Hà Nội · Điều khoản · Chính sách bảo mật</span>
+        <span>Liên hệ hợp tác · Telegram · Zalo</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== MOBILE ===================== -->
+  <div style="flex:none;width:390px;">
+    <div style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#a8a59d;font-weight:700;margin-bottom:14px;">Mobile</div>
+    <div style="width:390px;background:#f5f4f2;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);color:#1f1d29;position:relative;border:1px solid #e3e0da;">
+
+      <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;background:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #1f1d29;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#1f1d29;border-radius:1px;"></span></span></div>
+
+      <div style="background:#fff;padding:6px 18px 14px;">
+        <h2 style="font-size:20px;font-weight:800;"><img src="https://img.icons8.com/fluency/96/trophy.png" style="width:22px;height:22px;vertical-align:-5px;margin-right:7px;" alt="">Bảng xếp hạng</h2>
+        <div class="hscroll" style="display:flex;gap:7px;margin-top:13px;overflow-x:auto;padding-bottom:4px;">
+          <div onClick="{{ rTonghop }}" style="{{ mRTonghop }}">Tổng hợp</div>
+          <div onClick="{{ rHn }}" style="{{ mRHn }}">Hà Nội</div>
+          <div onClick="{{ rHcm }}" style="{{ mRHcm }}">TP.HCM</div>
+          <div onClick="{{ rDn }}" style="{{ mRDn }}">Đà Nẵng</div>
+          <div onClick="{{ rHp }}" style="{{ mRHp }}">Hải Phòng</div>
+        </div>
+        <div style="display:flex;gap:6px;margin-top:10px;background:#f3f2f5;border-radius:14px;padding:4px;">
+          <div onClick="{{ tCast }}" style="{{ mTCast }}">Cast</div>
+          <div onClick="{{ tQuan }}" style="{{ mTQuan }}">Quán</div>
+        </div>
+        <sc-if value="{{ showCat }}" hint-placeholder-val="{{ true }}">
+          <div class="hscroll" style="display:flex;gap:7px;margin-top:10px;overflow-x:auto;padding-bottom:4px;">
+            <div onClick="{{ cAll }}" style="{{ mCAll }}">Tất cả</div>
+            <div onClick="{{ cBar }}" style="{{ mCBar }}">Bar</div>
+            <div onClick="{{ cKaraoke }}" style="{{ mCKaraoke }}">Karaoke</div>
+            <div onClick="{{ cMassage }}" style="{{ mCMassage }}">Massage</div>
+            <div onClick="{{ cNhahang }}" style="{{ mCNhahang }}">Nhà hàng</div>
+          </div>
+        </sc-if>
+      </div>
+
+      <div style="padding:12px 18px 6px;">
+        <div style="background:#f1ebff;border-radius:9px;padding:8px 12px;font-size:11px;color:#6d28d9;font-weight:600;margin-bottom:11px;">{{ headingLabel }} · Top 5</div>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <sc-for list="{{ list }}" as="r" hint-placeholder-count="5">
+            <div style="display:flex;align-items:center;gap:11px;background:#fff;border:1px solid #ececec;border-radius:13px;padding:10px 11px;">
+              <span style="width:27px;height:27px;border-radius:8px;flex:none;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;color:{{ r.numColor }};background:{{ r.crown }};">{{ r.rank }}</span>
+              <span style="width:42px;height:42px;border-radius:11px;flex:none;background:{{ r.grad }};"></span>
+              <div style="flex:1;min-width:0;">
+                <div style="display:flex;align-items:center;gap:6px;"><span style="font-weight:600;font-size:13.5px;">{{ r.name }}</span><sc-if value="{{ r.sponsor }}" hint-placeholder-val="{{ false }}"><span style="font-size:8.5px;color:#b06a00;background:#fdefd6;border-radius:6px;padding:1px 6px;font-weight:700;">Tài trợ</span></sc-if></div>
+                <div style="font-size:10.5px;color:#8a879a;margin-top:1px;">{{ r.area }}</div>
+                <div style="font-size:10.5px;color:#e8923a;margin-top:3px;font-weight:600;">{{ r.metric }}</div>
+              </div>
+              <span style="width:38px;height:38px;border-radius:11px;flex:none;background:#6d28d9;display:flex;align-items:center;justify-content:center;"><img src="{{ actionIcon }}" style="width:16px;height:16px;" alt=""></span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="height:64px;background:#fff;border-top:1px solid #ececec;display:flex;align-items:center;justify-content:space-around;padding-bottom:6px;margin-top:12px;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/home.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Trang chủ</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/geisha.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Cast</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios-filled/100/6D28D9/trophy.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#6d28d9;font-weight:600;">Xếp hạng</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/gift.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Ưu đãi</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/user.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Tài khoản</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultRegion&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;tonghop&quot;,&quot;hn&quot;,&quot;hcm&quot;,&quot;dn&quot;,&quot;hp&quot;],&quot;default&quot;:&quot;tonghop&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;defaultType&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;cast&quot;,&quot;quan&quot;],&quot;default&quot;:&quot;cast&quot;,&quot;tsType&quot;:&quot;'cast'|'quan'&quot;}}">
+class Component extends DCLogic {
+  state = {};
+
+  get DATA(){
+    return {
+      tonghop:{
+        quan:[
+          ['Club Lumière','Tây Hồ · HN · Bar Lounge','★ 4.9 · 12.4k lượt',true],
+          ['Sora Lounge','Quận 1 · HCM · Lounge','★ 4.9 · 11.8k lượt',true],
+          ['KTV Hoàng Gia','Kim Mã · HN · Karaoke','★ 4.8 · 9.7k lượt',false],
+          ['Diamond Bar','Quận 3 · HCM · Bar','★ 4.7 · 8.9k lượt',false],
+          ['Sakura Lounge','Trúc Bạch · HN · Lounge','★ 4.7 · 8.1k lượt',false],
+        ],
+        cast:[
+          ['Michi · 23','Nói tiếng Nhật · HN','★ 4.9 · 1.2k thích',true],
+          ['Mai · 25','Nói chuyện duyên · HCM','★ 4.9 · 1.1k thích',false],
+          ['Yuki · 24','Phong cách đẹp · HN','★ 4.8 · 980 thích',false],
+          ['Emi · 25','Nói tiếng Nhật · HCM','★ 4.9 · 910 thích',false],
+          ['Nana · 22','Hát hay · ĐN','★ 4.8 · 870 thích',false],
+        ],
+      },
+      hn:{
+        quan:[
+          ['Club Lumière','Tây Hồ · Bar Lounge','★ 4.9 · 12.4k lượt',true],
+          ['KTV Hoàng Gia','Kim Mã · Karaoke','★ 4.8 · 9.7k lượt',false],
+          ['Sakura Lounge','Trúc Bạch · Lounge','★ 4.7 · 8.1k lượt',false],
+          ['Hanoi Velvet','Hoàn Kiếm · Bar','★ 4.7 · 7.3k lượt',false],
+          ['Casino Diamond','Tây Hồ · Casino','★ 4.6 · 6.5k lượt',false],
+        ],
+        cast:[
+          ['Michi · 23','Nói tiếng Nhật','★ 4.9 · 860 thích',true],
+          ['Yuki · 24','Phong cách đẹp','★ 4.8 · 640 thích',false],
+          ['Rina · 21','Trong độ tuổi 20','★ 4.7 · 520 thích',false],
+          ['Mai · 25','Nói chuyện duyên','★ 4.9 · 500 thích',false],
+          ['Hana · 22','Nói tiếng Nhật','★ 4.6 · 470 thích',false],
+        ],
+      },
+      hcm:{
+        quan:[
+          ['Sora Lounge','Quận 1 · Lounge','★ 4.9 · 11.8k lượt',true],
+          ['Diamond Bar','Quận 3 · Bar','★ 4.7 · 8.9k lượt',false],
+          ['Saigon Pearl','Quận 1 · KTV','★ 4.7 · 7.7k lượt',false],
+          ['Neon Garden','Bình Thạnh · Club','★ 4.6 · 6.9k lượt',false],
+          ['Lotus Spa','Quận 7 · Massage','★ 4.6 · 6.2k lượt',false],
+        ],
+        cast:[
+          ['Emi · 25','Nói tiếng Nhật','★ 4.9 · 720 thích',true],
+          ['Nana · 22','Hát hay','★ 4.8 · 690 thích',false],
+          ['Aoi · 24','Dịu dàng','★ 4.7 · 610 thích',false],
+          ['Saki · 23','Vui vẻ','★ 4.8 · 580 thích',false],
+          ['Kana · 23','Thân thiện','★ 4.7 · 540 thích',false],
+        ],
+      },
+      dn:{
+        quan:[
+          ['Han River Bar','Hải Châu · Bar','★ 4.8 · 5.4k lượt',true],
+          ['Sky36 Lounge','Hải Châu · Lounge','★ 4.7 · 4.8k lượt',false],
+          ['Karaoke Sông Hàn','Thanh Khê · Karaoke','★ 4.6 · 4.1k lượt',false],
+          ['Beach Club ĐN','Sơn Trà · Club','★ 4.6 · 3.7k lượt',false],
+          ['Mỹ Khê Spa','Ngũ Hành Sơn · Massage','★ 4.5 · 3.2k lượt',false],
+        ],
+        cast:[
+          ['Linh · 24','Thân thiện','★ 4.8 · 410 thích',true],
+          ['Trang · 23','Nói tiếng Anh','★ 4.7 · 360 thích',false],
+          ['Ngọc · 22','Hát hay','★ 4.7 · 330 thích',false],
+          ['Vy · 25','Dịu dàng','★ 4.6 · 300 thích',false],
+          ['My · 23','Vui vẻ','★ 4.6 · 280 thích',false],
+        ],
+      },
+      hp:{
+        quan:[
+          ['Lạch Tray Lounge','Ngô Quyền · Lounge','★ 4.7 · 3.9k lượt',true],
+          ['Cảng Bar','Hồng Bàng · Bar','★ 4.6 · 3.3k lượt',false],
+          ['KTV Hoa Phượng','Lê Chân · Karaoke','★ 4.6 · 2.9k lượt',false],
+          ['Đồ Sơn Club','Đồ Sơn · Club','★ 4.5 · 2.5k lượt',false],
+          ['Pearl Spa HP','Ngô Quyền · Massage','★ 4.5 · 2.1k lượt',false],
+        ],
+        cast:[
+          ['Hà · 24','Thân thiện','★ 4.7 · 240 thích',true],
+          ['Thu · 23','Hát hay','★ 4.6 · 210 thích',false],
+          ['Lan · 22','Dịu dàng','★ 4.6 · 190 thích',false],
+          ['Quỳnh · 25','Vui vẻ','★ 4.5 · 170 thích',false],
+          ['Anh · 23','Nói tiếng Anh','★ 4.5 · 150 thích',false],
+        ],
+      },
+    };
+  }
+
+  build(rows){
+    const crown=['#E8B84B','#B9C2CC','#C8814B','#5BC08A','#5BA6E0'];
+    const numColor=['#5a3d00','#3a424d','#5a3300','#0a3d28','#0a2e4d'];
+    const grads=[['#d6336c','#7b2d6b'],['#3a8fb0','#2d5fae'],['#8a6ad0','#5d3da8'],['#e0a23a','#c0782d'],['#e0598a','#a8336b']];
+    return rows.map((r,i)=>({
+      rank:i+1, name:r[0], area:r[1], metric:r[2], sponsor:r[3],
+      crown:crown[i], numColor:numColor[i],
+      grad:'linear-gradient(140deg,'+grads[i][0]+','+grads[i][1]+')'
+    }));
+  }
+
+  renderVals(){
+    const region = this.state.region || this.props.defaultRegion || 'tonghop';
+    const type = this.state.type || this.props.defaultType || 'cast';
+    const cat = this.state.cat || 'all';
+
+    const rows = (this.DATA[region] || this.DATA.tonghop)[type] || [];
+    const list = this.build(rows);
+
+    const regionLabel = {tonghop:'Tổng hợp toàn quốc', hn:'Hà Nội', hcm:'TP.HCM', dn:'Đà Nẵng', hp:'Hải Phòng'}[region];
+    const catLabel = {all:'Tất cả loại hình', bar:'Bar', karaoke:'Karaoke', massage:'Massage/Spa', nhahang:'Nhà hàng', casino:'Casino'}[cat];
+    const headingLabel = type==='cast'
+      ? ('Top 5 Cast · ' + regionLabel)
+      : ('Top 5 Quán · ' + catLabel + ' · ' + regionLabel);
+
+    // tab style builders
+    const baseR='display:inline-flex;align-items:center;justify-content:center;font-size:13px;border-radius:18px;padding:8px 16px;font-weight:600;cursor:pointer;white-space:nowrap;';
+    const onR='background:#6d28d9;color:#fff;border:1px solid #6d28d9;';
+    const offR='background:#fff;color:#5b5870;border:1px solid #ececec;';
+    const R=(a)=>baseR+(a?onR:offR);
+    const baseM='display:inline-flex;align-items:center;justify-content:center;font-size:11.5px;border-radius:14px;padding:6px 12px;font-weight:600;cursor:pointer;white-space:nowrap;';
+    const M=(a)=>baseM+(a?onR:offR);
+    // toggle (segmented)
+    const segBase='display:inline-flex;align-items:center;justify-content:center;font-size:13px;border-radius:14px;padding:7px 18px;font-weight:600;cursor:pointer;';
+    const segOn='background:#6d28d9;color:#fff;';
+    const segOff='background:transparent;color:#5b5870;';
+    const SEG=(a)=>segBase+(a?segOn:segOff);
+    const segM='flex:1;display:inline-flex;align-items:center;justify-content:center;font-size:12.5px;border-radius:11px;padding:8px 0;font-weight:600;cursor:pointer;';
+    const SEGM=(a)=>segM+(a?segOn:segOff);
+    // category chips
+    const baseC='display:inline-flex;align-items:center;justify-content:center;font-size:12.5px;border-radius:16px;padding:7px 14px;font-weight:600;cursor:pointer;white-space:nowrap;';
+    const C=(a)=>baseC+(a?onR:offR);
+    const baseCM='display:inline-flex;align-items:center;justify-content:center;font-size:11px;border-radius:14px;padding:6px 11px;font-weight:600;cursor:pointer;white-space:nowrap;';
+    const CM=(a)=>baseCM+(a?onR:offR);
+
+    return {
+      list, headingLabel, showCat: type==='quan',
+      actionLabel: type==='cast' ? 'Đặt hẹn' : 'Gọi ngay',
+      actionIcon: type==='cast'
+        ? 'https://img.icons8.com/ios-filled/100/FFFFFF/calendar.png'
+        : 'https://img.icons8.com/ios-filled/100/FFFFFF/phone.png',
+      // region handlers
+      rTonghop:()=>this.setState({region:'tonghop'}),
+      rHn:()=>this.setState({region:'hn'}),
+      rHcm:()=>this.setState({region:'hcm'}),
+      rDn:()=>this.setState({region:'dn'}),
+      rHp:()=>this.setState({region:'hp'}),
+      // type handlers
+      tCast:()=>this.setState({type:'cast'}),
+      tQuan:()=>this.setState({type:'quan'}),
+      // category handlers
+      cAll:()=>this.setState({cat:'all'}),
+      cBar:()=>this.setState({cat:'bar'}),
+      cKaraoke:()=>this.setState({cat:'karaoke'}),
+      cMassage:()=>this.setState({cat:'massage'}),
+      cNhahang:()=>this.setState({cat:'nhahang'}),
+      cCasino:()=>this.setState({cat:'casino'}),
+      // desktop styles
+      sRTonghop:R(region==='tonghop'), sRHn:R(region==='hn'), sRHcm:R(region==='hcm'), sRDn:R(region==='dn'), sRHp:R(region==='hp'),
+      sTCast:SEG(type==='cast'), sTQuan:SEG(type==='quan'),
+      sCAll:C(cat==='all'), sCBar:C(cat==='bar'), sCKaraoke:C(cat==='karaoke'), sCMassage:C(cat==='massage'), sCNhahang:C(cat==='nhahang'), sCCasino:C(cat==='casino'),
+      // mobile styles
+      mRTonghop:M(region==='tonghop'), mRHn:M(region==='hn'), mRHcm:M(region==='hcm'), mRDn:M(region==='dn'), mRHp:M(region==='hp'),
+      mTCast:SEGM(type==='cast'), mTQuan:SEGM(type==='quan'),
+      mCAll:CM(cat==='all'), mCBar:CM(cat==='bar'), mCKaraoke:CM(cat==='karaoke'), mCMassage:CM(cat==='massage'), mCNhahang:CM(cat==='nhahang'),
+    };
+  }
+}
+</script>
+</body>
+</html>

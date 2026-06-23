@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#e7e5df;}
+  .hscroll{scrollbar-width:thin;scrollbar-color:#c9c6cf transparent;}
+  .hscroll::-webkit-scrollbar{height:7px;}
+  .hscroll::-webkit-scrollbar-thumb{background:#c9c6cf;border-radius:4px;}
+</style>
+</helmet>
+
+<div style="width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;padding:48px;background:#e7e5df;font-family:'Inter',sans-serif;">
+
+  <div style="margin-bottom:36px;max-width:1100px;">
+    <div style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#8a8780;font-weight:600;">Phương án C · Daylight Discovery</div>
+    <h1 style="font-size:30px;font-weight:800;color:#2b2a26;margin-top:8px;">Booking &amp; Coupon — P7 · P8 · P9 · P10</h1>
+    <p style="font-size:15px;color:#6e6b64;margin-top:8px;max-width:760px;line-height:1.6;">Form đặt chỗ (chung quán/cast) · Lịch sử đặt chỗ 3 trạng thái · Chi tiết mã QR · Ví ưu đãi. Tab trạng thái ở P8 &amp; P10 bấm để lọc thật. Mỗi màn có desktop + mobile.</p>
+  </div>
+
+  <!-- ============================ P7 · BOOKING FORM ============================ -->
+  <div style="margin-bottom:18px;font-size:14px;font-weight:700;color:#2b2a26;">P7 · Booking — Form đặt chỗ <span style="color:#8a8780;font-weight:500;">(dùng chung quán &amp; cast)</span></div>
+  <div style="display:flex;gap:40px;align-items:flex-start;margin-bottom:64px;">
+
+    <!-- desktop -->
+    <div style="flex:none;width:1100px;background:#f5f4f2;border-radius:6px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.12);color:#1f1d29;">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 34px;background:#fff;border-bottom:1px solid #ececec;">
+        <div style="display:flex;align-items:center;gap:34px;"><div style="font-weight:800;font-size:20px;color:#6d28d9;">nightlife<span style="color:#1f1d29;">.hn</span></div><div style="display:flex;gap:22px;font-size:14px;color:#5b5870;font-weight:500;"><span>Trang chủ</span><span>Tìm quán</span><span>Cast</span><span>Bảng xếp hạng</span><span>Tour</span><span>Blog</span></div></div>
+        <div style="display:flex;align-items:center;gap:14px;"><div style="font-size:13px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:6px 12px;font-weight:600;">VI · 日本語</div><div style="font-size:13px;color:#5b5870;">Đăng nhập</div><div style="font-size:13px;font-weight:600;color:#fff;background:#6d28d9;border-radius:22px;padding:9px 18px;">Đăng ký đối tác</div></div>
+      </div>
+      <div style="padding:18px 34px 0;font-size:12.5px;color:#8a879a;">Trang chủ › Club Lumière › <span style="color:#1f1d29;">Đặt chỗ</span></div>
+
+      <div style="display:flex;gap:24px;padding:20px 34px 32px;">
+        <!-- form -->
+        <div style="flex:1;">
+          <h2 style="font-size:24px;font-weight:800;">Đặt chỗ</h2>
+          <p style="font-size:13.5px;color:#5b5870;margin-top:6px;">Gửi yêu cầu — Admin sẽ liên hệ xác nhận với bạn &amp; quán. Không thu cọc / thanh toán online.</p>
+
+          <!-- guest/member -->
+          <div style="display:flex;gap:8px;background:#f3f2f5;border-radius:12px;padding:4px;margin-top:18px;max-width:380px;">
+            <div onClick="{{ mGuest }}" style="{{ sGuest }}">Đặt nhanh (Guest)</div>
+            <div onClick="{{ mMember }}" style="{{ sMember }}">Đăng nhập hội viên</div>
+          </div>
+          <div style="margin-top:10px;font-size:12.5px;color:#6d28d9;background:#f1ebff;border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:8px;"><img src="https://img.icons8.com/fluency/96/gift.png" style="width:18px;height:18px;" alt="">{{ discountNote }}</div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;">
+            <div style="grid-column:span 2;"><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Quán</label><div style="margin-top:7px;border:1px solid #e2e0e8;border-radius:11px;padding:11px 13px;display:flex;align-items:center;gap:11px;"><span style="width:36px;height:36px;border-radius:9px;background:linear-gradient(140deg,#d6336c,#7b2d6b);flex:none;"></span><div><div style="font-size:13.5px;font-weight:600;">Club Lumière</div><div style="font-size:11.5px;color:#8a879a;">Tây Hồ · Bar Lounge</div></div></div></div>
+            <div style="grid-column:span 2;"><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Cast tham chiếu (nếu đặt theo cast)</label><div style="margin-top:7px;border:1px dashed #d9c9f7;border-radius:11px;padding:11px 13px;display:flex;align-items:center;gap:10px;background:#faf7ff;"><span style="width:30px;height:30px;border-radius:50%;background:linear-gradient(140deg,#e0598a,#a8336b);flex:none;"></span><span style="font-size:13px;font-weight:600;color:#6d28d9;">Michi · 23</span><span style="margin-left:auto;font-size:12px;color:#8a879a;">Bỏ chọn ✕</span></div></div>
+            <div><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Họ tên</label><div style="margin-top:7px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#9a98a6;">Nguyễn Văn A</div></div>
+            <div><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Số điện thoại</label><div style="margin-top:7px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#9a98a6;">0912 345 678</div></div>
+            <div><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Ngày</label><div style="margin-top:7px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#3a384a;display:flex;align-items:center;gap:9px;"><img src="https://img.icons8.com/fluency/96/calendar.png" style="width:17px;height:17px;" alt="">Th 6, 21/06/2026</div></div>
+            <div><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Khung giờ</label><div style="margin-top:7px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#3a384a;display:flex;align-items:center;gap:9px;"><img src="https://img.icons8.com/fluency/96/clock.png" style="width:17px;height:17px;" alt="">21:00</div></div>
+            <div><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Số người</label><div style="margin-top:7px;border:1px solid #e2e0e8;border-radius:11px;padding:9px 13px;font-size:13.5px;color:#3a384a;display:flex;align-items:center;justify-content:space-between;"><span style="width:28px;height:28px;border-radius:8px;background:#f3f2f5;display:flex;align-items:center;justify-content:center;font-weight:700;">−</span><span style="font-weight:600;">4 người</span><span style="width:28px;height:28px;border-radius:8px;background:#6d28d9;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;">+</span></div></div>
+            <div><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Mã giảm giá (tuỳ chọn)</label><div style="margin-top:7px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#3a384a;display:flex;align-items:center;justify-content:space-between;">Happy Hour −30%<span style="font-size:12px;color:#8a879a;">▾</span></div></div>
+            <div style="grid-column:span 2;"><label style="font-size:12.5px;font-weight:600;color:#5b5870;">Ghi chú</label><div style="margin-top:7px;border:1px solid #e2e0e8;border-radius:11px;padding:12px 13px;font-size:13.5px;color:#9a98a6;min-height:64px;">Yêu cầu phòng VIP, có nhân viên nói tiếng Nhật…</div></div>
+          </div>
+          <div style="margin-top:18px;background:#6d28d9;color:#fff;text-align:center;border-radius:12px;padding:14px;font-weight:700;font-size:15px;">Gửi yêu cầu đặt chỗ</div>
+          <div style="margin-top:10px;font-size:12px;color:#8a879a;text-align:center;">Yêu cầu sẽ gửi tới Admin qua Telegram để điều phối với quán.</div>
+        </div>
+
+        <!-- summary -->
+        <div style="width:300px;flex:none;">
+          <div style="background:#fff;border:1px solid #ececec;border-radius:16px;padding:20px;box-shadow:0 6px 20px rgba(40,20,60,.07);">
+            <div style="font-weight:700;font-size:15px;">Tóm tắt</div>
+            <div style="margin-top:14px;display:flex;flex-direction:column;gap:10px;font-size:13px;color:#3a384a;">
+              <div style="display:flex;justify-content:space-between;"><span style="color:#8a879a;">Quán</span><span style="font-weight:600;">Club Lumière</span></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:#8a879a;">Cast</span><span style="font-weight:600;">Michi</span></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:#8a879a;">Thời gian</span><span style="font-weight:600;">21/06 · 21:00</span></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:#8a879a;">Số người</span><span style="font-weight:600;">4</span></div>
+            </div>
+            <div style="height:1px;background:#ececec;margin:14px 0;"></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:13px;color:#8a879a;">Ưu đãi áp dụng</span><span style="font-size:15px;font-weight:800;color:#6d28d9;">{{ discountPct }}</span></div>
+            <div style="margin-top:14px;font-size:12px;color:#8a879a;line-height:1.6;">Giá hiển thị tại quán chỉ để tham khảo — không đặt món/thanh toán trên web.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- mobile -->
+    <div style="flex:none;width:390px;background:#f5f4f2;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);color:#1f1d29;border:1px solid #e3e0da;">
+      <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;background:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #1f1d29;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#1f1d29;border-radius:1px;"></span></span></div>
+      <div style="background:#fff;padding:8px 18px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #ececec;"><span style="font-size:20px;color:#5b5870;">‹</span><span style="font-weight:800;font-size:16px;">Đặt chỗ</span></div>
+      <div style="padding:14px 18px;">
+        <div style="border:1px solid #ececec;border-radius:12px;padding:11px;display:flex;align-items:center;gap:10px;"><span style="width:38px;height:38px;border-radius:9px;background:linear-gradient(140deg,#d6336c,#7b2d6b);flex:none;"></span><div><div style="font-size:13.5px;font-weight:600;">Club Lumière</div><div style="font-size:11px;color:#8a879a;">Cast: Michi · 23</div></div></div>
+        <div style="display:flex;gap:6px;background:#f3f2f5;border-radius:12px;padding:4px;margin-top:12px;">
+          <div onClick="{{ mGuest }}" style="{{ mGuestSt }}">Guest</div>
+          <div onClick="{{ mMember }}" style="{{ mMemberSt }}">Hội viên</div>
+        </div>
+        <div style="margin-top:10px;font-size:11.5px;color:#6d28d9;background:#f1ebff;border-radius:9px;padding:8px 11px;">{{ discountNote }}</div>
+        <div style="display:flex;flex-direction:column;gap:11px;margin-top:14px;">
+          <div><label style="font-size:11.5px;font-weight:600;color:#5b5870;">Họ tên</label><div style="margin-top:5px;border:1px solid #e2e0e8;border-radius:10px;padding:11px 12px;font-size:13px;color:#9a98a6;">Nguyễn Văn A</div></div>
+          <div><label style="font-size:11.5px;font-weight:600;color:#5b5870;">Số điện thoại</label><div style="margin-top:5px;border:1px solid #e2e0e8;border-radius:10px;padding:11px 12px;font-size:13px;color:#9a98a6;">0912 345 678</div></div>
+          <div style="display:flex;gap:10px;"><div style="flex:1;"><label style="font-size:11.5px;font-weight:600;color:#5b5870;">Ngày</label><div style="margin-top:5px;border:1px solid #e2e0e8;border-radius:10px;padding:11px 12px;font-size:12.5px;color:#3a384a;">21/06</div></div><div style="flex:1;"><label style="font-size:11.5px;font-weight:600;color:#5b5870;">Giờ</label><div style="margin-top:5px;border:1px solid #e2e0e8;border-radius:10px;padding:11px 12px;font-size:12.5px;color:#3a384a;">21:00</div></div><div style="flex:1;"><label style="font-size:11.5px;font-weight:600;color:#5b5870;">Số người</label><div style="margin-top:5px;border:1px solid #e2e0e8;border-radius:10px;padding:11px 12px;font-size:12.5px;color:#3a384a;">4</div></div></div>
+        </div>
+      </div>
+      <div style="background:#fff;border-top:1px solid #ececec;padding:13px 18px 20px;display:flex;align-items:center;gap:12px;">
+        <div><div style="font-size:11px;color:#8a879a;">Ưu đãi</div><div style="font-size:16px;font-weight:800;color:#6d28d9;">{{ discountPct }}</div></div>
+        <div style="flex:1;background:#6d28d9;color:#fff;text-align:center;border-radius:12px;padding:14px;font-weight:700;font-size:14px;">Gửi yêu cầu</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================ P8 · CONFIRM + HISTORY ============================ -->
+  <div style="margin-bottom:18px;font-size:14px;font-weight:700;color:#2b2a26;">P8 · Xác nhận &amp; Lịch sử đặt chỗ <span style="color:#8a8780;font-weight:500;">(Mới · Đã hủy · Hoàn tất)</span></div>
+  <div style="display:flex;gap:40px;align-items:flex-start;margin-bottom:64px;">
+
+    <!-- desktop -->
+    <div style="flex:none;width:1100px;background:#f5f4f2;border-radius:6px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.12);color:#1f1d29;">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 34px;background:#fff;border-bottom:1px solid #ececec;">
+        <div style="display:flex;align-items:center;gap:34px;"><div style="font-weight:800;font-size:20px;color:#6d28d9;">nightlife<span style="color:#1f1d29;">.hn</span></div><div style="display:flex;gap:22px;font-size:14px;color:#5b5870;font-weight:500;"><span>Trang chủ</span><span>Tìm quán</span><span>Cast</span><span>Bảng xếp hạng</span><span>Tour</span><span>Blog</span></div></div>
+        <div style="display:flex;align-items:center;gap:14px;"><div style="font-size:13px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:6px 12px;font-weight:600;">VI · 日本語</div><div style="font-size:13px;color:#5b5870;">Tài khoản</div></div>
+      </div>
+
+      <div style="padding:26px 34px 0;">
+        <div style="background:#e6f7ee;border:1px solid #c3ecd4;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:13px;">
+          <span style="width:40px;height:40px;border-radius:50%;background:#1f8a52;display:flex;align-items:center;justify-content:center;flex:none;"><img src="https://img.icons8.com/ios-filled/100/FFFFFF/checkmark.png" style="width:20px;height:20px;" alt=""></span>
+          <div><div style="font-weight:700;font-size:15px;color:#177544;">Đã gửi yêu cầu đặt chỗ!</div><div style="font-size:12.5px;color:#3a7a59;margin-top:2px;">Admin sẽ liên hệ xác nhận sớm. Bạn có thể hủy trước giờ hẹn tối thiểu 1 giờ.</div></div>
+        </div>
+      </div>
+
+      <div style="padding:22px 34px 8px;display:flex;align-items:center;justify-content:space-between;">
+        <h2 style="font-size:22px;font-weight:800;">Lịch sử đặt chỗ</h2>
+      </div>
+      <div style="padding:0 34px;display:flex;gap:9px;flex-wrap:wrap;">
+        <div onClick="{{ bkAll }}" style="{{ sBkAll }}">Tất cả</div>
+        <div onClick="{{ bkNew }}" style="{{ sBkNew }}">Mới</div>
+        <div onClick="{{ bkDone }}" style="{{ sBkDone }}">Hoàn tất</div>
+        <div onClick="{{ bkCancelled }}" style="{{ sBkCancelled }}">Đã hủy</div>
+      </div>
+      <div style="padding:16px 34px 32px;display:flex;flex-direction:column;gap:12px;">
+        <sc-for list="{{ bkList }}" as="b" hint-placeholder-count="4">
+          <div style="display:flex;align-items:center;gap:16px;background:#fff;border:1px solid #ececec;border-radius:14px;padding:14px 16px;box-shadow:0 3px 12px rgba(40,20,60,.06);">
+            <span style="width:50px;height:50px;border-radius:12px;flex:none;background:{{ b.grad }};"></span>
+            <div style="flex:1;"><div style="font-weight:600;font-size:15px;">{{ b.place }}</div><div style="font-size:12.5px;color:#8a879a;margin-top:3px;">{{ b.meta }}</div></div>
+            <span style="font-size:11.5px;font-weight:700;border-radius:10px;padding:5px 11px;color:{{ b.color }};background:{{ b.bg }};">{{ b.label }}</span>
+            <sc-if value="{{ b.canCancel }}" hint-placeholder-val="{{ false }}"><span style="font-size:12.5px;color:#b03a4a;font-weight:600;border:1px solid #f1cdd3;border-radius:10px;padding:8px 14px;">Hủy</span></sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- mobile -->
+    <div style="flex:none;width:390px;background:#f5f4f2;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);color:#1f1d29;border:1px solid #e3e0da;">
+      <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;background:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #1f1d29;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#1f1d29;border-radius:1px;"></span></span></div>
+      <div style="background:#fff;padding:8px 18px 12px;"><h2 style="font-size:19px;font-weight:800;">Đặt chỗ của tôi</h2></div>
+      <div style="padding:0 18px;"><div style="background:#e6f7ee;border:1px solid #c3ecd4;border-radius:12px;padding:11px 13px;display:flex;align-items:center;gap:10px;"><span style="width:30px;height:30px;border-radius:50%;background:#1f8a52;display:flex;align-items:center;justify-content:center;flex:none;"><img src="https://img.icons8.com/ios-filled/100/FFFFFF/checkmark.png" style="width:15px;height:15px;" alt=""></span><div style="font-size:11.5px;color:#177544;font-weight:600;">Đã gửi yêu cầu! Admin sẽ liên hệ sớm.</div></div></div>
+      <div class="hscroll" style="padding:12px 18px 0;display:flex;gap:7px;overflow-x:auto;">
+        <div onClick="{{ bkAll }}" style="{{ mBkAll }}">Tất cả</div>
+        <div onClick="{{ bkNew }}" style="{{ mBkNew }}">Mới</div>
+        <div onClick="{{ bkDone }}" style="{{ mBkDone }}">Hoàn tất</div>
+        <div onClick="{{ bkCancelled }}" style="{{ mBkCancelled }}">Đã hủy</div>
+      </div>
+      <div style="padding:12px 18px;display:flex;flex-direction:column;gap:9px;">
+        <sc-for list="{{ bkList }}" as="b" hint-placeholder-count="4">
+          <div style="background:#fff;border:1px solid #ececec;border-radius:13px;padding:11px 12px;display:flex;align-items:center;gap:11px;">
+            <span style="width:42px;height:42px;border-radius:11px;flex:none;background:{{ b.grad }};"></span>
+            <div style="flex:1;min-width:0;"><div style="font-weight:600;font-size:13px;">{{ b.place }}</div><div style="font-size:10.5px;color:#8a879a;margin-top:1px;">{{ b.meta }}</div></div>
+            <span style="font-size:9.5px;font-weight:700;border-radius:8px;padding:4px 8px;color:{{ b.color }};background:{{ b.bg }};">{{ b.label }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="height:64px;background:#fff;border-top:1px solid #ececec;display:flex;align-items:center;justify-content:space-around;padding-bottom:6px;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/home.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Trang chủ</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/geisha.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Cast</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/gift.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Ưu đãi</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios-filled/100/6D28D9/calendar.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#6d28d9;font-weight:600;">Đặt chỗ</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/user.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Tài khoản</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================ P9 · COUPON / QR DETAIL ============================ -->
+  <div style="margin-bottom:18px;font-size:14px;font-weight:700;color:#2b2a26;">P9 · Coupon / QR — Chi tiết mã</div>
+  <div style="display:flex;gap:40px;align-items:flex-start;margin-bottom:64px;">
+
+    <!-- desktop (centered card on canvas) -->
+    <div style="flex:none;width:1100px;background:#f5f4f2;border-radius:6px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.12);color:#1f1d29;padding:40px;display:flex;justify-content:center;">
+      <div style="width:440px;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 30px rgba(40,20,60,.12);">
+        <div style="background:linear-gradient(140deg,#7b2d6b,#3a1f6e);padding:26px 28px;color:#fff;position:relative;">
+          <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ffd0e4;font-weight:700;">Mã ưu đãi</div>
+          <div style="font-size:26px;font-weight:800;margin-top:6px;">Happy Hour −30%</div>
+          <div style="font-size:13px;color:#f0e6f4;margin-top:4px;">Club Lumière · Tây Hồ, Hà Nội</div>
+          <span style="position:absolute;top:24px;right:24px;background:#ffd24d;color:#5a3d00;font-size:22px;font-weight:800;border-radius:12px;padding:8px 14px;">−30%</span>
+        </div>
+        <div style="padding:26px 28px;text-align:center;">
+          <div style="width:200px;height:200px;margin:0 auto;border:1px solid #ececec;border-radius:16px;display:flex;align-items:center;justify-content:center;background:#fff;"><img src="https://img.icons8.com/ios/300/000000/qr-code.png" style="width:170px;height:170px;" alt="QR"></div>
+          <div style="font-family:monospace;font-size:15px;letter-spacing:.18em;color:#1f1d29;font-weight:700;margin-top:14px;">NL-HH30-7K2A</div>
+          <div style="display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:#f1ebff;color:#6d28d9;border-radius:20px;padding:8px 16px;font-size:13px;font-weight:600;"><img src="https://img.icons8.com/fluency/96/clock.png" style="width:16px;height:16px;" alt="">Còn 22:14:08 · trạng thái Đang giữ chỗ</div>
+          <div style="margin-top:18px;background:#faf7ff;border:1px solid #ece4fb;border-radius:12px;padding:14px;font-size:12.5px;color:#5b5870;line-height:1.6;text-align:left;">Đưa mã này cho <b>nhân viên quán quét</b> khi tới nơi để áp dụng ưu đãi. Mỗi mã dùng 1 lần; hết hạn tự hủy. Hạn dùng: Guest 24 giờ · Hội viên 7 ngày.</div>
+          <div style="display:flex;gap:10px;margin-top:16px;">
+            <div style="flex:1;background:#6d28d9;color:#fff;border-radius:11px;padding:13px;font-weight:700;font-size:14px;">Lưu vào ví</div>
+            <div style="flex:none;border:1px solid #ececec;border-radius:11px;padding:13px 18px;font-weight:600;font-size:14px;color:#6d28d9;display:flex;align-items:center;gap:7px;"><img src="https://img.icons8.com/ios/100/6D28D9/share.png" style="width:16px;height:16px;" alt="">Chia sẻ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- mobile -->
+    <div style="flex:none;width:390px;background:#f5f4f2;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);color:#1f1d29;border:1px solid #e3e0da;">
+      <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;background:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #1f1d29;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#1f1d29;border-radius:1px;"></span></span></div>
+      <div style="background:#fff;padding:8px 18px 12px;display:flex;align-items:center;gap:12px;"><span style="font-size:20px;color:#5b5870;">‹</span><span style="font-weight:800;font-size:16px;">Mã ưu đãi</span></div>
+      <div style="padding:0 18px 18px;">
+        <div style="background:linear-gradient(140deg,#7b2d6b,#3a1f6e);border-radius:16px;padding:18px;color:#fff;position:relative;">
+          <div style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#ffd0e4;font-weight:700;">Mã ưu đãi</div>
+          <div style="font-size:20px;font-weight:800;margin-top:5px;">Happy Hour −30%</div>
+          <div style="font-size:11.5px;color:#f0e6f4;margin-top:3px;">Club Lumière · Tây Hồ</div>
+          <span style="position:absolute;top:16px;right:16px;background:#ffd24d;color:#5a3d00;font-size:16px;font-weight:800;border-radius:10px;padding:5px 10px;">−30%</span>
+        </div>
+        <div style="background:#fff;border:1px solid #ececec;border-radius:16px;margin-top:12px;padding:18px;text-align:center;">
+          <div style="width:168px;height:168px;margin:0 auto;border:1px solid #ececec;border-radius:14px;display:flex;align-items:center;justify-content:center;"><img src="https://img.icons8.com/ios/300/000000/qr-code.png" style="width:140px;height:140px;" alt="QR"></div>
+          <div style="font-family:monospace;font-size:13px;letter-spacing:.16em;font-weight:700;margin-top:12px;">NL-HH30-7K2A</div>
+          <div style="display:inline-flex;align-items:center;gap:6px;margin-top:11px;background:#f1ebff;color:#6d28d9;border-radius:18px;padding:7px 13px;font-size:11.5px;font-weight:600;"><img src="https://img.icons8.com/fluency/96/clock.png" style="width:14px;height:14px;" alt="">Còn 22:14:08</div>
+        </div>
+        <div style="margin-top:12px;font-size:11.5px;color:#5b5870;line-height:1.6;background:#faf7ff;border:1px solid #ece4fb;border-radius:12px;padding:12px;">Đưa mã cho nhân viên quán quét khi tới nơi. Mã dùng 1 lần, hết hạn tự hủy.</div>
+        <div style="margin-top:12px;background:#6d28d9;color:#fff;text-align:center;border-radius:11px;padding:13px;font-weight:700;font-size:14px;">Lưu vào ví</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================ P10 · VÍ ƯU ĐÃI ============================ -->
+  <div style="margin-bottom:18px;font-size:14px;font-weight:700;color:#2b2a26;">P10 · Ví ưu đãi — Coupon của tôi <span style="color:#8a8780;font-weight:500;">(Đang giữ chỗ · Đã dùng · Hết hạn)</span></div>
+  <div style="display:flex;gap:40px;align-items:flex-start;">
+
+    <!-- desktop -->
+    <div style="flex:none;width:1100px;background:#f5f4f2;border-radius:6px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.12);color:#1f1d29;">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 34px;background:#fff;border-bottom:1px solid #ececec;">
+        <div style="display:flex;align-items:center;gap:34px;"><div style="font-weight:800;font-size:20px;color:#6d28d9;">nightlife<span style="color:#1f1d29;">.hn</span></div><div style="display:flex;gap:22px;font-size:14px;color:#5b5870;font-weight:500;"><span>Trang chủ</span><span>Tìm quán</span><span>Cast</span><span>Bảng xếp hạng</span><span style="color:#6d28d9;font-weight:600;">Ưu đãi</span><span>Blog</span></div></div>
+        <div style="display:flex;align-items:center;gap:14px;"><div style="font-size:13px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:6px 12px;font-weight:600;">VI · 日本語</div><div style="font-size:13px;color:#5b5870;">Tài khoản</div></div>
+      </div>
+      <div style="padding:26px 34px 8px;"><h2 style="font-size:24px;font-weight:800;">Ví ưu đãi của tôi</h2><p style="font-size:13px;color:#5b5870;margin-top:5px;">Quản lý mã giảm giá đã lấy — đưa cho nhân viên quán quét khi tới nơi.</p></div>
+      <div style="padding:14px 34px 0;display:flex;gap:9px;flex-wrap:wrap;">
+        <div onClick="{{ cpHolding }}" style="{{ sCpHolding }}">Đang giữ chỗ</div>
+        <div onClick="{{ cpUsed }}" style="{{ sCpUsed }}">Đã sử dụng</div>
+        <div onClick="{{ cpExpired }}" style="{{ sCpExpired }}">Hết hạn</div>
+      </div>
+      <div style="padding:18px 34px 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+        <sc-for list="{{ cpList }}" as="c" hint-placeholder-count="3">
+          <div style="background:#fff;border:1px solid #ececec;border-radius:16px;overflow:hidden;box-shadow:0 3px 12px rgba(40,20,60,.06);{{ c.dim }}">
+            <div style="padding:16px;display:flex;gap:14px;align-items:center;">
+              <div style="width:72px;height:72px;border-radius:12px;border:1px solid #ececec;display:flex;align-items:center;justify-content:center;flex:none;"><img src="https://img.icons8.com/ios/200/000000/qr-code.png" style="width:58px;height:58px;" alt=""></div>
+              <div style="flex:1;min-width:0;"><div style="font-weight:700;font-size:15px;">{{ c.title }}</div><div style="font-size:11.5px;color:#8a879a;margin-top:3px;">{{ c.place }}</div><span style="display:inline-block;margin-top:8px;font-size:11px;font-weight:700;border-radius:9px;padding:4px 10px;color:{{ c.color }};background:{{ c.bg }};">{{ c.label }}</span></div>
+            </div>
+            <div style="border-top:1px dashed #e2e0e8;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;font-size:12px;color:#8a879a;"><span>{{ c.expiry }}</span><span style="color:#6d28d9;font-weight:600;">{{ c.value }}</span></div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- mobile -->
+    <div style="flex:none;width:390px;background:#f5f4f2;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);color:#1f1d29;border:1px solid #e3e0da;">
+      <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;background:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #1f1d29;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#1f1d29;border-radius:1px;"></span></span></div>
+      <div style="background:#fff;padding:8px 18px 12px;"><h2 style="font-size:19px;font-weight:800;">Ví ưu đãi</h2>
+        <div class="hscroll" style="display:flex;gap:7px;margin-top:11px;overflow-x:auto;">
+          <div onClick="{{ cpHolding }}" style="{{ mCpHolding }}">Đang giữ chỗ</div>
+          <div onClick="{{ cpUsed }}" style="{{ mCpUsed }}">Đã dùng</div>
+          <div onClick="{{ cpExpired }}" style="{{ mCpExpired }}">Hết hạn</div>
+        </div>
+      </div>
+      <div style="padding:12px 18px;display:flex;flex-direction:column;gap:11px;">
+        <sc-for list="{{ cpList }}" as="c" hint-placeholder-count="3">
+          <div style="background:#fff;border:1px solid #ececec;border-radius:14px;overflow:hidden;box-shadow:0 3px 12px rgba(40,20,60,.06);{{ c.dim }}">
+            <div style="padding:13px;display:flex;gap:12px;align-items:center;">
+              <div style="width:58px;height:58px;border-radius:11px;border:1px solid #ececec;display:flex;align-items:center;justify-content:center;flex:none;"><img src="https://img.icons8.com/ios/200/000000/qr-code.png" style="width:46px;height:46px;" alt=""></div>
+              <div style="flex:1;min-width:0;"><div style="font-weight:700;font-size:13.5px;">{{ c.title }}</div><div style="font-size:10.5px;color:#8a879a;margin-top:2px;">{{ c.place }}</div><span style="display:inline-block;margin-top:6px;font-size:9.5px;font-weight:700;border-radius:8px;padding:3px 8px;color:{{ c.color }};background:{{ c.bg }};">{{ c.label }}</span></div>
+              <span style="font-size:13px;color:#6d28d9;font-weight:800;">{{ c.value }}</span>
+            </div>
+            <div style="border-top:1px dashed #e2e0e8;padding:9px 13px;font-size:10.5px;color:#8a879a;">{{ c.expiry }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="height:64px;background:#fff;border-top:1px solid #ececec;display:flex;align-items:center;justify-content:space-around;padding-bottom:6px;margin-top:6px;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/home.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Trang chủ</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/geisha.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Cast</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios-filled/100/6D28D9/gift.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#6d28d9;font-weight:600;">Ưu đãi</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/like.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Đã lưu</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/user.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Tài khoản</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {};
+
+  get BOOKINGS(){
+    return [
+      ['Club Lumière','Tây Hồ · 21/06 · 21:00 · 4 người','new','#d6336c','#7b2d6b'],
+      ['Cast: Michi @ Club Lumière','22/06 · 20:00 · 2 người','new','#e0598a','#a8336b'],
+      ['KTV Hoàng Gia','18/06 · 22:00 · 6 người','done','#3a8fb0','#2d5fae'],
+      ['Sakura Lounge','15/06 · 21:30 · 3 người','cancelled','#8a6ad0','#5d3da8'],
+      ['Diamond Bar','10/06 · 20:00 · 2 người','done','#e0a23a','#c0782d'],
+    ];
+  }
+  get COUPONS(){
+    return [
+      ['Happy Hour −30%','Club Lumière · Tây Hồ','holding','Còn 22:14:08','−30%'],
+      ['Combo VIP 2+1','KTV Hoàng Gia · Kim Mã','holding','Còn 6 ngày','2+1'],
+      ['Welcome Member −8%','Sora Lounge · Quận 1','holding','Còn 5 ngày','−8%'],
+      ['Spa thư giãn −50%','Spa Hồng Ngọc · Đống Đa','used','Đã dùng 12/06','−50%'],
+      ['Ladies Night −20%','Hanoi Velvet · Hoàn Kiếm','used','Đã dùng 02/06','−20%'],
+      ['Khai trương −10%','Neon Garden · Bình Thạnh','expired','Hết hạn 01/06','−10%'],
+    ];
+  }
+
+  bkBadge(s){
+    return {
+      new:{label:'Mới',color:'#6d28d9',bg:'#f1ebff'},
+      done:{label:'Hoàn tất',color:'#1f8a52',bg:'#e6f7ee'},
+      cancelled:{label:'Đã hủy',color:'#b03a4a',bg:'#fbe4e7'},
+    }[s];
+  }
+  cpBadge(s){
+    return {
+      holding:{label:'Đang giữ chỗ',color:'#6d28d9',bg:'#f1ebff'},
+      used:{label:'Đã sử dụng',color:'#5b5870',bg:'#f3f2f5'},
+      expired:{label:'Hết hạn',color:'#b03a4a',bg:'#fbe4e7'},
+    }[s];
+  }
+
+  renderVals(){
+    const member = (this.state.tier || 'guest') === 'member';
+    const bkStatus = this.state.bkStatus || 'all';
+    const cpStatus = this.state.cpStatus || 'holding';
+
+    const bkList = this.BOOKINGS
+      .filter(b => bkStatus==='all' || b[2]===bkStatus)
+      .map(b => { const bd=this.bkBadge(b[2]); return {
+        place:b[0], meta:b[1], grad:'linear-gradient(140deg,'+b[3]+','+b[4]+')',
+        label:bd.label, color:bd.color, bg:bd.bg, canCancel:b[2]==='new'
+      };});
+
+    const cpList = this.COUPONS
+      .filter(c => c[2]===cpStatus)
+      .map(c => { const cd=this.cpBadge(c[2]); return {
+        title:c[0], place:c[1], expiry:c[3], value:c[4],
+        label:cd.label, color:cd.color, bg:cd.bg,
+        dim: c[2]==='holding' ? '' : 'opacity:.62;'
+      };});
+
+    // style helpers
+    const baseSeg='flex:1;display:inline-flex;align-items:center;justify-content:center;font-size:13px;border-radius:9px;padding:10px;font-weight:600;cursor:pointer;';
+    const segOn='background:#fff;color:#6d28d9;box-shadow:0 1px 3px rgba(0,0,0,.08);';
+    const segOff='background:transparent;color:#8a879a;';
+    const SEG=(a)=>baseSeg+(a?segOn:segOff);
+
+    const basePill='display:inline-flex;align-items:center;justify-content:center;font-size:13px;border-radius:18px;padding:8px 16px;font-weight:600;cursor:pointer;white-space:nowrap;';
+    const onP='background:#6d28d9;color:#fff;border:1px solid #6d28d9;';
+    const offP='background:#fff;color:#5b5870;border:1px solid #ececec;';
+    const P=(a)=>basePill+(a?onP:offP);
+    const basePillM='display:inline-flex;align-items:center;justify-content:center;font-size:11.5px;border-radius:15px;padding:7px 13px;font-weight:600;cursor:pointer;white-space:nowrap;';
+    const PM=(a)=>basePillM+(a?onP:offP);
+
+    return {
+      bkList, cpList,
+      discountNote: member ? 'Hội viên: giảm 8% · hạn mã 7 ngày · được tích điểm' : 'Guest: giảm 5% · hạn mã 24 giờ. Đăng nhập để nhận tới 10%.',
+      discountPct: member ? '8%' : '5%',
+      mGuest:()=>this.setState({tier:'guest'}),
+      mMember:()=>this.setState({tier:'member'}),
+      sGuest:SEG(!member), sMember:SEG(member),
+      mGuestSt:SEG(!member), mMemberSt:SEG(member),
+      bkAll:()=>this.setState({bkStatus:'all'}),
+      bkNew:()=>this.setState({bkStatus:'new'}),
+      bkDone:()=>this.setState({bkStatus:'done'}),
+      bkCancelled:()=>this.setState({bkStatus:'cancelled'}),
+      sBkAll:P(bkStatus==='all'), sBkNew:P(bkStatus==='new'), sBkDone:P(bkStatus==='done'), sBkCancelled:P(bkStatus==='cancelled'),
+      mBkAll:PM(bkStatus==='all'), mBkNew:PM(bkStatus==='new'), mBkDone:PM(bkStatus==='done'), mBkCancelled:PM(bkStatus==='cancelled'),
+      cpHolding:()=>this.setState({cpStatus:'holding'}),
+      cpUsed:()=>this.setState({cpStatus:'used'}),
+      cpExpired:()=>this.setState({cpStatus:'expired'}),
+      sCpHolding:P(cpStatus==='holding'), sCpUsed:P(cpStatus==='used'), sCpExpired:P(cpStatus==='expired'),
+      mCpHolding:PM(cpStatus==='holding'), mCpUsed:PM(cpStatus==='used'), mCpExpired:PM(cpStatus==='expired'),
+    };
+  }
+}
+</script>
+</body>
+</html>
