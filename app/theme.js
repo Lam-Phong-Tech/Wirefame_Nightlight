@@ -64,6 +64,15 @@
   var applying = false, scheduled = false, btn = null, observer = null;
   function isDark() { try { return localStorage.getItem('nl_theme') === 'dark'; } catch (e) { return false; } }
 
+  // Tắt transition trong lúc đổi theme -> chuyển màu tức thì, không fade .14s.
+  var notrans = null, notransTimer = null;
+  function freezeTransitions() {
+    if (!notrans) { notrans = document.createElement('style'); notrans.textContent = '*{transition:none !important;}'; }
+    if (!notrans.parentNode) (document.head || document.documentElement).appendChild(notrans);
+    if (notransTimer) clearTimeout(notransTimer);
+    notransTimer = setTimeout(function () { if (notrans && notrans.parentNode) notrans.parentNode.removeChild(notrans); }, 160);
+  }
+
   function walk() {
     var dark = isDark();
     var els = document.body.querySelectorAll('[style]');
@@ -80,6 +89,7 @@
 
   function apply() {
     applying = true;
+    freezeTransitions();
     if (observer) observer.disconnect();
     try { walk(); } catch (e) {}
     styleBtn();
