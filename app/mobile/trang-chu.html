@@ -14,41 +14,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box;margin:0;padding:0;}
-  body{background:#e7e5df;}
+  body{background:#f5f4f2;}
   a{text-decoration:none;color:inherit;}
   .hscroll{scrollbar-width:none;}
   .hscroll::-webkit-scrollbar{display:none;}
 </style>
 </helmet>
 
-<div style="width:100%;min-height:100vh;box-sizing:border-box;padding:34px 24px 64px;background:#e7e5df;font-family:'Inter',sans-serif;">
 
-  <div style="max-width:390px;margin:0 auto 18px;display:flex;align-items:center;gap:12px;">
-    <a href="../../index.html" style="font-size:12.5px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:6px 13px;font-weight:600;">‹ Mục lục</a>
-    <div style="font-size:12px;color:#8a8780;">Prototype Mobile</div>
-  </div>
 
-  <div style="margin:0 auto;width:390px;background:#f5f4f2;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);color:#1f1d29;border:1px solid #e3e0da;">
+  <div style="margin:0 auto;width:100%;max-width:480px;background:#f5f4f2;min-height:100vh;overflow:hidden;box-shadow:0 0 20px rgba(0,0,0,.05);color:#1f1d29;font-family:'Inter',sans-serif;position:relative;">
     <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;background:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #1f1d29;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#1f1d29;border-radius:1px;"></span></span></div>
 
     <!-- header + search -->
     <div style="background:#fff;padding:8px 18px 16px;">
       <div style="display:flex;align-items:center;justify-content:space-between;">
         <a href="trang-chu.html" style="font-weight:800;font-size:18px;color:#6d28d9;">nightlife<span style="color:#1f1d29;">.hn</span></a>
-        <span style="font-size:12px;color:#6d28d9;background:#f1ebff;border-radius:16px;padding:5px 11px;font-weight:600;">Hà Nội ▾</span>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <a href="#" style="display:flex;"><img src="../../SVG/chat.svg" style="width:22px;height:22px;" alt=""></a>
+          <a href="#" style="display:flex;"><img src="../../SVG/Notification.svg" style="width:22px;height:22px;" alt=""></a>
+        </div>
       </div>
       <a href="danh-sach-quan.html" style="margin-top:14px;display:flex;align-items:center;gap:10px;background:#f3f2f5;border-radius:13px;padding:13px 14px;"><img src="https://img.icons8.com/ios/100/9A98A6/search.png" style="width:17px;height:17px;" alt=""><span style="font-size:13.5px;color:#9a98a6;">Tìm quán hoặc cast gần bạn…</span></a>
     </div>
 
     <!-- categories -->
     <div style="padding:14px 18px 4px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px 8px;">
-      <a href="danh-sach-quan.html" style="text-align:center;"><span style="width:52px;height:52px;border-radius:16px;background:#fff;box-shadow:0 2px 10px rgba(40,20,60,.05);display:flex;align-items:center;justify-content:center;margin:0 auto;"><img src="https://img.icons8.com/fluency/96/cocktail.png" style="width:26px;height:26px;" alt=""></span><div style="font-size:11px;color:#5b5870;margin-top:6px;">Tìm quán</div></a>
-      <a href="danh-sach-cast.html" style="text-align:center;"><span style="width:52px;height:52px;border-radius:16px;background:#fff;box-shadow:0 2px 10px rgba(40,20,60,.05);display:flex;align-items:center;justify-content:center;margin:0 auto;"><img src="https://img.icons8.com/fluency/96/geisha.png" style="width:26px;height:26px;" alt=""></span><div style="font-size:11px;color:#5b5870;margin-top:6px;">Tìm Cast</div></a>
-      <a href="uu-dai.html" style="text-align:center;"><span style="width:52px;height:52px;border-radius:16px;background:#fff;box-shadow:0 2px 10px rgba(40,20,60,.05);display:flex;align-items:center;justify-content:center;margin:0 auto;"><img src="https://img.icons8.com/fluency/96/gift.png" style="width:26px;height:26px;" alt=""></span><div style="font-size:11px;color:#5b5870;margin-top:6px;">Ưu đãi</div></a>
-      <a href="danh-sach-quan.html" style="text-align:center;"><span style="width:52px;height:52px;border-radius:16px;background:#fff;box-shadow:0 2px 10px rgba(40,20,60,.05);display:flex;align-items:center;justify-content:center;margin:0 auto;"><img src="https://img.icons8.com/fluency/96/confetti.png" style="width:26px;height:26px;" alt=""></span><div style="font-size:11px;color:#5b5870;margin-top:6px;">Sự kiện</div></a>
-      <a href="danh-sach-quan.html" style="text-align:center;"><span style="width:52px;height:52px;border-radius:16px;background:#fff;box-shadow:0 2px 10px rgba(40,20,60,.05);display:flex;align-items:center;justify-content:center;margin:0 auto;"><img src="https://img.icons8.com/fluency/96/restaurant.png" style="width:26px;height:26px;" alt=""></span><div style="font-size:11px;color:#5b5870;margin-top:6px;">Nhà hàng</div></a>
-      <a href="danh-sach-quan.html" style="text-align:center;"><span style="width:52px;height:52px;border-radius:16px;background:#fff;box-shadow:0 2px 10px rgba(40,20,60,.05);display:flex;align-items:center;justify-content:center;margin:0 auto;"><img src="https://img.icons8.com/fluency/96/spa-flower.png" style="width:26px;height:26px;" alt=""></span><div style="font-size:11px;color:#5b5870;margin-top:6px;">Spa</div></a>
-      <a href="huong-dan.html" style="text-align:center;"><span style="width:52px;height:52px;border-radius:16px;background:#fff;box-shadow:0 2px 10px rgba(40,20,60,.05);display:flex;align-items:center;justify-content:center;margin:0 auto;"><img src="https://img.icons8.com/fluency/96/book.png" style="width:26px;height:26px;" alt=""></span><div style="font-size:11px;color:#5b5870;margin-top:6px;">Hướng dẫn</div></a>
+      <a href="danh-sach-quan.html" style="text-align:center;"><span style="width:52px;height:52px;border-radius:16px;background:#fff;box-shadow:0 2px 10px rgba(40,20,60,.05);display:flex;align-items:center;justify-content:center;margin:0 auto;"><img src="../../SVG/tim quan.svg" style="width:26px;height:26px;" alt=""></span><div style="font-size:11px;color:#5b5870;margin-top:6px;">Tìm quán</div></a>
+      <a href="danh-sach-cast.html" style="text-align:center;"><span style="width:52px;height:52px;border-radius:16px;background:#fff;box-shadow:0 2px 10px rgba(40,20,60,.05);display:flex;align-items:center;justify-content:center;margin:0 auto;"><img src="../../SVG/tim cast.svg" style="width:26px;height:26px;" alt=""></span><div style="font-size:11px;color:#5b5870;margin-top:6px;">Tìm Cast</div></a>
+      <a href="uu-dai.html" style="text-align:center;"><span style="width:52px;height:52px;border-radius:16px;background:#fff;box-shadow:0 2px 10px rgba(40,20,60,.05);display:flex;align-items:center;justify-content:center;margin:0 auto;"><img src="../../SVG/uu daI.svg" style="width:26px;height:26px;" alt=""></span><div style="font-size:11px;color:#5b5870;margin-top:6px;">Ưu đãi</div></a>
+      <a href="danh-sach-quan.html" style="text-align:center;"><span style="width:52px;height:52px;border-radius:16px;background:#fff;box-shadow:0 2px 10px rgba(40,20,60,.05);display:flex;align-items:center;justify-content:center;margin:0 auto;"><img src="../../SVG/su kien.svg" style="width:26px;height:26px;" alt=""></span><div style="font-size:11px;color:#5b5870;margin-top:6px;">Sự kiện</div></a>
+      <a href="danh-sach-quan.html" style="text-align:center;"><span style="width:52px;height:52px;border-radius:16px;background:#fff;box-shadow:0 2px 10px rgba(40,20,60,.05);display:flex;align-items:center;justify-content:center;margin:0 auto;"><img src="../../SVG/nha hang.svg" style="width:26px;height:26px;" alt=""></span><div style="font-size:11px;color:#5b5870;margin-top:6px;">Nhà hàng</div></a>
+      <a href="danh-sach-quan.html" style="text-align:center;"><span style="width:52px;height:52px;border-radius:16px;background:#fff;box-shadow:0 2px 10px rgba(40,20,60,.05);display:flex;align-items:center;justify-content:center;margin:0 auto;"><img src="../../SVG/spa.svg" style="width:26px;height:26px;" alt=""></span><div style="font-size:11px;color:#5b5870;margin-top:6px;">Spa</div></a>
+      <a href="huong-dan.html" style="text-align:center;"><span style="width:52px;height:52px;border-radius:16px;background:#fff;box-shadow:0 2px 10px rgba(40,20,60,.05);display:flex;align-items:center;justify-content:center;margin:0 auto;"><img src="../../SVG/huong dan.svg" style="width:26px;height:26px;" alt=""></span><div style="font-size:11px;color:#5b5870;margin-top:6px;">Hướng dẫn</div></a>
     </div>
 
     <!-- banner quảng cáo trượt -->
@@ -169,7 +167,6 @@
       <a href="tai-khoan.html" style="display:flex;flex-direction:column;align-items:center;gap:3px;"><img src="https://img.icons8.com/ios/100/B6B3C0/user.png" style="width:21px;height:21px;" alt=""><span style="font-size:10px;color:#b6b3c0;">Tài khoản</span></a>
     </div>
   </div>
-</div>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {

@@ -14,7 +14,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box;margin:0;padding:0;}
-  body{background:#e7e5df;}
+  body{background:#f5f4f2;}
   a{text-decoration:none;color:inherit;}
   .hscroll{scrollbar-width:none;}
   .hscroll::-webkit-scrollbar{display:none;}
@@ -23,13 +23,8 @@
 </style>
 </helmet>
 
-<div style="width:100%;min-height:100vh;box-sizing:border-box;padding:34px 24px 64px;background:#e7e5df;font-family:'Inter',sans-serif;">
-  <div style="max-width:390px;margin:0 auto 18px;display:flex;align-items:center;gap:12px;">
-    <a href="danh-sach-cast.html" style="font-size:12.5px;color:#6d28d9;background:#f1ebff;border-radius:20px;padding:6px 13px;font-weight:600;">‹ Cast</a>
-    <div style="font-size:12px;color:#8a8780;">Chi tiết Cast</div>
-  </div>
 
-  <div style="margin:0 auto;width:390px;background:#f5f4f2;border-radius:32px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.16);color:#1f1d29;border:1px solid #e3e0da;">
+  <div style="margin:0 auto;width:100%;max-width:480px;background:#f5f4f2;min-height:100vh;overflow:hidden;box-shadow:0 0 20px rgba(0,0,0,.05);color:#1f1d29;font-family:'Inter',sans-serif;position:relative;">
     <div style="height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:700;background:#fff;"><span>21:00</span><span style="width:22px;height:11px;border:1.5px solid #1f1d29;border-radius:3px;display:inline-block;position:relative;"><span style="position:absolute;inset:1.5px;right:6px;background:#1f1d29;border-radius:1px;"></span></span></div>
 
     <div style="position:relative;height:300px;background:{{ mainBg }};">
@@ -57,7 +52,6 @@
       <div class="btn" onClick="{{ book }}" style="flex:1;background:#6d28d9;color:#fff;text-align:center;border-radius:12px;padding:14px;font-weight:700;font-size:14px;">Đặt theo cast</div>
     </div>
   </div>
-</div>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
