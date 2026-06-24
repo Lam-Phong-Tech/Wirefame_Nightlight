@@ -57,6 +57,19 @@
       <div><div style="font-size:11px;color:#8a879a;">Ưu đãi</div><div style="font-size:16px;font-weight:800;color:#6d28d9;">{{ discountPct }}</div></div>
       <div class="btn" onClick="{{ submit }}" style="flex:1;background:#6d28d9;color:#fff;text-align:center;border-radius:12px;padding:14px;font-weight:700;font-size:14px;">Gửi yêu cầu</div>
     </div>
+
+    <sc-if value="{{ showLoginModal }}" hint-placeholder-val="{{ false }}">
+      <div style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);backdrop-filter:blur(4px);z-index:999;display:flex;align-items:center;justify-content:center;padding:20px;">
+        <div style="background:#fff;border-radius:16px;width:100%;max-width:320px;padding:20px;box-shadow:0 12px 40px rgba(0,0,0,0.2);">
+          <div style="text-align:center;font-size:16px;font-weight:700;color:#1f1d29;margin-bottom:12px;">Yêu cầu đăng nhập</div>
+          <div style="text-align:center;font-size:13.5px;color:#5b5870;margin-bottom:24px;line-height:1.5;">Bạn cần đăng nhập tài khoản để sử dụng quyền lợi Hội viên và tích điểm.</div>
+          <div style="display:flex;gap:10px;">
+            <div class="btn" onClick="{{ closeLoginModal }}" style="flex:1;text-align:center;padding:12px;border-radius:10px;background:#f3f2f5;color:#5b5870;font-weight:600;font-size:14px;">Hủy</div>
+            <a href="dang-nhap.html" class="btn" style="flex:1;text-align:center;padding:12px;border-radius:10px;background:#6d28d9;color:#fff;font-weight:600;font-size:14px;">Đăng nhập</a>
+          </div>
+        </div>
+      </div>
+    </sc-if>
   </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
@@ -79,7 +92,8 @@ class Component extends DCLogic {
       vName:v.name, vArea:v.area, vImg:NL.photo(v.imgId,360), castName:b.castName||'Michi · 23',
       date:date, time:time, guests:guests,
       sGuest:NL.seg(!member), sMember:NL.seg(member),
-      pickGuest:function(){ self.setState({tier:'guest'}); }, pickMember:function(){ self.setState({tier:'member'}); },
+      pickGuest:function(){ self.setState({tier:'guest'}); }, pickMember:function(){ self.setState({showLoginModal:true}); },
+      showLoginModal: st.showLoginModal || false, closeLoginModal: function(){ self.setState({showLoginModal:false}); },
       discountNote: member ? 'Hội viên: giảm 8% · hạn mã 7 ngày · được tích điểm' : 'Guest: giảm 5% · hạn mã 24 giờ. Đăng nhập để nhận tới 10%.',
       discountPct: discountPct, couponItems: couponItems,
       dec:function(){ self.setState({guests:Math.max(1,guests-1)}); },
